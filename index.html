@@ -872,50 +872,28 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
 
 <script>
 // ════════════════════════════════════════════════
-// QUESTIONS (40 culture générale)
+// QUESTIONS — chargées depuis questions.json
 // ════════════════════════════════════════════════
-const QDB = [
-  {q:"Quelle est la planète la plus proche du Soleil ?",                      a:["Vénus","Mercure","Mars","Terre"],                c:1},
-  {q:"Combien de côtés a un hexagone ?",                                      a:["5","6","7","8"],                                 c:1},
-  {q:"Qui a peint la Joconde ?",                                              a:["Raphaël","Michel-Ange","Léonard de Vinci","Botticelli"], c:2},
-  {q:"Quelle est la capitale de l'Espagne ?",                                 a:["Barcelone","Séville","Valence","Madrid"],        c:3},
-  {q:"En quelle année a eu lieu la Révolution française ?",                   a:["1776","1789","1815","1804"],                     c:1},
-  {q:"Quel est le plus grand océan du monde ?",                               a:["Atlantique","Indien","Arctique","Pacifique"],    c:3},
-  {q:"Combien de joueurs dans une équipe de football ?",                      a:["9","10","11","12"],                              c:2},
-  {q:"Quelle est la formule chimique de l'eau ?",                             a:["CO₂","H₂O","O₂","NaCl"],                       c:1},
-  {q:"Quel pays a remporté la Coupe du Monde 2018 ?",                        a:["Brésil","Allemagne","France","Argentine"],       c:2},
-  {q:"Combien d'os dans le corps humain adulte ?",                            a:["106","206","306","406"],                         c:1},
-  {q:"Quelle est la plus haute montagne du monde ?",                          a:["K2","Mont Blanc","Everest","Kilimanjaro"],       c:2},
-  {q:"Qui a écrit « Les Misérables » ?",                                     a:["Zola","Balzac","Victor Hugo","Flaubert"],        c:2},
-  {q:"Dans quel pays se trouve la Grande Muraille ?",                         a:["Japon","Mongolie","Corée","Chine"],              c:3},
-  {q:"Quelle est la capitale de l'Australie ?",                              a:["Sydney","Melbourne","Brisbane","Canberra"],      c:3},
-  {q:"De quelle couleur est le sang oxygéné ?",                               a:["Bleu","Violet","Rouge","Orange"],               c:2},
-  {q:"Combien de continents y a-t-il sur Terre ?",                            a:["5","6","7","8"],                                 c:2},
-  {q:"Qui a inventé le téléphone ?",                                          a:["Edison","Tesla","Graham Bell","Marconi"],        c:2},
-  {q:"Combien de grammes dans un kilogramme ?",                               a:["100","500","1000","10000"],                      c:2},
-  {q:"Quel est le plus grand pays du monde en superficie ?",                  a:["Canada","USA","Chine","Russie"],                 c:3},
-  {q:"Quelle langue est la plus parlée dans le monde ?",                      a:["Espagnol","Anglais","Mandarin","Hindi"],        c:2},
-  {q:"Combien de secondes dans une heure ?",                                  a:["360","600","3600","36000"],                      c:2},
-  {q:"Quel organe produit l'insuline ?",                                      a:["Foie","Pancréas","Rein","Rate"],                c:1},
-  {q:"Quelle est la vitesse de la lumière (approximation) ?",                a:["150 000 km/s","300 000 km/s","450 000 km/s","600 000 km/s"], c:1},
-  {q:"Quel est le symbole chimique de l'or ?",                               a:["Go","Ag","Au","Or"],                             c:2},
-  {q:"Qui a composé la Symphonie n°9 ?",                                     a:["Mozart","Bach","Beethoven","Chopin"],            c:2},
-  {q:"Dans quel sport utilise-t-on un volant (shuttlecock) ?",               a:["Tennis","Squash","Badminton","Ping-pong"],       c:2},
-  {q:"Combien de planètes dans le système solaire ?",                         a:["7","8","9","10"],                                c:1},
-  {q:"Quelle est la langue officielle du Brésil ?",                          a:["Espagnol","Français","Portugais","Italien"],     c:2},
-  {q:"Quel est le plus long fleuve d'Europe ?",                              a:["Rhin","Danube","Seine","Volga"],                 c:3},
-  {q:"En quelle année l'Homme a-t-il marché sur la Lune pour la 1ère fois ?",a:["1965","1967","1969","1971"],                    c:2},
-  {q:"Quel pays a la plus grande population au monde en 2024 ?",             a:["Inde","Chine","USA","Indonésie"],               c:0},
-  {q:"Combien de faces a un cube ?",                                          a:["4","5","6","8"],                                 c:2},
-  {q:"Quelle planète est connue comme la planète rouge ?",                    a:["Vénus","Jupiter","Mars","Saturne"],             c:2},
-  {q:"Qui a peint le plafond de la Chapelle Sixtine ?",                      a:["Raphaël","Donatello","Léonard de Vinci","Michel-Ange"], c:3},
-  {q:"Quel est l'animal terrestre le plus rapide ?",                         a:["Lion","Guépard","Autruche","Gazelle"],           c:1},
-  {q:"Dans quel pays se trouve la Tour de Pise ?",                           a:["France","Espagne","Grèce","Italie"],             c:3},
-  {q:"Combien de dents a un adulte humain (dents de sagesse incluses) ?",   a:["28","30","32","34"],                              c:2},
-  {q:"Quel est le plus petit pays du monde ?",                               a:["Monaco","Liechtenstein","Saint-Marin","Vatican"], c:3},
-  {q:"Quel élément est majoritaire dans l'atmosphère terrestre ?",           a:["Oxygène","Azote","CO₂","Argon"],               c:1},
-  {q:"Dans quelle ville se trouvent les Jeux Olympiques de 2024 ?",         a:["Los Angeles","Tokyo","Paris","Londres"],          c:2},
-];
+let QDB = [];
+
+// URL du JSON : même dossier que le HTML (racine du repo GitHub Pages)
+const QUESTIONS_URL = './questions.json';
+
+async function loadQuestions() {
+  try {
+    const r = await fetch(QUESTIONS_URL + '?v=' + Date.now()); // cache-bust
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    QDB = await r.json();
+    console.log(`✅ ${QDB.length} questions chargées`);
+  } catch(e) {
+    console.error('❌ Impossible de charger questions.json :', e);
+    alert('❌ Impossible de charger questions.json\n\n' + e.message + '\n\nVérifie que le fichier est à la racine de ton repo GitHub.');
+  }
+}
+
+// Chargement au démarrage
+loadQuestions();
+
 
 // ════════════════════════════════════════════════
 // STATE
@@ -1248,6 +1226,10 @@ function chatLog(type, a, b) {
 // GAME START
 // ════════════════════════════════════════════════
 function startGame() {
+  if (!QDB.length) {
+    alert('⏳ Les questions ne sont pas encore chargées.\nAttends une seconde et réessaie.');
+    return;
+  }
   S.gameStarted = true;
   S.questions   = shuffle([...QDB]).slice(0, Math.min(40, QDB.length));
   S.qIdx        = 0;
