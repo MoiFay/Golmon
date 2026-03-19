@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👑 Question pour un GOLMON</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.3.0/pusher.min.js"></script>
+<style>
+:root {
+  --gold: #f5c842;
+  --gold-dim: #c9a12e;
+  --gold-pale: #fff5cc;
+  --purple: #4a1d96;
+  --purple-mid: #7c3aed;
+  --bg: #07070f;
+  --bg2: #0e0e1c;
+  --bg3: #161628;
+  --bg4: #1e1e34;
+  --text: #e4e4f0;
+  --text-dim: #8080a0;
+  --red: #ef4444;
+  --green: #22c55e;
+  --orange: #f97316;
+  --twitch: #9147ff;
+  --kick: #53fc18;
+  --border: rgba(255,255,255,0.08);
+  --border-gold: rgba(245,200,66,0.25);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Exo 2', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 15%, rgba(74,29,150,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 85%, rgba(245,200,66,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(124,58,237,0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hidden { display: none !important; }
+
+/* ────────────────────── SETUP ────────────────────── */
+#screen-setup {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2.5rem;
+}
+
+.crown-title { text-align: center; }
+
+.crown-icon {
+  font-size: 5.5rem;
+  display: block;
+  animation: float 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(245,200,66,0.4));
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+
+.crown-title h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.6rem, 5vw, 3.2rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #c9a12e 0%, #f5c842 30%, #fff5cc 55%, #f5c842 70%, #c9a12e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.crown-title p {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.setup-card {
+  background: var(--bg2);
+  border: 1px solid var(--border-gold);
+  border-radius: 18px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 0 60px rgba(245,200,66,0.06);
+}
+
+.section-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.platform-chooser {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.platform-btn {
+  padding: 1.1rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--bg3);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  font-family: 'Exo 2', sans-serif;
+  color: var(--text-dim);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.platform-btn:hover { border-color: rgba(255,255,255,0.2); color: var(--text); }
+.platform-btn.active[data-p="twitch"] { border-color: var(--twitch); color: var(--twitch); background: rgba(145,71,255,0.12); box-shadow: 0 0 20px rgba(145,71,255,0.15); }
+.platform-btn.active[data-p="kick"]   { border-color: var(--kick);   color: var(--kick);   background: rgba(83,252,24,0.08);  box-shadow: 0 0 20px rgba(83,252,24,0.12); }
+.platform-logo { font-size: 2rem; }
+
+.field-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.field-group label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-dim); font-weight: 600; }
+.field-group input {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  outline: none;
+  width: 100%;
+}
+.field-group input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(245,200,66,0.08); }
+.field-group input::placeholder { color: var(--text-dim); font-style: italic; }
+
+.field-note { font-size: 0.72rem; color: var(--text-dim); line-height: 1.5; }
+.field-note a { color: var(--gold); }
+
+#kick-extra { display: none; }
+
+.btn-gold {
+  background: linear-gradient(135deg, #b8901a, var(--gold), #b8901a);
+  color: #080808;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.5rem;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.4s;
+}
+.btn-gold:hover::after { left: 100%; }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(245,200,66,0.35); }
+.btn-gold:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
+
+.status-msg { font-size: 0.8rem; color: var(--text-dim); text-align: center; min-height: 1.2em; }
+.status-msg.ok  { color: var(--green); }
+.status-msg.err { color: var(--red); }
+
+.rules-card {
+  max-width: 460px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  text-align: center;
+}
+.rule-item { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; }
+.rule-icon { font-size: 1.4rem; }
+.rule-text { font-size: 0.75rem; color: var(--text-dim); line-height: 1.4; }
+.rule-text strong { color: var(--gold); }
+
+/* ────────────────────── LOBBY ────────────────────── */
+#screen-lobby {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.lobby-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg2);
+  border: 1px solid var(--border-gold);
+  border-radius: 12px;
+  padding: 0.8rem 1.25rem;
+}
+
+.lobby-header h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-pale));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.live-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+.dot-live { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+.panel {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+.panel-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.players-grid-lobby {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex: 1;
+  overflow-y: auto;
+  content: '';
+}
+
+.p-chip {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  animation: chipIn 0.25s ease;
+}
+@keyframes chipIn { from{opacity:0;transform:scale(0.75)} to{opacity:1;transform:scale(1)} }
+.p-chip .ph { font-size: 0.65rem; }
+
+.chat-scroll {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-height: 380px;
+}
+.chat-scroll::-webkit-scrollbar { width: 3px; }
+.chat-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.cm { font-size: 0.78rem; line-height: 1.4; animation: msgIn 0.2s ease; }
+@keyframes msgIn { from{opacity:0;transform:translateX(-6px)} to{opacity:1;transform:translateX(0)} }
+.cm .au { color: var(--gold); font-weight: 700; }
+.cm.sys { color: var(--purple-mid); font-style: italic; }
+.cm.join { color: var(--green); font-weight: 600; }
+.cm.leave { color: var(--red); }
+
+.lobby-footer {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.count-badge { font-size: 0.9rem; color: var(--text-dim); }
+.count-badge strong { color: var(--gold); font-size: 1.3rem; font-family: 'Cinzel Decorative', serif; }
+.lobby-footer-btns { display: flex; gap: 0.75rem; }
+
+/* ────────────────────── GAME ────────────────────── */
+#screen-game {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 265px;
+  grid-template-rows: auto 1fr;
+  gap: 0.85rem;
+  padding: 0.85rem;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.topbar {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 0.55rem 1.1rem;
+}
+
+.topbar-left { font-size: 0.85rem; color: var(--text-dim); }
+.topbar-left strong { color: var(--gold); font-size: 1rem; font-family: 'Cinzel Decorative', serif; }
+.topbar-right { font-size: 0.85rem; color: var(--green); font-weight: 700; }
+.topbar-right span { color: var(--text-dim); font-weight: 400; }
+
+.timer-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.timer-svg { width: 52px; height: 52px; transform: rotate(-90deg); }
+.t-bg { fill: none; stroke: var(--bg4); stroke-width: 4.5; }
+.t-arc { fill: none; stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 138; stroke-dashoffset: 0; transition: stroke-dashoffset 1s linear, stroke 0.4s; }
+.t-num {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.qzone {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-self: start;
+}
+
+.q-card {
+  background: var(--bg2);
+  border: 1px solid var(--border-gold);
+  border-radius: 16px;
+  padding: 1.6rem 2rem;
+  box-shadow: 0 0 50px rgba(245,200,66,0.04), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.q-meta { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-dim); margin-bottom: 0.85rem; font-weight: 600; }
+.q-text {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.answers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.ans-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.35s;
+}
+.ans-card.correct { border-color: var(--green); background: rgba(34,197,94,0.08); }
+.ans-card.wrong   { border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.05); opacity: 0.55; }
+
+.ans-letter {
+  width: 38px; height: 38px;
+  border-radius: 9px;
+  background: var(--bg4);
+  border: 1px solid var(--border-gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.ans-text { font-size: 0.88rem; line-height: 1.3; flex: 1; }
+.ans-votes { font-size: 0.75rem; color: var(--text-dim); font-weight: 700; margin-left: auto; white-space: nowrap; }
+
+/* sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 90px);
+}
+.sidebar::-webkit-scrollbar { width: 3px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.side-block {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.side-title {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+}
+
+.prow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  font-size: 0.82rem;
+  transition: all 0.3s;
+  animation: slideIn 0.25s ease;
+}
+@keyframes slideIn { from{opacity:0;transform:translateX(8px)} to{opacity:1;transform:translateX(0)} }
+.prow:last-child { border-bottom: none; }
+.prow .pname { max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.prow .plives { font-size: 0.7rem; letter-spacing: 0.05em; }
+.prow.answered .pname::after { content: ' ✓'; color: var(--green); font-size: 0.68rem; }
+.prow.elim { opacity: 0.3; }
+.prow.elim .pname { text-decoration: line-through; }
+
+.elim-row { font-size: 0.78rem; color: var(--red); padding: 0.25rem 0; display: flex; align-items: center; gap: 0.3rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+.elim-row:last-child { border-bottom: none; }
+
+/* ────────────────────── RESULT OVERLAY ────────────────────── */
+#overlay-result {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.88);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 200;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+.result-modal {
+  background: var(--bg2);
+  border: 1px solid var(--border-gold);
+  border-radius: 22px;
+  padding: 2rem 2.25rem;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 80px rgba(245,200,66,0.1);
+}
+@keyframes popIn { from{opacity:0;transform:scale(0.65)} to{opacity:1;transform:scale(1)} }
+
+.result-modal h3 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.correct-box {
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.5);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0.75rem 0;
+}
+
+.elim-announcements {
+  display: flex; flex-direction: column; gap: 0.35rem;
+  margin: 0.75rem 0;
+  max-height: 160px;
+  overflow-y: auto;
+}
+.ea-item {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.82rem;
+  color: var(--red);
+  text-align: left;
+}
+.ea-item.life {
+  background: rgba(249,115,22,0.08);
+  border-color: rgba(249,115,22,0.3);
+  color: var(--orange);
+}
+
+.surv-line { font-size: 0.85rem; color: var(--text-dim); }
+.surv-line strong { color: var(--green); }
+
+.btn-next {
+  margin-top: 1.25rem;
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+  color: #080808;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-next:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,200,66,0.3); }
+
+/* ────────────────────── WINNER ────────────────────── */
+#screen-winner {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+
+.winner-inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  animation: riseIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@keyframes riseIn { from{opacity:0;transform:translateY(60px)} to{opacity:1;transform:translateY(0)} }
+
+.w-crown {
+  font-size: 6rem;
+  filter: drop-shadow(0 0 40px rgba(245,200,66,0.6));
+  animation: crownPop 0.6s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes crownPop { from{transform:scale(0) rotate(-20deg)} to{transform:scale(1) rotate(0)} }
+
+.w-pretitle {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold-pale));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.05em;
+}
+
+.w-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(2.5rem, 9vw, 5rem);
+  font-weight: 900;
+  color: var(--gold);
+  text-shadow: 0 0 60px rgba(245,200,66,0.6);
+  animation: goldenPulse 2s ease-in-out infinite alternate;
+  line-height: 1.1;
+}
+@keyframes goldenPulse {
+  from { text-shadow: 0 0 25px rgba(245,200,66,0.3); }
+  to   { text-shadow: 0 0 80px rgba(245,200,66,0.9); }
+}
+
+.w-sub {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.w-stats {
+  display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  margin-top: 0.5rem;
+}
+.w-stat {
+  background: var(--bg2);
+  border: 1px solid var(--border-gold);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  min-width: 90px;
+}
+.w-stat .val {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+.w-stat .lab { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-top: 0.2rem; }
+
+/* ────────────────────── RESPONSIVE ────────────────────── */
+@media (max-width: 680px) {
+  #screen-lobby { grid-template-columns: 1fr; }
+  #screen-game  { grid-template-columns: 1fr; }
+  .answers-grid { grid-template-columns: 1fr; }
+  .sidebar { max-height: none; }
+  .rules-card { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════ SETUP ══════════════════════════════════ -->
+<div id="screen-setup">
+  <div class="crown-title">
+    <span class="crown-icon">👑</span>
+    <h1>Question pour un<br>GOLMON</h1>
+    <p>Battle Royale Chat · Twitch & Kick</p>
+  </div>
+
+  <div class="setup-card">
+    <div>
+      <div class="section-label">Plateforme</div>
+      <div class="platform-chooser">
+        <button class="platform-btn active" data-p="twitch" onclick="pickPlatform('twitch')">
+          <span class="platform-logo">🟣</span>Twitch
+        </button>
+        <button class="platform-btn" data-p="kick" onclick="pickPlatform('kick')">
+          <span class="platform-logo">🟢</span>Kick
+        </button>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Nom de ta chaîne</label>
+      <input type="text" id="channel-input" placeholder="ex: monpseudo" autocomplete="off" spellcheck="false">
+    </div>
+
+    <div id="kick-extra" class="field-group">
+      <label>Kick Chatroom ID <span style="color:var(--text-dim);font-weight:400;text-transform:none">(si auto-détection échoue)</span></label>
+      <input type="text" id="chatroom-id" placeholder="ex: 1234567" autocomplete="off">
+      <p class="field-note">
+        Va sur <a target="_blank">kick.com/api/v2/channels/<strong id="kick-slug-hint">TON_PSEUDO</strong></a> → cherche <code style="color:var(--gold)">"chatroom":{"id":</code>
+      </p>
+    </div>
+
+    <button class="btn-gold" id="btn-connect" onclick="connectToChat()">
+      🔌 Connecter le chat
+    </button>
+
+    <p class="status-msg" id="connect-status"></p>
+  </div>
+
+  <div class="rules-card">
+    <div class="rule-item">
+      <div class="rule-icon">⚔️</div>
+      <div class="rule-text">Viewers tapent <strong>!entry</strong> / <strong>!exit</strong> pour jouer</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon">💬</div>
+      <div class="rule-text">Répondre <strong>A B C</strong> ou <strong>D</strong> dans le chat</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon">❤️</div>
+      <div class="rule-text"><strong>3 vies</strong> · Dernier survivant = <strong>👑 Roi des Golmons</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ LOBBY ══════════════════════════════════ -->
+<div id="screen-lobby" class="hidden">
+  <div class="lobby-header">
+    <h2>⚔️ Salle d'attente</h2>
+    <div style="display:flex;gap:0.6rem;align-items:center">
+      <div class="live-pill">
+        <div class="dot-live"></div>
+        <span id="channel-display">—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">⚔️ Inscrits — <span id="lobby-count-label">0</span> joueurs</div>
+    <div class="players-grid-lobby" id="lobby-grid"></div>
+    <p style="font-size:0.75rem;color:var(--text-dim)">
+      Viewers : tape <strong style="color:var(--gold)">!entry</strong> pour rejoindre · <strong style="color:var(--red)">!exit</strong> pour quitter
+    </p>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">💬 Chat en direct</div>
+    <div class="chat-scroll" id="chat-log"></div>
+  </div>
+
+  <div class="lobby-footer">
+    <div class="count-badge">
+      <strong id="lobby-count-big">0</strong> joueurs prêts
+    </div>
+    <div class="lobby-footer-btns">
+      <button class="btn-ghost" onclick="doDisconnect()">← Retour</button>
+      <button class="btn-gold" id="btn-start" onclick="startGame()" disabled style="width:auto;padding:0.75rem 1.75rem">
+        ⚔️ Lancer la bataille
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ GAME ══════════════════════════════════ -->
+<div id="screen-game" class="hidden">
+
+  <div class="topbar">
+    <div class="topbar-left">
+      Question <strong id="q-index">1</strong> / <span id="q-total">—</span>
+    </div>
+    <div class="timer-wrap">
+      <svg class="timer-svg" viewBox="0 0 46 46">
+        <circle class="t-bg" cx="23" cy="23" r="22"/>
+        <circle class="t-arc" id="t-arc" cx="23" cy="23" r="22"/>
+      </svg>
+      <span class="t-num" id="t-num">30</span>
+    </div>
+    <div class="topbar-right">
+      <span id="alive-count">—</span> <span>survivants</span>
+    </div>
+  </div>
+
+  <div class="qzone">
+    <div class="q-card">
+      <div class="q-meta" id="q-meta">Question 1</div>
+      <div class="q-text" id="q-text">—</div>
+    </div>
+    <div class="answers-grid" id="answers-grid"></div>
+  </div>
+
+  <div class="sidebar">
+    <div class="side-block">
+      <div class="side-title">⚔️ Joueurs actifs</div>
+      <div id="alive-list"></div>
+    </div>
+    <div class="side-block" id="elim-block" style="display:none">
+      <div class="side-title">💀 Éliminés</div>
+      <div id="elim-list-sidebar"></div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULT OVERLAY -->
+<div id="overlay-result" class="hidden">
+  <div class="result-modal">
+    <h3 id="r-title">Résultat</h3>
+    <div class="correct-box" id="r-correct"></div>
+    <div class="elim-announcements" id="r-events"></div>
+    <div class="surv-line" id="r-surv"></div>
+    <button class="btn-next" id="btn-next" onclick="nextQ()">Question suivante →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ WINNER ══════════════════════════════════ -->
+<div id="screen-winner" class="hidden">
+  <canvas id="confetti"></canvas>
+  <div class="winner-inner">
+    <div class="w-crown">👑</div>
+    <div class="w-pretitle">Roi des Golmons</div>
+    <div class="w-name" id="w-name">—</div>
+    <div class="w-sub">Dernier survivant · Indétrônable</div>
+    <div class="w-stats">
+      <div class="w-stat"><div class="val" id="w-players">—</div><div class="lab">Joueurs</div></div>
+      <div class="w-stat"><div class="val" id="w-rounds">—</div><div class="lab">Rounds</div></div>
+      <div class="w-stat"><div class="val" id="w-lives">—</div><div class="lab">Vies rest.</div></div>
+    </div>
+    <button class="btn-gold" onclick="resetGame()" style="max-width:280px;margin-top:0.5rem">
+      🔄 Nouvelle partie
+    </button>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════
+// QUESTIONS (40 culture générale)
+// ════════════════════════════════════════════════
+const QDB = [
+  {q:"Quelle est la planète la plus proche du Soleil ?",                      a:["Vénus","Mercure","Mars","Terre"],                c:1},
+  {q:"Combien de côtés a un hexagone ?",                                      a:["5","6","7","8"],                                 c:1},
+  {q:"Qui a peint la Joconde ?",                                              a:["Raphaël","Michel-Ange","Léonard de Vinci","Botticelli"], c:2},
+  {q:"Quelle est la capitale de l'Espagne ?",                                 a:["Barcelone","Séville","Valence","Madrid"],        c:3},
+  {q:"En quelle année a eu lieu la Révolution française ?",                   a:["1776","1789","1815","1804"],                     c:1},
+  {q:"Quel est le plus grand océan du monde ?",                               a:["Atlantique","Indien","Arctique","Pacifique"],    c:3},
+  {q:"Combien de joueurs dans une équipe de football ?",                      a:["9","10","11","12"],                              c:2},
+  {q:"Quelle est la formule chimique de l'eau ?",                             a:["CO₂","H₂O","O₂","NaCl"],                       c:1},
+  {q:"Quel pays a remporté la Coupe du Monde 2018 ?",                        a:["Brésil","Allemagne","France","Argentine"],       c:2},
+  {q:"Combien d'os dans le corps humain adulte ?",                            a:["106","206","306","406"],                         c:1},
+  {q:"Quelle est la plus haute montagne du monde ?",                          a:["K2","Mont Blanc","Everest","Kilimanjaro"],       c:2},
+  {q:"Qui a écrit « Les Misérables » ?",                                     a:["Zola","Balzac","Victor Hugo","Flaubert"],        c:2},
+  {q:"Dans quel pays se trouve la Grande Muraille ?",                         a:["Japon","Mongolie","Corée","Chine"],              c:3},
+  {q:"Quelle est la capitale de l'Australie ?",                              a:["Sydney","Melbourne","Brisbane","Canberra"],      c:3},
+  {q:"De quelle couleur est le sang oxygéné ?",                               a:["Bleu","Violet","Rouge","Orange"],               c:2},
+  {q:"Combien de continents y a-t-il sur Terre ?",                            a:["5","6","7","8"],                                 c:2},
+  {q:"Qui a inventé le téléphone ?",                                          a:["Edison","Tesla","Graham Bell","Marconi"],        c:2},
+  {q:"Combien de grammes dans un kilogramme ?",                               a:["100","500","1000","10000"],                      c:2},
+  {q:"Quel est le plus grand pays du monde en superficie ?",                  a:["Canada","USA","Chine","Russie"],                 c:3},
+  {q:"Quelle langue est la plus parlée dans le monde ?",                      a:["Espagnol","Anglais","Mandarin","Hindi"],        c:2},
+  {q:"Combien de secondes dans une heure ?",                                  a:["360","600","3600","36000"],                      c:2},
+  {q:"Quel organe produit l'insuline ?",                                      a:["Foie","Pancréas","Rein","Rate"],                c:1},
+  {q:"Quelle est la vitesse de la lumière (approximation) ?",                a:["150 000 km/s","300 000 km/s","450 000 km/s","600 000 km/s"], c:1},
+  {q:"Quel est le symbole chimique de l'or ?",                               a:["Go","Ag","Au","Or"],                             c:2},
+  {q:"Qui a composé la Symphonie n°9 ?",                                     a:["Mozart","Bach","Beethoven","Chopin"],            c:2},
+  {q:"Dans quel sport utilise-t-on un volant (shuttlecock) ?",               a:["Tennis","Squash","Badminton","Ping-pong"],       c:2},
+  {q:"Combien de planètes dans le système solaire ?",                         a:["7","8","9","10"],                                c:1},
+  {q:"Quelle est la langue officielle du Brésil ?",                          a:["Espagnol","Français","Portugais","Italien"],     c:2},
+  {q:"Quel est le plus long fleuve d'Europe ?",                              a:["Rhin","Danube","Seine","Volga"],                 c:3},
+  {q:"En quelle année l'Homme a-t-il marché sur la Lune pour la 1ère fois ?",a:["1965","1967","1969","1971"],                    c:2},
+  {q:"Quel pays a la plus grande population au monde en 2024 ?",             a:["Inde","Chine","USA","Indonésie"],               c:0},
+  {q:"Combien de faces a un cube ?",                                          a:["4","5","6","8"],                                 c:2},
+  {q:"Quelle planète est connue comme la planète rouge ?",                    a:["Vénus","Jupiter","Mars","Saturne"],             c:2},
+  {q:"Qui a peint le plafond de la Chapelle Sixtine ?",                      a:["Raphaël","Donatello","Léonard de Vinci","Michel-Ange"], c:3},
+  {q:"Quel est l'animal terrestre le plus rapide ?",                         a:["Lion","Guépard","Autruche","Gazelle"],           c:1},
+  {q:"Dans quel pays se trouve la Tour de Pise ?",                           a:["France","Espagne","Grèce","Italie"],             c:3},
+  {q:"Combien de dents a un adulte humain (dents de sagesse incluses) ?",   a:["28","30","32","34"],                              c:2},
+  {q:"Quel est le plus petit pays du monde ?",                               a:["Monaco","Liechtenstein","Saint-Marin","Vatican"], c:3},
+  {q:"Quel élément est majoritaire dans l'atmosphère terrestre ?",           a:["Oxygène","Azote","CO₂","Argon"],               c:1},
+  {q:"Dans quelle ville se trouvent les Jeux Olympiques de 2024 ?",         a:["Los Angeles","Tokyo","Paris","Londres"],          c:2},
+];
+
+// ════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════
+let S = {
+  platform: 'twitch',
+  channel: '',
+  players: {},        // username_lower → { display, lives, eliminated }
+  eliminated: [],
+  questions: [],
+  qIdx: 0,
+  timer: 30,
+  timerId: null,
+  roundAnswers: {},   // username_lower → 'A'|'B'|'C'|'D'
+  roundActive: false,
+  totalPlayers: 0,
+  ws: null,           // Twitch WS
+  pusher: null,       // Kick Pusher
+  gameStarted: false,
+};
+
+// ════════════════════════════════════════════════
+// SETUP LOGIC
+// ════════════════════════════════════════════════
+function pickPlatform(p) {
+  S.platform = p;
+  document.querySelectorAll('.platform-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`[data-p="${p}"]`).classList.add('active');
+  const kickExtra = document.getElementById('kick-extra');
+  kickExtra.style.display = p === 'kick' ? 'flex' : 'none';
+  kickExtra.style.flexDirection = 'column';
+  kickExtra.style.gap = '0.5rem';
+  updateKickSlugHint();
+}
+
+function updateKickSlugHint() {
+  const ch = document.getElementById('channel-input').value.trim() || 'TON_PSEUDO';
+  document.getElementById('kick-slug-hint').textContent = ch;
+  const a = document.querySelector('#kick-extra a');
+  if (a) a.href = `https://kick.com/api/v2/channels/${ch}`;
+}
+
+document.getElementById('channel-input').addEventListener('input', updateKickSlugHint);
+document.getElementById('channel-input').addEventListener('keydown', e => { if(e.key==='Enter') connectToChat(); });
+
+async function connectToChat() {
+  const ch = document.getElementById('channel-input').value.trim().toLowerCase();
+  if (!ch) { setStatus('Entrez un nom de chaîne', 'err'); return; }
+  S.channel = ch;
+  const btn = document.getElementById('btn-connect');
+  btn.disabled = true;
+  setStatus('Connexion...', '');
+  try {
+    if (S.platform === 'twitch') await connectTwitch(ch);
+    else await connectKick(ch);
+    const icon = S.platform === 'twitch' ? '🟣' : '🟢';
+    document.getElementById('channel-display').textContent = icon + ' ' + ch;
+    showScreen('lobby');
+    chatLog('sys', `✅ Connecté à #${ch} via ${S.platform === 'twitch' ? 'Twitch' : 'Kick'}`);
+  } catch(e) {
+    setStatus('❌ ' + e.message, 'err');
+    btn.disabled = false;
+  }
+}
+
+function setStatus(msg, type) {
+  const el = document.getElementById('connect-status');
+  el.textContent = msg;
+  el.className = 'status-msg ' + (type||'');
+}
+
+// ════════════════════════════════════════════════
+// TWITCH IRC
+// ════════════════════════════════════════════════
+function connectTwitch(channel) {
+  return new Promise((resolve, reject) => {
+    const nick = 'justinfan' + (Math.floor(Math.random()*90000)+10000);
+    const ws = new WebSocket('wss://irc-ws.chat.twitch.tv:443');
+    let done = false;
+    const TO = setTimeout(() => { if(!done){ws.close(); reject(new Error('Timeout — vérifie le nom de la chaîne'));} }, 9000);
+
+    ws.onopen = () => {
+      ws.send('CAP REQ :twitch.tv/tags twitch.tv/commands');
+      ws.send('PASS oauth:anonymous');
+      ws.send('NICK ' + nick);
+      ws.send('JOIN #' + channel);
+    };
+
+    ws.onmessage = raw => {
+      const lines = raw.data.split('\r\n');
+      lines.forEach(line => {
+        if (!line) return;
+        if (line.startsWith('PING')) { ws.send('PONG :tmi.twitch.tv'); return; }
+        if (!done && (line.includes('366') || line.includes(':End of /NAMES'))) {
+          done = true; clearTimeout(TO); S.ws = ws; resolve();
+        }
+        // PRIVMSG parse
+        const m = line.match(/^(?:@([^ ]+) )?:([^!]+)![^ ]+ PRIVMSG #[^ ]+ :(.+)$/);
+        if (m) {
+          let username = m[2];
+          const tags = m[1] || '';
+          const dm = tags.match(/display-name=([^;]+)/);
+          if (dm && dm[1]) username = dm[1];
+          handleMsg(username, m[3].trim());
+        }
+      });
+    };
+
+    ws.onerror = () => { if(!done){clearTimeout(TO); reject(new Error('Impossible de rejoindre Twitch IRC'));} };
+    ws.onclose = () => { if(S.gameStarted) chatLog('sys','⚠️ Chat Twitch déconnecté'); };
+  });
+}
+
+// ════════════════════════════════════════════════
+// KICK PUSHER
+// ════════════════════════════════════════════════
+async function connectKick(channel) {
+  let roomId = document.getElementById('chatroom-id').value.trim();
+
+  if (!roomId) {
+    setStatus('Récupération du chatroom ID...', '');
+    try {
+      const r = await fetch(`https://kick.com/api/v2/channels/${channel}`, {signal: AbortSignal.timeout(6000)});
+      const d = await r.json();
+      roomId = d?.chatroom?.id;
+    } catch(e) { /* CORS probable */ }
+  }
+
+  if (!roomId) {
+    // Reveal the manual field and guide the user
+    const ex = document.getElementById('kick-extra');
+    ex.style.display = 'flex';
+    ex.style.flexDirection = 'column';
+    ex.style.gap = '0.5rem';
+    updateKickSlugHint();
+    throw new Error(`CORS bloqué — ouvre l'URL indiquée ci-dessus dans ton navigateur, note l'ID et entre-le dans le champ`);
+  }
+
+  return new Promise((resolve, reject) => {
+    const pusher = new Pusher('eb1d5f283081a78b932c', { cluster: 'us2' });
+    const ch = pusher.subscribe('chatrooms.' + roomId + '.v2');
+    let done = false;
+    const TO = setTimeout(() => { if(!done){pusher.disconnect(); reject(new Error('Timeout Kick Pusher'));} }, 9000);
+
+    ch.bind('pusher:subscription_succeeded', () => {
+      if (!done) { done = true; clearTimeout(TO); S.pusher = pusher; resolve(); }
+    });
+
+    ch.bind('App\\Events\\ChatMessageEvent', data => {
+      const user = data?.sender?.username || data?.sender?.slug || 'unknown';
+      const msg  = data?.content || '';
+      handleMsg(user, msg);
+    });
+
+    pusher.connection.bind('error', e => {
+      if (!done) { clearTimeout(TO); reject(new Error('Erreur Pusher : ' + (e?.error?.data?.message || e))); }
+    });
+  });
+}
+
+// ════════════════════════════════════════════════
+// MESSAGE HANDLER
+// ════════════════════════════════════════════════
+function handleMsg(username, message) {
+  const msg  = message.trim().toLowerCase();
+  const ukey = username.toLowerCase();
+
+  chatLog('msg', username, message);
+
+  if (!S.gameStarted) {
+    if (msg === '!entry') {
+      if (!S.players[ukey]) {
+        S.players[ukey] = { display: username, lives: 3, eliminated: false };
+        updateLobby();
+        chatLog('join', `⚔️ ${username} rejoint la bataille !`);
+      }
+      return;
+    }
+    if (msg === '!exit') {
+      if (S.players[ukey]) {
+        delete S.players[ukey];
+        updateLobby();
+        chatLog('leave', `🚪 ${username} a quitté`);
+      }
+      return;
+    }
+    return;
+  }
+
+  // In-game answers
+  if (S.roundActive && ['a','b','c','d'].includes(msg)) {
+    const p = S.players[ukey];
+    if (p && !p.eliminated && !S.roundAnswers[ukey]) {
+      S.roundAnswers[ukey] = msg.toUpperCase();
+      const row = document.getElementById('pr-' + ukey);
+      if (row) row.classList.add('answered');
+    }
+  }
+}
+
+// ════════════════════════════════════════════════
+// LOBBY
+// ════════════════════════════════════════════════
+function updateLobby() {
+  const count = Object.keys(S.players).length;
+  document.getElementById('lobby-count-label').textContent = count;
+  document.getElementById('lobby-count-big').textContent   = count;
+  document.getElementById('btn-start').disabled = count < 2;
+
+  const grid = document.getElementById('lobby-grid');
+  grid.innerHTML = '';
+  Object.values(S.players).forEach(p => {
+    const chip = document.createElement('div');
+    chip.className = 'p-chip';
+    chip.innerHTML = `<span>${esc(p.display)}</span><span class="ph">❤️❤️❤️</span>`;
+    grid.appendChild(chip);
+  });
+}
+
+function chatLog(type, a, b) {
+  const box = document.getElementById('chat-log');
+  if (!box) return;
+  const el = document.createElement('div');
+  if (type === 'msg')  { el.className='cm'; el.innerHTML=`<span class="au">${esc(a)}</span>: ${esc(b)}`; }
+  if (type === 'join') { el.className='cm join'; el.textContent=a; }
+  if (type === 'leave'){ el.className='cm leave'; el.textContent=a; }
+  if (type === 'sys')  { el.className='cm sys'; el.textContent=a; }
+  box.appendChild(el);
+  box.scrollTop = box.scrollHeight;
+  while (box.children.length > 100) box.removeChild(box.firstChild);
+}
+
+// ════════════════════════════════════════════════
+// GAME START
+// ════════════════════════════════════════════════
+function startGame() {
+  S.gameStarted = true;
+  S.questions   = shuffle([...QDB]).slice(0, Math.min(40, QDB.length));
+  S.qIdx        = 0;
+  S.eliminated  = [];
+  S.totalPlayers= Object.keys(S.players).length;
+  // Reset lives
+  Object.values(S.players).forEach(p => { p.lives = 3; p.eliminated = false; });
+
+  showScreen('game');
+  buildSidebar();
+  showQ();
+}
+
+// ════════════════════════════════════════════════
+// QUESTION
+// ════════════════════════════════════════════════
+function showQ() {
+  const alive = getAlive();
+  if (alive.length <= 1) { showWinner(alive[0] || null); return; }
+  if (S.qIdx >= S.questions.length) { showWinner(alive.sort((a,b) => S.players[b].lives - S.players[a].lives)[0]); return; }
+
+  const q   = S.questions[S.qIdx];
+  const num = S.qIdx + 1;
+  const LETTERS = ['A','B','C','D'];
+
+  document.getElementById('q-index').textContent = num;
+  document.getElementById('q-total').textContent = S.questions.length;
+  document.getElementById('q-meta').textContent  = `Question ${num}`;
+  document.getElementById('q-text').textContent  = q.q;
+  document.getElementById('alive-count').textContent = alive.length;
+
+  const grid = document.getElementById('answers-grid');
+  grid.innerHTML = '';
+  q.a.forEach((ans, i) => {
+    const card = document.createElement('div');
+    card.className = 'ans-card';
+    card.id = 'ac-' + i;
+    card.innerHTML = `
+      <div class="ans-letter">${LETTERS[i]}</div>
+      <div class="ans-text">${esc(ans)}</div>
+      <div class="ans-votes" id="av-${i}"></div>
+    `;
+    grid.appendChild(card);
+  });
+
+  S.roundAnswers = {};
+  S.roundActive  = true;
+  startTimer(30);
+}
+
+// ════════════════════════════════════════════════
+// TIMER
+// ════════════════════════════════════════════════
+function startTimer(secs) {
+  S.timer = secs;
+  tickUI(secs);
+  clearInterval(S.timerId);
+  S.timerId = setInterval(() => {
+    S.timer--;
+    tickUI(S.timer);
+    if (S.timer <= 0) { clearInterval(S.timerId); S.roundActive = false; endRound(); }
+  }, 1000);
+}
+
+function tickUI(t) {
+  document.getElementById('t-num').textContent = t;
+  const arc = document.getElementById('t-arc');
+  const C   = 2 * Math.PI * 22; // circumference ≈ 138
+  arc.style.strokeDashoffset = C * (1 - t/30);
+  arc.style.stroke = t > 10 ? 'var(--gold)' : t > 5 ? 'var(--orange)' : 'var(--red)';
+  document.getElementById('t-num').style.color = t > 10 ? 'var(--gold)' : t > 5 ? 'var(--orange)' : 'var(--red)';
+}
+
+// ════════════════════════════════════════════════
+// END ROUND
+// ════════════════════════════════════════════════
+function endRound() {
+  const q = S.questions[S.qIdx];
+  const LETTERS = ['A','B','C','D'];
+  const correct = LETTERS[q.c];
+
+  // Count votes
+  const votes = {A:0,B:0,C:0,D:0};
+  Object.values(S.roundAnswers).forEach(v => { if(votes[v]!==undefined) votes[v]++; });
+
+  // Reveal answers
+  LETTERS.forEach((l, i) => {
+    const card = document.getElementById('ac-' + i);
+    if (card) card.classList.add(i === q.c ? 'correct' : 'wrong');
+    const vd = document.getElementById('av-' + i);
+    if (vd && votes[l]) vd.textContent = votes[l] + ' rép.';
+  });
+
+  // Apply lives
+  const events      = [];
+  const eliminatedNow = [];
+
+  getAlive().forEach(ukey => {
+    const p   = S.players[ukey];
+    const ans = S.roundAnswers[ukey];
+    if (!ans || ans !== correct) {
+      p.lives--;
+      const reason = ans ? `a répondu ${ans}` : "n'a pas répondu";
+      if (p.lives <= 0) {
+        p.lives = 0;
+        p.eliminated = true;
+        eliminatedNow.push(p.display);
+        S.eliminated.push(p.display);
+        events.push({ type: 'elim', text: `💀 ${p.display} éliminé·e ! (${reason})` });
+      } else {
+        events.push({ type: 'life', text: `❤️ ${p.display} perd une vie → ${p.lives} restante${p.lives > 1 ? 's' : ''} (${reason})` });
+      }
+    }
+  });
+
+  buildSidebar();
+
+  // Overlay
+  const overlay = document.getElementById('overlay-result');
+  overlay.classList.remove('hidden');
+
+  document.getElementById('r-title').textContent  = `Bonne réponse : ${correct}`;
+  document.getElementById('r-correct').textContent = `${correct} — ${q.a[q.c]}`;
+
+  const evBox = document.getElementById('r-events');
+  evBox.innerHTML = '';
+  events.forEach(ev => {
+    const d = document.createElement('div');
+    d.className = 'ea-item ' + (ev.type === 'life' ? 'life' : '');
+    d.textContent = ev.text;
+    evBox.appendChild(d);
+  });
+
+  const alive = getAlive();
+  document.getElementById('r-surv').innerHTML = `<strong>${alive.length}</strong> survivant${alive.length > 1 ? 's' : ''}`;
+
+  const btnNext = document.getElementById('btn-next');
+  btnNext.textContent = alive.length <= 1
+    ? (alive.length === 1 ? '👑 Voir le champion !' : '🏁 Fin de partie')
+    : 'Question suivante →';
+}
+
+function nextQ() {
+  document.getElementById('overlay-result').classList.add('hidden');
+  const alive = getAlive();
+  if (alive.length <= 1) { showWinner(alive[0] || null); return; }
+  S.qIdx++;
+  buildSidebar();
+  showQ();
+}
+
+// ════════════════════════════════════════════════
+// SIDEBAR
+// ════════════════════════════════════════════════
+function buildSidebar() {
+  const aliveList = document.getElementById('alive-list');
+  aliveList.innerHTML = '';
+  const hearts = ['','❤️','❤️❤️','❤️❤️❤️'];
+
+  Object.entries(S.players).forEach(([key, p]) => {
+    if (p.eliminated) return;
+    const row = document.createElement('div');
+    row.className = 'prow';
+    row.id = 'pr-' + key;
+    row.innerHTML = `<span class="pname">${esc(p.display)}</span><span class="plives">${hearts[Math.max(0,p.lives)]||''}</span>`;
+    aliveList.appendChild(row);
+  });
+
+  const elimBlock = document.getElementById('elim-block');
+  const elimList  = document.getElementById('elim-list-sidebar');
+  if (S.eliminated.length) {
+    elimBlock.style.display = 'block';
+    elimList.innerHTML = '';
+    S.eliminated.forEach(name => {
+      const r = document.createElement('div');
+      r.className = 'elim-row';
+      r.innerHTML = `💀 ${esc(name)}`;
+      elimList.appendChild(r);
+    });
+  }
+
+  document.getElementById('alive-count').textContent = getAlive().length;
+}
+
+// ════════════════════════════════════════════════
+// WINNER
+// ════════════════════════════════════════════════
+function showWinner(winnerKey) {
+  clearInterval(S.timerId);
+  S.roundActive = false;
+  showScreen('winner');
+
+  const name = winnerKey ? S.players[winnerKey].display : 'Égalité !';
+  const lives= winnerKey ? S.players[winnerKey].lives   : 0;
+
+  document.getElementById('w-name').textContent    = name;
+  document.getElementById('w-players').textContent = S.totalPlayers;
+  document.getElementById('w-rounds').textContent  = S.qIdx + 1;
+  document.getElementById('w-lives').textContent   = lives;
+
+  confetti();
+}
+
+function confetti() {
+  const cv  = document.getElementById('confetti');
+  cv.width  = window.innerWidth;
+  cv.height = window.innerHeight;
+  const ctx = cv.getContext('2d');
+  const C   = ['#f5c842','#c9a12e','#fff5cc','#9147ff','#53fc18','#ef4444','#60a5fa','#fb923c'];
+  const pts = Array.from({length:160}, () => ({
+    x: Math.random() * cv.width,
+    y: Math.random() * cv.height - cv.height,
+    r: Math.random() * 9 + 3,
+    d: Math.random() * 50,
+    c: C[Math.floor(Math.random()*C.length)],
+    t: 0,
+    ts: Math.random() * 0.1 + 0.02,
+  }));
+  let ang = 0;
+  function frame() {
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ang += 0.01;
+    pts.forEach(p => {
+      p.t += p.ts;
+      p.y += Math.cos(ang + p.d) + 2.2 + p.r/10;
+      p.x += Math.sin(ang) * 1.8;
+      if (p.y > cv.height) { p.y = -10; p.x = Math.random()*cv.width; }
+      ctx.beginPath();
+      ctx.lineWidth = p.r/2;
+      ctx.strokeStyle = p.c;
+      const tilt = Math.sin(p.t)*16;
+      ctx.moveTo(p.x + tilt + p.r/4, p.y);
+      ctx.lineTo(p.x + tilt, p.y + tilt + p.r/4);
+      ctx.stroke();
+    });
+    if (!document.getElementById('screen-winner').classList.contains('hidden'))
+      requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+// ════════════════════════════════════════════════
+// UTILS
+// ════════════════════════════════════════════════
+function showScreen(name) {
+  ['setup','lobby','game','winner'].forEach(s => {
+    document.getElementById('screen-'+s).classList.toggle('hidden', s !== name);
+  });
+}
+
+function getAlive() {
+  return Object.keys(S.players).filter(k => !S.players[k].eliminated);
+}
+
+function shuffle(arr) {
+  for (let i = arr.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]] = [arr[j],arr[i]];
+  }
+  return arr;
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function doDisconnect() {
+  if (S.ws)     { S.ws.close();          S.ws = null; }
+  if (S.pusher) { S.pusher.disconnect(); S.pusher = null; }
+  resetGame();
+}
+
+function resetGame() {
+  clearInterval(S.timerId);
+  S = { platform: S.platform, channel:'', players:{}, eliminated:[], questions:[],
+        qIdx:0, timer:30, timerId:null, roundAnswers:{}, roundActive:false,
+        totalPlayers:0, ws:null, pusher:null, gameStarted:false };
+  document.getElementById('channel-input').value = '';
+  document.getElementById('chatroom-id').value   = '';
+  document.getElementById('connect-status').textContent = '';
+  document.getElementById('connect-status').className   = 'status-msg';
+  document.getElementById('btn-connect').disabled = false;
+  showScreen('setup');
+}
+</script>
+</body>
+</html>
