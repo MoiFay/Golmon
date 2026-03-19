@@ -559,7 +559,60 @@ body::before {
 .prow:last-child { border-bottom: none; }
 .prow .pname { max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .prow .plives { font-size: 0.7rem; letter-spacing: 0.05em; }
-.prow.answered .pname::after { content: ' ✓'; color: var(--green); font-size: 0.68rem; }
+.prow.reveal-correct {
+  background: rgba(34,197,94,0.15);
+  border-radius: 8px;
+  padding-left: 6px;
+  animation: flashGreen 0.5s ease;
+}
+.prow.reveal-wrong {
+  background: rgba(239,68,68,0.12);
+  border-radius: 8px;
+  padding-left: 6px;
+  animation: flashRed 0.5s ease;
+}
+.prow.reveal-skip {
+  opacity: 0.35;
+}
+@keyframes flashGreen {
+  0%   { background: rgba(34,197,94,0.5); transform: translateX(6px); }
+  100% { background: rgba(34,197,94,0.15); transform: translateX(0); }
+}
+@keyframes flashRed {
+  0%   { background: rgba(239,68,68,0.4); transform: translateX(6px); }
+  100% { background: rgba(239,68,68,0.12); transform: translateX(0); }
+}
+.prow .rev-ans {
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin-left: 0.3rem;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.prow.reveal-correct .rev-ans { background: var(--green); color: #000; }
+.prow.reveal-wrong   .rev-ans { background: var(--red);   color: #fff; }
+
+/* sound toggle */
+.sound-btn {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-dim);
+  transition: all 0.2s;
+  line-height: 1;
+}
+.sound-btn:hover { border-color: var(--gold); color: var(--gold); }
+.sound-btn.muted { opacity: 0.35; }
+
+/* all-answered flash on timer */
+@keyframes timerPulse {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.25); }
+}
+.timer-pulse { animation: timerPulse 0.35s ease; }
 .prow.elim { opacity: 0.3; }
 .prow.elim .pname { text-decoration: line-through; }
 
@@ -871,8 +924,11 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
       </svg>
       <span class="t-num" id="t-num">30</span>
     </div>
-    <div class="topbar-right">
-      <span id="alive-count">—</span> <span>survivants</span>
+    <div style="display:flex;align-items:center;gap:0.6rem">
+      <button class="sound-btn" id="sound-btn" onclick="toggleSound()" title="Son on/off">🔊</button>
+      <div class="topbar-right">
+        <span id="alive-count">—</span> <span>survivants</span>
+      </div>
     </div>
   </div>
 
@@ -1309,6 +1365,7 @@ function handleMsg(username, message) {
       S.roundAnswers[ukey] = msg.toUpperCase();
       const row = document.getElementById('pr-' + ukey);
       if (row) row.classList.add('answered');
+      checkAllAnswered();
     }
   }
 }
@@ -1356,6 +1413,8 @@ function startGame() {
     alert('⏳ Les questions ne sont pas encore chargées.\nAttends une seconde et réessaie.');
     return;
   }
+  // Init audio context (nécessite un geste utilisateur)
+  try { getAudio(); } catch(e) {}
   S.gameStarted = true;
   S.questions   = shuffle([...QDB]).slice(0, Math.min(40, QDB.length));
   S.qIdx        = 0;
@@ -1436,6 +1495,99 @@ function streamerAnswer(idx) {
   // Marque comme répondu dans la sidebar
   const row = document.getElementById('pr-' + S.streamerKey);
   if (row) row.classList.add('answered');
+  checkAllAnswered();
+}
+
+// ════════════════════════════════════════════════
+// SONS — Web Audio API (aucune dépendance)
+// ════════════════════════════════════════════════
+let audioCtx = null;
+let soundOn  = true;
+
+function getAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  return audioCtx;
+}
+
+function toggleSound() {
+  soundOn = !soundOn;
+  const btn = document.getElementById('sound-btn');
+  if (btn) { btn.textContent = soundOn ? '🔊' : '🔇'; btn.classList.toggle('muted', !soundOn); }
+}
+
+function playTone(freq, type, vol, start, dur, fadeOut) {
+  if (!soundOn) return;
+  try {
+    const ctx  = getAudio();
+    const osc  = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.type      = type || 'sine';
+    osc.frequency.setValueAtTime(freq, ctx.currentTime + start);
+    gain.gain.setValueAtTime(vol || 0.3, ctx.currentTime + start);
+    if (fadeOut) gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + start + dur);
+    osc.start(ctx.currentTime + start);
+    osc.stop(ctx.currentTime  + start + dur);
+  } catch(e) {}
+}
+
+function playTick() {
+  playTone(800, 'square', 0.06, 0, 0.04, true);
+}
+
+function playAllAnswered() {
+  // Petit "whoosh" montant
+  playTone(440, 'sine', 0.2, 0,    0.12, true);
+  playTone(660, 'sine', 0.2, 0.1,  0.12, true);
+  playTone(880, 'sine', 0.2, 0.2,  0.15, true);
+}
+
+function playRevealCorrect() {
+  playTone(523, 'sine', 0.18, 0,    0.08, true);
+  playTone(659, 'sine', 0.18, 0.06, 0.08, true);
+}
+
+function playRevealWrong() {
+  playTone(220, 'sawtooth', 0.12, 0, 0.1, true);
+}
+
+function playElimination() {
+  // Son dramatique descendant
+  playTone(300, 'sawtooth', 0.25, 0,    0.2, false);
+  playTone(200, 'sawtooth', 0.25, 0.15, 0.2, false);
+  playTone(120, 'sawtooth', 0.25, 0.3,  0.3, true);
+}
+
+function playRoundEnd() {
+  // Accord final après révélations
+  playTone(523, 'triangle', 0.2, 0,    0.4, true);
+  playTone(659, 'triangle', 0.2, 0.05, 0.4, true);
+  playTone(784, 'triangle', 0.2, 0.1,  0.4, true);
+}
+
+function playWinnerFanfare() {
+  const notes = [523,659,784,1047,784,1047,1175,1047];
+  notes.forEach((f, i) => playTone(f, 'triangle', 0.25, i * 0.13, 0.2, true));
+}
+
+// ════════════════════════════════════════════════
+// AUTO-AVANCE — tout le monde a répondu
+// ════════════════════════════════════════════════
+function checkAllAnswered() {
+  if (!S.roundActive) return;
+  const alive = getAlive();
+  const answered = alive.filter(k => S.roundAnswers[k]);
+  if (answered.length >= alive.length) {
+    // Tout le monde a répondu → on coupe le timer
+    clearInterval(S.timerId);
+    S.roundActive = false;
+    playAllAnswered();
+    // Petite pause visuelle avant la révélation
+    const wrap = document.querySelector('.timer-wrap');
+    if (wrap) { wrap.classList.add('timer-pulse'); setTimeout(() => wrap.classList.remove('timer-pulse'), 400); }
+    setTimeout(() => endRound(), 600);
+  }
 }
 
 // ════════════════════════════════════════════════
@@ -1455,17 +1607,18 @@ function startTimer(secs) {
 function tickUI(t) {
   document.getElementById('t-num').textContent = t;
   const arc = document.getElementById('t-arc');
-  const C   = 2 * Math.PI * 22; // circumference ≈ 138
+  const C   = 2 * Math.PI * 22;
   arc.style.strokeDashoffset = C * (1 - t/30);
   arc.style.stroke = t > 10 ? 'var(--gold)' : t > 5 ? 'var(--orange)' : 'var(--red)';
   document.getElementById('t-num').style.color = t > 10 ? 'var(--gold)' : t > 5 ? 'var(--orange)' : 'var(--red)';
+  if (t <= 10 && t > 0) playTick();
 }
 
 // ════════════════════════════════════════════════
-// END ROUND
+// END ROUND — avec animation de révélation
 // ════════════════════════════════════════════════
 function endRound() {
-  const q = S.questions[S.qIdx];
+  const q       = S.questions[S.qIdx];
   const LETTERS = ['A','B','C','D'];
   const correct = LETTERS[q.c];
 
@@ -1473,61 +1626,111 @@ function endRound() {
   const votes = {A:0,B:0,C:0,D:0};
   Object.values(S.roundAnswers).forEach(v => { if(votes[v]!==undefined) votes[v]++; });
 
-  // Reveal answers
+  // Révèle les cartes de réponse
   LETTERS.forEach((l, i) => {
     const card = document.getElementById('ac-' + i);
-    if (card) card.classList.add(i === q.c ? 'correct' : 'wrong');
+    if (card) {
+      card.classList.remove('clickable','streamer-picked');
+      card.onclick = null;
+      card.classList.add(i === q.c ? 'correct' : 'wrong');
+    }
     const vd = document.getElementById('av-' + i);
     if (vd && votes[l]) vd.textContent = votes[l] + ' rép.';
   });
 
-  // Apply lives
-  const events      = [];
-  const eliminatedNow = [];
-
-  getAlive().forEach(ukey => {
-    const p   = S.players[ukey];
-    const ans = S.roundAnswers[ukey];
-    if (!ans || ans !== correct) {
-      p.lives--;
-      const reason = ans ? `a répondu ${ans}` : "n'a pas répondu";
-      if (p.lives <= 0) {
-        p.lives = 0;
-        p.eliminated = true;
-        eliminatedNow.push(p.display);
-        S.eliminated.push(p.display);
-        events.push({ type: 'elim', text: `💀 ${p.display} éliminé·e ! (${reason})` });
-      } else {
-        events.push({ type: 'life', text: `❤️ ${p.display} perd une vie → ${p.lives} restante${p.lives > 1 ? 's' : ''} (${reason})` });
-      }
-    }
-  });
-
-  buildSidebar();
-
-  // Overlay
-  const overlay = document.getElementById('overlay-result');
-  overlay.classList.remove('hidden');
-
-  document.getElementById('r-title').textContent  = `Bonne réponse : ${correct}`;
-  document.getElementById('r-correct').textContent = `${correct} — ${q.a[q.c]}`;
-
-  const evBox = document.getElementById('r-events');
-  evBox.innerHTML = '';
-  events.forEach(ev => {
-    const d = document.createElement('div');
-    d.className = 'ea-item ' + (ev.type === 'life' ? 'life' : '');
-    d.textContent = ev.text;
-    evBox.appendChild(d);
-  });
-
+  // Calcule les résultats de chaque joueur
   const alive = getAlive();
-  document.getElementById('r-surv').innerHTML = `<strong>${alive.length}</strong> survivant${alive.length > 1 ? 's' : ''}`;
+  const results = {}; // ukey → 'correct' | 'wrong' | 'skip'
+  alive.forEach(ukey => {
+    const ans = S.roundAnswers[ukey];
+    results[ukey] = !ans ? 'skip' : ans === correct ? 'correct' : 'wrong';
+  });
 
-  const btnNext = document.getElementById('btn-next');
-  btnNext.textContent = alive.length <= 1
-    ? (alive.length === 1 ? '👑 Voir le champion !' : '🏁 Fin de partie')
-    : 'Question suivante →';
+  // ── ANIMATION : révélation joueur par joueur ──
+  const DELAY_PER = 260; // ms entre chaque joueur
+  const rows = [];
+  alive.forEach(ukey => {
+    const row = document.getElementById('pr-' + ukey);
+    if (row) rows.push({ row, ukey, res: results[ukey] });
+  });
+
+  let hasElim = false;
+
+  rows.forEach(({ row, ukey, res }, idx) => {
+    setTimeout(() => {
+      row.classList.remove('answered');
+      const ans = S.roundAnswers[ukey];
+      const ansLabel = ans || '—';
+
+      // Ajoute le badge de réponse
+      let badge = row.querySelector('.rev-ans');
+      if (!badge) { badge = document.createElement('span'); badge.className = 'rev-ans'; row.querySelector('.pname').appendChild(badge); }
+      badge.textContent = ansLabel;
+
+      if (res === 'correct') {
+        row.classList.add('reveal-correct');
+        playRevealCorrect();
+      } else if (res === 'wrong') {
+        row.classList.add('reveal-wrong');
+        playRevealWrong();
+      } else {
+        row.classList.add('reveal-skip');
+        playRevealWrong();
+      }
+    }, idx * DELAY_PER);
+  });
+
+  // Après toutes les révélations → applique les vies et affiche le modal
+  const totalRevealTime = rows.length * DELAY_PER + 400;
+
+  setTimeout(() => {
+    // Apply lives
+    const events = [];
+    getAlive().forEach(ukey => {
+      const p   = S.players[ukey];
+      const ans = S.roundAnswers[ukey];
+      if (!ans || ans !== correct) {
+        p.lives--;
+        const reason = ans ? `a répondu ${ans}` : "n'a pas répondu";
+        if (p.lives <= 0) {
+          p.lives = 0;
+          p.eliminated = true;
+          S.eliminated.push(p.display);
+          events.push({ type: 'elim', text: `💀 ${p.display} éliminé·e ! (${reason})` });
+          hasElim = true;
+        } else {
+          events.push({ type: 'life', text: `❤️ ${p.display} perd une vie → ${p.lives} restante${p.lives > 1 ? 's' : ''} (${reason})` });
+        }
+      }
+    });
+
+    if (hasElim) playElimination();
+    else         playRoundEnd();
+
+    buildSidebar();
+
+    // Overlay
+    const overlay = document.getElementById('overlay-result');
+    overlay.classList.remove('hidden');
+    document.getElementById('r-title').textContent   = `Bonne réponse : ${correct}`;
+    document.getElementById('r-correct').textContent = `${correct} — ${q.a[q.c]}`;
+
+    const evBox = document.getElementById('r-events');
+    evBox.innerHTML = '';
+    events.forEach(ev => {
+      const d = document.createElement('div');
+      d.className = 'ea-item ' + (ev.type === 'life' ? 'life' : '');
+      d.textContent = ev.text;
+      evBox.appendChild(d);
+    });
+
+    const aliveNow = getAlive();
+    document.getElementById('r-surv').innerHTML = `<strong>${aliveNow.length}</strong> survivant${aliveNow.length > 1 ? 's' : ''}`;
+    document.getElementById('btn-next').textContent = aliveNow.length <= 1
+      ? (aliveNow.length === 1 ? '👑 Voir le champion !' : '🏁 Fin de partie')
+      : 'Question suivante →';
+
+  }, totalRevealTime);
 }
 
 function nextQ() {
@@ -1589,6 +1792,7 @@ function showWinner(winnerKey) {
   document.getElementById('w-rounds').textContent  = S.qIdx + 1;
   document.getElementById('w-lives').textContent   = lives;
 
+  setTimeout(() => playWinnerFanfare(), 400);
   confetti();
 }
 
