@@ -344,6 +344,12 @@ body::before {
   gap: 0.35rem;
   animation: chipIn 0.25s ease;
 }
+.p-chip.streamer {
+  border-color: var(--border-gold);
+  background: rgba(245,200,66,0.06);
+  color: var(--gold);
+  font-weight: 700;
+}
 @keyframes chipIn { from{opacity:0;transform:scale(0.75)} to{opacity:1;transform:scale(1)} }
 .p-chip .ph { font-size: 0.65rem; }
 
@@ -464,6 +470,39 @@ body::before {
 }
 .ans-card.correct { border-color: var(--green); background: rgba(34,197,94,0.08); }
 .ans-card.wrong   { border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.05); opacity: 0.55; }
+
+/* Cartes cliquables pour le streamer */
+.ans-card.clickable {
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.ans-card.clickable:hover {
+  border-color: var(--gold);
+  background: rgba(245,200,66,0.07);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245,200,66,0.12);
+}
+.ans-card.clickable:hover .ans-letter {
+  background: var(--gold);
+  color: #080808;
+}
+.ans-card.streamer-picked {
+  border-color: var(--gold);
+  background: rgba(245,200,66,0.1);
+  box-shadow: 0 0 0 2px rgba(245,200,66,0.3);
+}
+.ans-card.streamer-picked .ans-letter {
+  background: var(--gold);
+  color: #080808;
+}
+.streamer-hint {
+  font-size: 0.7rem;
+  color: var(--gold);
+  text-align: center;
+  opacity: 0.7;
+  letter-spacing: 0.08em;
+  margin-top: -0.2rem;
+}
 
 .ans-letter {
   width: 38px; height: 38px;
@@ -843,6 +882,7 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
       <div class="q-text" id="q-text">—</div>
     </div>
     <div class="answers-grid" id="answers-grid"></div>
+    <div class="streamer-hint" id="streamer-hint" style="display:none">👑 Clique sur ta réponse</div>
   </div>
 
   <div class="sidebar">
@@ -918,7 +958,8 @@ loadQuestions();
 let S = {
   platform: 'twitch',
   channel: '',
-  players: {},        // username_lower → { display, lives, eliminated }
+  streamerKey: '',    // clé du streamer dans players
+  players: {},        // username_lower → { display, lives, eliminated, isStreamer? }
   eliminated: [],
   questions: [],
   qIdx: 0,
@@ -1024,6 +1065,12 @@ async function connectToChat() {
     const icon = S.platform === 'twitch' ? '🟣' : '🟢';
     document.getElementById('channel-display').textContent = icon + ' ' + ch;
     saveSession();
+
+    // Inscription automatique du streamer
+    S.streamerKey = ch.toLowerCase();
+    S.players[S.streamerKey] = { display: ch, lives: 3, eliminated: false, isStreamer: true };
+    updateLobby();
+
     showScreen('lobby');
     chatLog('sys', `✅ Connecté à #${ch} via ${S.platform === 'twitch' ? 'Twitch' : 'Kick'}`);
   } catch(e) {
@@ -1232,6 +1279,9 @@ function handleMsg(username, message) {
   chatLog('msg', username, message);
 
   if (!S.gameStarted) {
+    // Le streamer ne peut ni entrer ni sortir via le chat
+    if (ukey === S.streamerKey) return;
+
     if (msg === '!entry') {
       if (!S.players[ukey]) {
         S.players[ukey] = { display: username, lives: 3, eliminated: false };
@@ -1251,8 +1301,9 @@ function handleMsg(username, message) {
     return;
   }
 
-  // In-game answers
+  // Réponses en jeu — le streamer répond en cliquant, pas via le chat
   if (S.roundActive && ['a','b','c','d'].includes(msg)) {
+    if (ukey === S.streamerKey) return; // ignoré, il clique
     const p = S.players[ukey];
     if (p && !p.eliminated && !S.roundAnswers[ukey]) {
       S.roundAnswers[ukey] = msg.toUpperCase();
@@ -1269,14 +1320,17 @@ function updateLobby() {
   const count = Object.keys(S.players).length;
   document.getElementById('lobby-count-label').textContent = count;
   document.getElementById('lobby-count-big').textContent   = count;
+  // Besoin d'au moins 2 joueurs (streamer + 1 viewer)
   document.getElementById('btn-start').disabled = count < 2;
 
   const grid = document.getElementById('lobby-grid');
   grid.innerHTML = '';
   Object.values(S.players).forEach(p => {
     const chip = document.createElement('div');
-    chip.className = 'p-chip';
-    chip.innerHTML = `<span>${esc(p.display)}</span><span class="ph">❤️❤️❤️</span>`;
+    chip.className = 'p-chip' + (p.isStreamer ? ' streamer' : '');
+    chip.innerHTML = p.isStreamer
+      ? `<span>👑</span><span>${esc(p.display)}</span><span class="ph" style="font-size:0.6rem">STREAMER</span>`
+      : `<span>${esc(p.display)}</span><span class="ph">❤️❤️❤️</span>`;
     grid.appendChild(chip);
   });
 }
@@ -1335,10 +1389,18 @@ function showQ() {
 
   const grid = document.getElementById('answers-grid');
   grid.innerHTML = '';
+
+  const streamerAlive = S.players[S.streamerKey] && !S.players[S.streamerKey].eliminated;
+  const hint = document.getElementById('streamer-hint');
+  if (hint) hint.style.display = streamerAlive ? 'block' : 'none';
+
   q.a.forEach((ans, i) => {
     const card = document.createElement('div');
-    card.className = 'ans-card';
+    card.className = 'ans-card' + (streamerAlive ? ' clickable' : '');
     card.id = 'ac-' + i;
+    if (streamerAlive) {
+      card.onclick = () => streamerAnswer(i);
+    }
     card.innerHTML = `
       <div class="ans-letter">${LETTERS[i]}</div>
       <div class="ans-text">${esc(ans)}</div>
@@ -1350,6 +1412,30 @@ function showQ() {
   S.roundAnswers = {};
   S.roundActive  = true;
   startTimer(30);
+}
+
+// ════════════════════════════════════════════════
+// RÉPONSE STREAMER (clic)
+// ════════════════════════════════════════════════
+function streamerAnswer(idx) {
+  if (!S.roundActive) return;
+  if (S.roundAnswers[S.streamerKey]) return; // déjà répondu
+
+  const LETTERS = ['A','B','C','D'];
+  S.roundAnswers[S.streamerKey] = LETTERS[idx];
+
+  // Feedback visuel : highlight la carte choisie
+  document.querySelectorAll('.ans-card').forEach((c, i) => {
+    c.classList.toggle('streamer-picked', i === idx);
+    c.onclick = null; // désactive les autres clics
+    c.classList.remove('clickable');
+  });
+  const hint = document.getElementById('streamer-hint');
+  if (hint) hint.textContent = `👑 Tu as choisi ${LETTERS[idx]} ✓`;
+
+  // Marque comme répondu dans la sidebar
+  const row = document.getElementById('pr-' + S.streamerKey);
+  if (row) row.classList.add('answered');
 }
 
 // ════════════════════════════════════════════════
@@ -1464,9 +1550,10 @@ function buildSidebar() {
   Object.entries(S.players).forEach(([key, p]) => {
     if (p.eliminated) return;
     const row = document.createElement('div');
-    row.className = 'prow';
+    row.className = 'prow' + (p.isStreamer ? ' streamer-row' : '');
     row.id = 'pr-' + key;
-    row.innerHTML = `<span class="pname">${esc(p.display)}</span><span class="plives">${hearts[Math.max(0,p.lives)]||''}</span>`;
+    const nameLabel = p.isStreamer ? `👑 ${esc(p.display)}` : esc(p.display);
+    row.innerHTML = `<span class="pname">${nameLabel}</span><span class="plives">${hearts[Math.max(0,p.lives)]||''}</span>`;
     aliveList.appendChild(row);
   });
 
