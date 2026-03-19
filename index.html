@@ -713,6 +713,23 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
     <p>Battle Royale Chat · Twitch & Kick</p>
   </div>
 
+  <div id="saved-banner" class="hidden" style="
+    max-width:460px;width:100%;
+    background:var(--bg2);
+    border:1px solid var(--border-gold);
+    border-radius:14px;
+    padding:1rem 1.25rem;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  ">
+    <div>
+      <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--text-dim);font-weight:600;margin-bottom:0.3rem">Dernière session</div>
+      <div id="saved-label" style="font-size:0.95rem;font-weight:700;color:var(--text)"></div>
+    </div>
+    <button class="btn-gold" onclick="reconnectSaved()" style="width:auto;padding:0.6rem 1.2rem;font-size:0.85rem;flex-shrink:0">
+      ⚡ Reconnecter
+    </button>
+  </div>
+
   <div class="setup-card">
     <div>
       <div class="section-label">Plateforme</div>
@@ -916,6 +933,60 @@ let S = {
 };
 
 // ════════════════════════════════════════════════
+// SAUVEGARDE SESSION (localStorage)
+// ════════════════════════════════════════════════
+const SAVE_KEY = 'golmon_last_session';
+
+function saveSession() {
+  const data = {
+    platform:   S.platform,
+    channel:    S.channel,
+    chatroomId: document.getElementById('chatroom-id').value.trim(),
+  };
+  try { localStorage.setItem(SAVE_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+function loadSavedSession() {
+  try {
+    const raw = localStorage.getItem(SAVE_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (!data.channel) return;
+
+    // Affiche le bandeau
+    const banner = document.getElementById('saved-banner');
+    const label  = document.getElementById('saved-label');
+    const icon   = data.platform === 'twitch' ? '🟣' : '🟢';
+    const plat   = data.platform === 'twitch' ? 'Twitch' : 'Kick';
+    label.textContent = `${icon} ${plat} · ${data.channel}`;
+    banner.classList.remove('hidden');
+
+    // Pré-remplie le formulaire en dessous aussi
+    pickPlatform(data.platform);
+    document.getElementById('channel-input').value = data.channel;
+    if (data.chatroomId) document.getElementById('chatroom-id').value = data.chatroomId;
+    updateKickSlugHint();
+  } catch(e) {}
+}
+
+async function reconnectSaved() {
+  try {
+    const raw  = localStorage.getItem(SAVE_KEY);
+    const data = JSON.parse(raw);
+    if (!data.channel) return;
+
+    pickPlatform(data.platform);
+    document.getElementById('channel-input').value = data.channel;
+    if (data.chatroomId) document.getElementById('chatroom-id').value = data.chatroomId;
+    updateKickSlugHint();
+
+    await connectToChat();
+  } catch(e) {
+    setStatus('❌ ' + e.message, 'err');
+  }
+}
+
+// ════════════════════════════════════════════════
 // SETUP LOGIC
 // ════════════════════════════════════════════════
 function pickPlatform(p) {
@@ -952,6 +1023,7 @@ async function connectToChat() {
     else await connectKick(ch);
     const icon = S.platform === 'twitch' ? '🟣' : '🟢';
     document.getElementById('channel-display').textContent = icon + ' ' + ch;
+    saveSession();
     showScreen('lobby');
     chatLog('sys', `✅ Connecté à #${ch} via ${S.platform === 'twitch' ? 'Twitch' : 'Kick'}`);
   } catch(e) {
@@ -1499,23 +1571,16 @@ function esc(s) {
 function doDisconnect() {
   if (S.ws)     { S.ws.close();     S.ws     = null; }
   if (S.kickWs) { S.kickWs.close(); S.kickWs = null; }
-  resetGame();
+  location.reload();
 }
 
 function resetGame() {
-  clearInterval(S.timerId);
-  S = { platform: S.platform, channel:'', players:{}, eliminated:[], questions:[],
-        qIdx:0, timer:30, timerId:null, roundAnswers:{}, roundActive:false,
-        totalPlayers:0, ws:null, kickWs:null, gameStarted:false };
-  document.getElementById('channel-input').value = '';
-  document.getElementById('chatroom-id').value   = '';
-  document.getElementById('connect-status').textContent = '';
-  document.getElementById('connect-status').className   = 'status-msg';
-  document.getElementById('btn-connect').disabled = false;
-  const dp = document.getElementById('debug-panel');
-  if (dp) { dp.innerHTML = ''; dp.classList.remove('visible'); }
-  showScreen('setup');
+  // Fin de partie → rechargement complet (reconnexion auto via savedSession)
+  location.reload();
 }
+
+// Chargement initial de la session sauvegardée
+loadSavedSession();
 </script>
 </body>
 </html>
