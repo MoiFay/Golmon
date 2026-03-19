@@ -643,6 +643,7 @@ body::before {
 .prow:last-child { border-bottom: none; }
 .prow .pname { max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .prow .plives { font-size: 0.7rem; letter-spacing: 0.05em; }
+.prow.answered .pname::after { content: ' ✓'; color: var(--green); font-size: 0.68rem; }
 .prow.reveal-correct {
   background: rgba(34,197,94,0.15);
   border-radius: 8px;
