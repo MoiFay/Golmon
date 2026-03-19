@@ -251,6 +251,90 @@ body::before {
   gap: 1rem;
   text-align: center;
 }
+
+/* ── SECTION CHAÎNES ── */
+.channels-section {
+  max-width: 460px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.channels-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  font-weight: 600;
+  text-align: center;
+}
+.channels-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+.ch-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.75rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.ch-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.ch-card[data-p="twitch"]::before { background: radial-gradient(ellipse at 0% 50%, rgba(145,71,255,0.18) 0%, transparent 70%); }
+.ch-card[data-p="kick"]::before   { background: radial-gradient(ellipse at 0% 50%, rgba(83,252,24,0.12)  0%, transparent 70%); }
+.ch-card:hover { transform: translateY(-2px); }
+.ch-card[data-p="twitch"]:hover { border-color: rgba(145,71,255,0.5); box-shadow: 0 4px 16px rgba(145,71,255,0.15); }
+.ch-card[data-p="kick"]:hover   { border-color: rgba(83,252,24,0.4);  box-shadow: 0 4px 16px rgba(83,252,24,0.1); }
+.ch-card:hover::before { opacity: 1; }
+
+.ch-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--bg4);
+  border: 1.5px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+.ch-info { flex: 1; min-width: 0; position: relative; z-index: 1; }
+.ch-name {
+  font-weight: 700;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+.ch-plat {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.2rem;
+}
+.ch-plat img { width: 13px; height: 13px; object-fit: contain; opacity: 0.7; }
+.ch-plat span { font-size: 0.65rem; color: var(--text-dim); font-weight: 600; letter-spacing: 0.06em; }
+.ch-arrow {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  position: relative; z-index: 1;
+  transition: transform 0.2s, color 0.2s;
+}
+.ch-card:hover .ch-arrow { transform: translateX(3px); color: var(--text); }
 .rule-item { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; }
 .rule-icon { font-size: 1.4rem; }
 .rule-text { font-size: 0.75rem; color: var(--text-dim); line-height: 1.4; }
@@ -870,6 +954,74 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
       <div class="rule-text"><strong>3 vies</strong> · Dernier survivant = <strong>👑 Roi des Golmons</strong></div>
     </div>
   </div>
+
+  <!-- ── CHAÎNES À SUIVRE ── -->
+  <div class="channels-section">
+    <div class="channels-label">Chaînes à suivre</div>
+    <div class="channels-grid">
+
+      <a class="ch-card" data-p="twitch" href="https://twitch.tv/moifay" target="_blank" rel="noopener">
+        <img class="ch-avatar"
+             src="https://unavatar.io/twitch/moifay"
+             onerror="this.src='./twitch.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(145,71,255,0.15)'"
+             alt="moifay">
+        <div class="ch-info">
+          <div class="ch-name">moifay</div>
+          <div class="ch-plat">
+            <img src="./twitch.png" alt="Twitch">
+            <span>TWITCH</span>
+          </div>
+        </div>
+        <span class="ch-arrow">→</span>
+      </a>
+
+      <a class="ch-card" data-p="kick" href="https://kick.com/moifay7up" target="_blank" rel="noopener">
+        <img class="ch-avatar"
+             src="https://unavatar.io/kick/moifay7up"
+             onerror="this.src='./kick.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(83,252,24,0.1)'"
+             alt="moifay7up">
+        <div class="ch-info">
+          <div class="ch-name">moifay7up</div>
+          <div class="ch-plat">
+            <img src="./kick.png" alt="Kick">
+            <span>KICK</span>
+          </div>
+        </div>
+        <span class="ch-arrow">→</span>
+      </a>
+
+      <a class="ch-card" data-p="twitch" href="https://twitch.tv/fack7up" target="_blank" rel="noopener">
+        <img class="ch-avatar"
+             src="https://unavatar.io/twitch/fack7up"
+             onerror="this.src='./twitch.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(145,71,255,0.15)'"
+             alt="fack7up">
+        <div class="ch-info">
+          <div class="ch-name">fack7up</div>
+          <div class="ch-plat">
+            <img src="./twitch.png" alt="Twitch">
+            <span>TWITCH</span>
+          </div>
+        </div>
+        <span class="ch-arrow">→</span>
+      </a>
+
+      <a class="ch-card" data-p="kick" href="https://kick.com/fack7up" target="_blank" rel="noopener">
+        <img class="ch-avatar"
+             src="https://unavatar.io/kick/fack7up"
+             onerror="this.src='./kick.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(83,252,24,0.1)'"
+             alt="fack7up">
+        <div class="ch-info">
+          <div class="ch-name">fack7up</div>
+          <div class="ch-plat">
+            <img src="./kick.png" alt="Kick">
+            <span>KICK</span>
+          </div>
+        </div>
+        <span class="ch-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════ LOBBY ══════════════════════════════════ -->
@@ -915,7 +1067,7 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
 
   <div class="topbar">
     <div class="topbar-left">
-      Question <strong id="q-index">1</strong> / <span id="q-total">—</span>
+      Question <strong id="q-index">1</strong>
     </div>
     <div class="timer-wrap">
       <svg class="timer-svg" viewBox="0 0 46 46">
@@ -1416,7 +1568,7 @@ function startGame() {
   // Init audio context (nécessite un geste utilisateur)
   try { getAudio(); } catch(e) {}
   S.gameStarted = true;
-  S.questions   = shuffle([...QDB]).slice(0, Math.min(40, QDB.length));
+  S.questions   = shuffle([...QDB]);
   S.qIdx        = 0;
   S.eliminated  = [];
   S.totalPlayers= Object.keys(S.players).length;
@@ -1434,14 +1586,19 @@ function startGame() {
 function showQ() {
   const alive = getAlive();
   if (alive.length <= 1) { showWinner(alive[0] || null); return; }
-  if (S.qIdx >= S.questions.length) { showWinner(alive.sort((a,b) => S.players[b].lives - S.players[a].lives)[0]); return; }
+
+  // Plus de questions → on rebat les cartes et on continue
+  if (S.qIdx >= S.questions.length) {
+    S.questions = shuffle([...QDB]);
+    S.qIdx = 0;
+  }
 
   const q   = S.questions[S.qIdx];
   const num = S.qIdx + 1;
   const LETTERS = ['A','B','C','D'];
 
   document.getElementById('q-index').textContent = num;
-  document.getElementById('q-total').textContent = S.questions.length;
+  document.getElementById('q-total').textContent = '';
   document.getElementById('q-meta').textContent  = `Question ${num}`;
   document.getElementById('q-text').textContent  = q.q;
   document.getElementById('alive-count').textContent = alive.length;
