@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>👑 Question pour un GOLMON</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.3.0/pusher.min.js"></script>
 <style>
 :root {
   --gold: #f5c842;
@@ -220,6 +219,26 @@ body::before {
 .status-msg { font-size: 0.8rem; color: var(--text-dim); text-align: center; min-height: 1.2em; }
 .status-msg.ok  { color: var(--green); }
 .status-msg.err { color: var(--red); }
+
+.debug-panel {
+  background: #050505;
+  border: 1px solid rgba(83,252,24,0.2);
+  border-radius: 10px;
+  padding: 0.65rem 0.8rem;
+  font-family: monospace;
+  font-size: 0.68rem;
+  max-height: 130px;
+  overflow-y: auto;
+  display: none;
+  flex-direction: column;
+  gap: 1px;
+}
+.debug-panel.visible { display: flex; }
+.dl { color: #53fc18; line-height: 1.5; word-break: break-all; }
+.dl.err  { color: #ef4444; }
+.dl.warn { color: #f97316; }
+.dl.info { color: #60a5fa; }
+.dl.recv { color: #a78bfa; }
 
 .rules-card {
   max-width: 460px;
@@ -713,10 +732,10 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
     </div>
 
     <div id="kick-extra" class="field-group">
-      <label>Kick Chatroom ID <span style="color:var(--text-dim);font-weight:400;text-transform:none">(si auto-détection échoue)</span></label>
+      <label>Kick Chatroom ID <span style="color:var(--text-dim);font-weight:400;text-transform:none">(requis)</span></label>
       <input type="text" id="chatroom-id" placeholder="ex: 1234567" autocomplete="off">
       <p class="field-note">
-        Va sur <a target="_blank">kick.com/api/v2/channels/<strong id="kick-slug-hint">TON_PSEUDO</strong></a> → cherche <code style="color:var(--gold)">"chatroom":{"id":</code>
+        Ouvre <a id="kick-api-link" href="#" target="_blank" style="color:var(--kick)">kick.com/api/v2/channels/<strong id="kick-slug-hint">TON_PSEUDO</strong></a> dans ton navigateur → cherche <code style="color:var(--gold)">"chatroom":{"id":</code> → copie le nombre
       </p>
     </div>
 
@@ -725,6 +744,7 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
     </button>
 
     <p class="status-msg" id="connect-status"></p>
+    <div class="debug-panel" id="debug-panel"></div>
   </div>
 
   <div class="rules-card">
@@ -913,7 +933,7 @@ let S = {
   roundActive: false,
   totalPlayers: 0,
   ws: null,           // Twitch WS
-  pusher: null,       // Kick Pusher
+  kickWs: null,       // Kick native WS
   gameStarted: false,
 };
 
@@ -933,9 +953,10 @@ function pickPlatform(p) {
 
 function updateKickSlugHint() {
   const ch = document.getElementById('channel-input').value.trim() || 'TON_PSEUDO';
-  document.getElementById('kick-slug-hint').textContent = ch;
-  const a = document.querySelector('#kick-extra a');
-  if (a) a.href = `https://kick.com/api/v2/channels/${ch}`;
+  const hint = document.getElementById('kick-slug-hint');
+  const link = document.getElementById('kick-api-link');
+  if (hint) hint.textContent = ch;
+  if (link) link.href = `https://kick.com/api/v2/channels/${ch}`;
 }
 
 document.getElementById('channel-input').addEventListener('input', updateKickSlugHint);
@@ -1010,49 +1031,144 @@ function connectTwitch(channel) {
 }
 
 // ════════════════════════════════════════════════
-// KICK PUSHER
+// KICK — WebSocket natif vers Pusher
 // ════════════════════════════════════════════════
+function dbg(msg, type='') {
+  const p = document.getElementById('debug-panel');
+  if (!p) return;
+  p.classList.add('visible');
+  const d = document.createElement('div');
+  d.className = 'dl ' + type;
+  d.textContent = '[' + new Date().toLocaleTimeString() + '] ' + msg;
+  p.appendChild(d);
+  p.scrollTop = p.scrollHeight;
+  while (p.children.length > 60) p.removeChild(p.firstChild);
+}
+
 async function connectKick(channel) {
-  let roomId = document.getElementById('chatroom-id').value.trim();
+  const roomId = document.getElementById('chatroom-id').value.trim();
 
   if (!roomId) {
-    setStatus('Récupération du chatroom ID...', '');
-    try {
-      const r = await fetch(`https://kick.com/api/v2/channels/${channel}`, {signal: AbortSignal.timeout(6000)});
-      const d = await r.json();
-      roomId = d?.chatroom?.id;
-    } catch(e) { /* CORS probable */ }
-  }
-
-  if (!roomId) {
-    // Reveal the manual field and guide the user
+    // Guide l'utilisateur
     const ex = document.getElementById('kick-extra');
     ex.style.display = 'flex';
     ex.style.flexDirection = 'column';
-    ex.style.gap = '0.5rem';
     updateKickSlugHint();
-    throw new Error(`CORS bloqué — ouvre l'URL indiquée ci-dessus dans ton navigateur, note l'ID et entre-le dans le champ`);
+    throw new Error('Entre le Chatroom ID Kick (voir le lien vert ci-dessus)');
   }
 
+  dbg('Connexion WS Kick — chatroom ID: ' + roomId, 'info');
+  setStatus('Connexion WebSocket Kick...', '');
+
   return new Promise((resolve, reject) => {
-    const pusher = new Pusher('eb1d5f283081a78b932c', { cluster: 'us2' });
-    const ch = pusher.subscribe('chatrooms.' + roomId + '.v2');
-    let done = false;
-    const TO = setTimeout(() => { if(!done){pusher.disconnect(); reject(new Error('Timeout Kick Pusher'));} }, 9000);
+    // URL officielle Pusher de Kick
+    const WS_URL = 'wss://ws-us2.pusher.com/app/eb1d5f283081a78b932c?protocol=7&client=js&version=8.3.0&flash=false';
+    const ws = new WebSocket(WS_URL);
+    let done      = false;
+    let subSent   = false;
+    const CHANNEL = 'chatrooms.' + roomId + '.v2';
 
-    ch.bind('pusher:subscription_succeeded', () => {
-      if (!done) { done = true; clearTimeout(TO); S.pusher = pusher; resolve(); }
-    });
+    const TO = setTimeout(() => {
+      if (!done) {
+        dbg('Timeout 12s — aucun message reçu', 'err');
+        ws.close();
+        reject(new Error('Timeout Kick — vérifie le Chatroom ID'));
+      }
+    }, 12000);
 
-    ch.bind('App\\Events\\ChatMessageEvent', data => {
-      const user = data?.sender?.username || data?.sender?.slug || 'unknown';
-      const msg  = data?.content || '';
-      handleMsg(user, msg);
-    });
+    ws.onopen = () => {
+      dbg('WS ouvert, attente connexion Pusher...', 'info');
+    };
 
-    pusher.connection.bind('error', e => {
-      if (!done) { clearTimeout(TO); reject(new Error('Erreur Pusher : ' + (e?.error?.data?.message || e))); }
-    });
+    ws.onmessage = raw => {
+      let payload;
+      try { payload = JSON.parse(raw.data); } catch { dbg('JSON invalide: ' + raw.data, 'warn'); return; }
+
+      const ev   = payload.event || '';
+      const data = typeof payload.data === 'string'
+        ? (() => { try { return JSON.parse(payload.data); } catch { return {}; } })()
+        : (payload.data || {});
+
+      dbg(`← ${ev}`, 'recv');
+
+      // Étape 1 : connexion établie → envoyer subscribe
+      if (ev === 'pusher:connection_established') {
+        dbg('Connecté ! Abonnement à ' + CHANNEL, 'info');
+        ws.send(JSON.stringify({
+          event: 'pusher:subscribe',
+          data: { auth: '', channel: CHANNEL }
+        }));
+        subSent = true;
+        return;
+      }
+
+      // Étape 2 : abonnement confirmé → on est prêts
+      if (ev === 'pusher_internal:subscription_succeeded' || ev === 'pusher:subscription_succeeded') {
+        if (!done) {
+          done = true;
+          clearTimeout(TO);
+          S.kickWs = ws;
+          dbg('✅ Abonné à ' + CHANNEL + ' — écoute du chat', 'info');
+          resolve();
+        }
+        return;
+      }
+
+      // Erreur d'abonnement
+      if (ev === 'pusher:subscription_error') {
+        dbg('Erreur abonnement: ' + JSON.stringify(data), 'err');
+        if (!done) { clearTimeout(TO); ws.close(); reject(new Error('Kick: subscription_error — chatroom ID invalide ?')); }
+        return;
+      }
+
+      // Messages du chat — Kick utilise plusieurs noms d'events selon la version
+      const chatEvents = [
+        'App\\Events\\ChatMessageEvent',
+        'App.Events.ChatMessageEvent',
+        'chat_message',
+        'ChatMessageEvent',
+      ];
+
+      if (chatEvents.includes(ev)) {
+        // Structure Kick : sender.username ou sender.slug
+        const username = data?.sender?.username || data?.sender?.slug
+                      || data?.user?.username    || data?.username
+                      || 'unknown';
+        const msg = data?.content || data?.message || data?.text || '';
+        dbg(`💬 ${username}: ${msg}`, '');
+        handleMsg(username, msg);
+        return;
+      }
+
+      // Affiche tous les autres events inconnus pour debug
+      if (ev && !ev.startsWith('pusher:ping') && !ev.startsWith('pusher:pong')) {
+        dbg(`Ev inconnu: ${ev} → ${JSON.stringify(data).slice(0,80)}`, 'warn');
+      }
+    };
+
+    ws.onclose = e => {
+      if (!done) {
+        clearTimeout(TO);
+        dbg('WS fermé avant connexion. Code: ' + e.code, 'err');
+        reject(new Error('WS Kick fermé (code ' + e.code + ')'));
+      } else {
+        dbg('WS Kick déconnecté (code ' + e.code + ')', 'warn');
+      }
+    };
+
+    ws.onerror = () => {
+      dbg('Erreur WS — Pusher bloqué par le navigateur ?', 'err');
+      if (!done) { clearTimeout(TO); reject(new Error('Erreur WebSocket Kick')); }
+    };
+
+    // Ping Pusher toutes les 30s pour garder la connexion vivante
+    const pingInterval = setInterval(() => {
+      if (ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({ event: 'pusher:ping', data: {} }));
+      } else {
+        clearInterval(pingInterval);
+      }
+    }, 30000);
   });
 }
 
@@ -1399,8 +1515,8 @@ function esc(s) {
 }
 
 function doDisconnect() {
-  if (S.ws)     { S.ws.close();          S.ws = null; }
-  if (S.pusher) { S.pusher.disconnect(); S.pusher = null; }
+  if (S.ws)     { S.ws.close();     S.ws     = null; }
+  if (S.kickWs) { S.kickWs.close(); S.kickWs = null; }
   resetGame();
 }
 
@@ -1408,12 +1524,14 @@ function resetGame() {
   clearInterval(S.timerId);
   S = { platform: S.platform, channel:'', players:{}, eliminated:[], questions:[],
         qIdx:0, timer:30, timerId:null, roundAnswers:{}, roundActive:false,
-        totalPlayers:0, ws:null, pusher:null, gameStarted:false };
+        totalPlayers:0, ws:null, kickWs:null, gameStarted:false };
   document.getElementById('channel-input').value = '';
   document.getElementById('chatroom-id').value   = '';
   document.getElementById('connect-status').textContent = '';
   document.getElementById('connect-status').className   = 'status-msg';
   document.getElementById('btn-connect').disabled = false;
+  const dp = document.getElementById('debug-panel');
+  if (dp) { dp.innerHTML = ''; dp.classList.remove('visible'); }
   showScreen('setup');
 }
 </script>
