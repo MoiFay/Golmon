@@ -937,6 +937,7 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
     </button>
 
     <p class="status-msg" id="connect-status"></p>
+    <p id="q-load-status" style="font-size:0.72rem;text-align:center;color:var(--text-dim);display:block">⏳ Chargement des questions...</p>
     <div class="debug-panel" id="debug-panel"></div>
   </div>
 
@@ -1142,18 +1143,36 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
 let QDB = [];
 
 // URL du JSON : même dossier que le HTML (racine du repo GitHub Pages)
-const QUESTIONS_URL = './questions.json';
 
 async function loadQuestions() {
+  // Construit l'URL absolue pour éviter les problèmes de base path sur GitHub Pages
+  const base = window.location.href.replace(/\/[^/]*$/, '/');
+  const url  = base + 'questions.json?v=' + Date.now();
+
+  setQStatus('loading');
   try {
-    const r = await fetch(QUESTIONS_URL + '?v=' + Date.now()); // cache-bust
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    QDB = await r.json();
-    console.log(`✅ ${QDB.length} questions chargées`);
+    const r = await fetch(url);
+    if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + url);
+    const text = await r.text();
+    let data;
+    try { data = JSON.parse(text); } catch(e) { throw new Error('JSON invalide : ' + text.slice(0,80)); }
+    if (!Array.isArray(data) || !data.length) throw new Error('Le fichier est vide ou mal formaté');
+    if (!data[0].q || !data[0].a || data[0].c === undefined) throw new Error('Format invalide — attendu {q, a, c}');
+    QDB = data;
+    setQStatus('ok', QDB.length + ' questions chargées ✓');
+    console.log('✅', QDB.length, 'questions chargées depuis', url);
   } catch(e) {
-    console.error('❌ Impossible de charger questions.json :', e);
-    alert('❌ Impossible de charger questions.json\n\n' + e.message + '\n\nVérifie que le fichier est à la racine de ton repo GitHub.');
+    setQStatus('err', '❌ ' + e.message);
+    console.error('❌ questions.json :', e);
   }
+}
+
+function setQStatus(type, msg) {
+  let el = document.getElementById('q-load-status');
+  if (!el) return;
+  el.textContent = type === 'loading' ? '⏳ Chargement des questions...' : (msg || '');
+  el.style.color = type === 'ok' ? 'var(--green)' : type === 'err' ? 'var(--red)' : 'var(--text-dim)';
+  el.style.display = type === 'ok' ? 'none' : 'block';
 }
 
 // Chargement au démarrage
