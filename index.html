@@ -335,6 +335,101 @@ body::before {
   transition: transform 0.2s, color 0.2s;
 }
 .ch-card:hover .ch-arrow { transform: translateX(3px); color: var(--text); }
+
+/* ── ADMIN PANEL ── */
+#admin-btn {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  z-index: 500;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0.4;
+  transition: all 0.2s;
+}
+#admin-btn:hover { opacity: 1; border-color: var(--gold); box-shadow: 0 0 14px rgba(245,200,66,0.2); }
+
+#admin-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 600;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.2s ease;
+}
+.admin-modal {
+  background: var(--bg2);
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+  width: 92%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.admin-modal h3 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.admin-close {
+  background: none; border: none; color: var(--text-dim);
+  font-size: 1.3rem; cursor: pointer; line-height: 1;
+  transition: color 0.15s;
+}
+.admin-close:hover { color: var(--text); }
+.admin-section {
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.admin-section label {
+  font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--text-dim); font-weight: 600;
+}
+.admin-section input, .admin-section select, .admin-section textarea {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 0.65rem 0.9rem;
+  color: var(--text);
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.admin-section input:focus,
+.admin-section select:focus,
+.admin-section textarea:focus { border-color: var(--gold); }
+.admin-section textarea { resize: vertical; min-height: 60px; }
+.admin-section select { cursor: pointer; }
+.answers-admin {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem;
+}
+.ans-admin-row {
+  display: flex; align-items: center; gap: 0.45rem;
+}
+.ans-admin-row input[type="radio"] { accent-color: var(--gold); flex-shrink: 0; cursor: pointer; }
+.ans-admin-row input[type="text"] { flex: 1; }
+.admin-note { font-size: 0.72rem; color: var(--text-dim); line-height: 1.5; }
+.admin-note a { color: var(--gold); }
+.admin-note code { color: var(--purple-mid); font-size: 0.8em; }
+.admin-status {
+  font-size: 0.8rem; text-align: center;
+  min-height: 1.2em; font-weight: 600;
+}
+.admin-status.ok  { color: var(--green); }
+.admin-status.err { color: var(--red); }
+.admin-status.loading { color: var(--gold); }
 .rule-item { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; }
 .rule-icon { font-size: 1.4rem; }
 .rule-text { font-size: 0.75rem; color: var(--text-dim); line-height: 1.4; }
@@ -346,12 +441,65 @@ body::before {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 300px;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
   gap: 1rem;
   padding: 1rem;
   max-width: 1000px;
   margin: 0 auto;
 }
+
+.cat-picker {
+  grid-column: 1 / -1;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.cat-picker-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+.cat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.cat-btn {
+  background: var(--bg3);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 0.35rem 0.85rem;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.cat-btn:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
+.cat-btn.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(245,200,66,0.08);
+  box-shadow: 0 0 12px rgba(245,200,66,0.12);
+}
+.cat-count {
+  font-size: 0.65rem;
+  background: var(--bg4);
+  border-radius: 10px;
+  padding: 1px 5px;
+  color: var(--text-dim);
+}
+.cat-btn.active .cat-count { background: rgba(245,200,66,0.2); color: var(--gold-dim); }
 
 .lobby-header {
   grid-column: 1 / -1;
@@ -1026,6 +1174,86 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
   </div>
 </div>
 
+<!-- ── BOUTON ADMIN (fixe, toujours visible sur la page setup) ── -->
+<button id="admin-btn" onclick="openAdmin()" title="Ajouter une question">✏️</button>
+
+<!-- ── MODAL ADMIN ── -->
+<div id="admin-overlay" class="hidden">
+  <div class="admin-modal">
+    <h3>✏️ Ajouter une question
+      <button class="admin-close" onclick="closeAdmin()">✕</button>
+    </h3>
+
+    <!-- Token GitHub (repo hardcodé) -->
+    <div class="admin-section">
+      <label>Token GitHub
+        <a href="https://github.com/settings/tokens/new?scopes=public_repo&description=Golmon" target="_blank" style="color:var(--gold);font-size:0.7rem;text-transform:none;font-weight:400;margin-left:0.4rem">→ Créer un token</a>
+      </label>
+      <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off">
+      <p class="admin-note">Permission requise : <code>public_repo</code> uniquement. Sauvegardé localement dans ton navigateur.</p>
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--border)">
+
+    <!-- Question -->
+    <div class="admin-section">
+      <label>Question</label>
+      <textarea id="adm-q" placeholder="Quel est le nom du..."></textarea>
+    </div>
+
+    <!-- 4 réponses + bonne réponse -->
+    <div class="admin-section">
+      <label>Réponses — <span style="color:var(--gold);text-transform:none;font-weight:400">coche la bonne réponse</span></label>
+      <div style="display:flex;flex-direction:column;gap:0.4rem;">
+        <div class="ans-admin-row">
+          <input type="radio" name="adm-correct" value="0" id="rc0" checked>
+          <span style="font-size:0.75rem;color:var(--gold);font-weight:700;flex-shrink:0;min-width:16px">A</span>
+          <input type="text" id="adm-a0" placeholder="Réponse A" autocomplete="off">
+        </div>
+        <div class="ans-admin-row">
+          <input type="radio" name="adm-correct" value="1" id="rc1">
+          <span style="font-size:0.75rem;color:var(--gold);font-weight:700;flex-shrink:0;min-width:16px">B</span>
+          <input type="text" id="adm-a1" placeholder="Réponse B" autocomplete="off">
+        </div>
+        <div class="ans-admin-row">
+          <input type="radio" name="adm-correct" value="2" id="rc2">
+          <span style="font-size:0.75rem;color:var(--gold);font-weight:700;flex-shrink:0;min-width:16px">C</span>
+          <input type="text" id="adm-a2" placeholder="Réponse C" autocomplete="off">
+        </div>
+        <div class="ans-admin-row">
+          <input type="radio" name="adm-correct" value="3" id="rc3">
+          <span style="font-size:0.75rem;color:var(--gold);font-weight:700;flex-shrink:0;min-width:16px">D</span>
+          <input type="text" id="adm-a3" placeholder="Réponse D" autocomplete="off">
+        </div>
+      </div>
+    </div>
+
+    <!-- Catégorie -->
+    <div class="admin-section">
+      <label>Catégorie</label>
+      <select id="adm-cat">
+        <option value="culture">🧠 Culture générale</option>
+        <option value="france">🇫🇷 Culture française</option>
+        <option value="histoire">📜 Histoire</option>
+        <option value="science">🔬 Science</option>
+        <option value="football">⚽ Football</option>
+        <option value="gaming">🎮 Jeux vidéo</option>
+        <option value="cinema">🎬 Cinéma & Séries</option>
+        <option value="musique">🎵 Musique</option>
+        <option value="sport">🏆 Sport</option>
+        <option value="geo">🗺️ Géographie</option>
+        <option value="art">🎨 Art & Littérature</option>
+      </select>
+    </div>
+
+    <p class="admin-status" id="admin-status"></p>
+
+    <button class="btn-gold" onclick="submitQuestion()">
+      ➕ Ajouter dans questions.json sur GitHub
+    </button>
+  </div>
+</div>
+
 <!-- ══════════════════════════════════ LOBBY ══════════════════════════════════ -->
 <div id="screen-lobby" class="hidden">
   <div class="lobby-header">
@@ -1049,6 +1277,12 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
   <div class="panel">
     <div class="panel-title">💬 Chat en direct</div>
     <div class="chat-scroll" id="chat-log"></div>
+  </div>
+
+  <!-- ── CATÉGORIE ── -->
+  <div class="cat-picker">
+    <div class="cat-picker-label">🎯 Catégorie de questions</div>
+    <div class="cat-grid" id="cat-grid"></div>
   </div>
 
   <div class="lobby-footer">
@@ -1162,6 +1396,7 @@ async function loadQuestions() {
     QDB = data;
     setQStatus('ok', QDB.length + ' questions chargées ✓');
     console.log('✅', QDB.length, 'questions chargées depuis', url);
+    buildCatPicker();
   } catch(e) {
     setQStatus('err', '❌ ' + e.message);
     console.error('❌ questions.json :', e);
@@ -1301,6 +1536,7 @@ async function connectToChat() {
 
     showScreen('lobby');
     chatLog('sys', `✅ Connecté à #${ch} via ${S.platform === 'twitch' ? 'Twitch' : 'Kick'}`);
+    buildCatPicker();
   } catch(e) {
     setStatus('❌ ' + e.message, 'err');
     btn.disabled = false;
@@ -1580,6 +1816,52 @@ function chatLog(type, a, b) {
 // ════════════════════════════════════════════════
 // GAME START
 // ════════════════════════════════════════════════
+// ════════════════════════════════════════════════
+// CATÉGORIES
+// ════════════════════════════════════════════════
+const CATEGORIES = [
+  { id: 'all',      label: 'Toutes',           icon: '🌍' },
+  { id: 'culture',  label: 'Culture générale',  icon: '🧠' },
+  { id: 'france',   label: 'Culture française', icon: '🇫🇷' },
+  { id: 'histoire', label: 'Histoire',          icon: '📜' },
+  { id: 'science',  label: 'Science',           icon: '🔬' },
+  { id: 'football', label: 'Football',          icon: '⚽' },
+  { id: 'gaming',   label: 'Jeux vidéo',        icon: '🎮' },
+  { id: 'cinema',   label: 'Cinéma & Séries',   icon: '🎬' },
+  { id: 'musique',  label: 'Musique',           icon: '🎵' },
+  { id: 'sport',    label: 'Sport',             icon: '🏆' },
+  { id: 'geo',      label: 'Géographie',        icon: '🗺️' },
+  { id: 'art',      label: 'Art & Littérature', icon: '🎨' },
+];
+
+let selectedCat = 'all';
+
+function buildCatPicker() {
+  const grid = document.getElementById('cat-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  CATEGORIES.forEach(cat => {
+    const count = cat.id === 'all'
+      ? QDB.length
+      : QDB.filter(q => q.cat === cat.id).length;
+    if (cat.id !== 'all' && count === 0) return; // cache les catégories vides
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn' + (cat.id === selectedCat ? ' active' : '');
+    btn.innerHTML = `${cat.icon} ${cat.label} <span class="cat-count">${count}</span>`;
+    btn.onclick = () => {
+      selectedCat = cat.id;
+      buildCatPicker();
+    };
+    grid.appendChild(btn);
+  });
+}
+
+function getFilteredQuestions() {
+  if (selectedCat === 'all') return [...QDB];
+  const filtered = QDB.filter(q => q.cat === selectedCat);
+  return filtered.length >= 5 ? filtered : [...QDB]; // fallback si trop peu
+}
+
 function startGame() {
   if (!QDB.length) {
     alert('⏳ Les questions ne sont pas encore chargées.\nAttends une seconde et réessaie.');
@@ -1588,7 +1870,8 @@ function startGame() {
   // Init audio context (nécessite un geste utilisateur)
   try { getAudio(); } catch(e) {}
   S.gameStarted = true;
-  S.questions   = shuffle([...QDB]);
+  const pool    = getFilteredQuestions();
+  S.questions   = shuffle(pool);
   S.qIdx        = 0;
   S.eliminated  = [];
   S.totalPlayers= Object.keys(S.players).length;
@@ -1609,7 +1892,7 @@ function showQ() {
 
   // Plus de questions → on rebat les cartes et on continue
   if (S.qIdx >= S.questions.length) {
-    S.questions = shuffle([...QDB]);
+    S.questions = shuffle(getFilteredQuestions());
     S.qIdx = 0;
   }
 
@@ -2048,6 +2331,112 @@ function resetGame() {
 
 // Chargement initial de la session sauvegardée
 loadSavedSession();
+// ════════════════════════════════════════════════
+// ADMIN — ajout de questions via GitHub API
+// ════════════════════════════════════════════════
+const GH_REPO     = 'MoiFay/Golmon';
+const GH_SAVE_KEY = 'golmon_gh_token';
+const GH_TOKEN_DEFAULT = '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';
+
+function openAdmin() {
+  document.getElementById('admin-overlay').classList.remove('hidden');
+  const saved = localStorage.getItem(GH_SAVE_KEY) || GH_TOKEN_DEFAULT;
+  document.getElementById('gh-token').value = saved;
+  setAdminStatus('', '');
+}
+
+function closeAdmin() {
+  document.getElementById('admin-overlay').classList.add('hidden');
+}
+
+function setAdminStatus(msg, type) {
+  const el = document.getElementById('admin-status');
+  el.textContent = msg;
+  el.className   = 'admin-status' + (type ? ' ' + type : '');
+}
+
+async function submitQuestion() {
+  const token   = document.getElementById('gh-token').value.trim();
+  const q       = document.getElementById('adm-q').value.trim();
+  const a0      = document.getElementById('adm-a0').value.trim();
+  const a1      = document.getElementById('adm-a1').value.trim();
+  const a2      = document.getElementById('adm-a2').value.trim();
+  const a3      = document.getElementById('adm-a3').value.trim();
+  const cat     = document.getElementById('adm-cat').value;
+  const correct = parseInt(document.querySelector('input[name="adm-correct"]:checked').value);
+
+  if (!token)                       return setAdminStatus('❌ Entre ton token GitHub', 'err');
+  if (!q)                           return setAdminStatus('❌ La question ne peut pas être vide', 'err');
+  if (!a0 || !a1 || !a2 || !a3)    return setAdminStatus('❌ Remplis les 4 réponses', 'err');
+
+  localStorage.setItem(GH_SAVE_KEY, token);
+
+  setAdminStatus('⏳ Lecture du fichier...', 'loading');
+
+  const API = `https://api.github.com/repos/${GH_REPO}/contents/questions.json`;
+  const headers = {
+    'Authorization': `token ${token}`,
+    'Accept': 'application/vnd.github.v3+json',
+    'Content-Type': 'application/json',
+  };
+
+  try {
+    // 1. Lire + SHA
+    const res = await fetch(API, { headers });
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || `HTTP ${res.status}`);
+    }
+    const file = await res.json();
+
+    // 2. Décoder
+    const currentJson = JSON.parse(atob(file.content.replace(/\n/g, '')));
+
+    // 3. Ajouter
+    currentJson.push({ q, a: [a0, a1, a2, a3], c: correct, cat });
+
+    // 4. Commit
+    setAdminStatus('⏳ Envoi sur GitHub...', 'loading');
+    const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(currentJson, null, 2))));
+
+    const putRes = await fetch(API, {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify({
+        message: `✏️ Ajout question : ${q.slice(0, 60)}`,
+        content: newContent,
+        sha: file.sha,
+        branch: 'main',
+      }),
+    });
+
+    if (!putRes.ok) {
+      const err = await putRes.json();
+      throw new Error(err.message || `HTTP ${putRes.status}`);
+    }
+
+    // 5. Succès
+    QDB = currentJson;
+    buildCatPicker();
+    setAdminStatus(`✅ Question ajoutée ! (${currentJson.length} questions au total)`, 'ok');
+
+    // Reset formulaire
+    document.getElementById('adm-q').value  = '';
+    document.getElementById('adm-a0').value = '';
+    document.getElementById('adm-a1').value = '';
+    document.getElementById('adm-a2').value = '';
+    document.getElementById('adm-a3').value = '';
+    document.querySelector('input[name="adm-correct"][value="0"]').checked = true;
+
+  } catch(e) {
+    setAdminStatus('❌ ' + e.message, 'err');
+  }
+}
+
+document.getElementById('admin-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('admin-overlay')) closeAdmin();
+});
+
 </script>
 </body>
 </html>
