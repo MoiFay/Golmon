@@ -1111,6 +1111,15 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
     <div class="cat-grid" id="cat-grid"></div>
   </div>
 
+  <div class="cat-picker">
+    <div class="cat-picker-label">❤️ Nombre de vies par joueur</div>
+    <div style="display:flex;gap:0.5rem">
+      <button class="cat-btn active" id="lives-btn-1" onclick="setLives(1)">1 vie — 💀 Brutal</button>
+      <button class="cat-btn" id="lives-btn-2" onclick="setLives(2)">2 vies</button>
+      <button class="cat-btn" id="lives-btn-3" onclick="setLives(3)">3 vies — 🛡️ Standard</button>
+    </div>
+  </div>
+
   <div class="lobby-footer">
     <div class="count-badge">
       <strong id="lobby-count-big">0</strong> joueurs prêts
@@ -1621,7 +1630,7 @@ function updateLobby() {
     chip.className = 'p-chip' + (p.isStreamer ? ' streamer' : '');
     chip.innerHTML = p.isStreamer
       ? `<span>👑</span><span>${esc(p.display)}</span><span class="ph" style="font-size:0.6rem">STREAMER</span>`
-      : `<span>${esc(p.display)}</span><span class="ph">❤️❤️❤️</span>`;
+      : `<span>${esc(p.display)}</span><span class="ph">${'❤️'.repeat(selectedLives)}</span>`;
     grid.appendChild(chip);
   });
 }
@@ -1660,7 +1669,16 @@ const CATEGORIES = [
   { id: 'art',      label: 'Art & Littérature', icon: '🎨' },
 ];
 
-let selectedCat = 'all';
+let selectedCat   = 'all';
+let selectedLives = 1;
+
+function setLives(n) {
+  selectedLives = n;
+  [1,2,3].forEach(i => {
+    const btn = document.getElementById('lives-btn-' + i);
+    if (btn) btn.classList.toggle('active', i === n);
+  });
+}
 
 function buildCatPicker() {
   const grid = document.getElementById('cat-grid');
@@ -1702,7 +1720,7 @@ function startGame() {
   S.eliminated  = [];
   S.totalPlayers= Object.keys(S.players).length;
   // Reset lives
-  Object.values(S.players).forEach(p => { p.lives = 3; p.eliminated = false; });
+  Object.values(S.players).forEach(p => { p.lives = selectedLives; p.eliminated = false; });
 
   showScreen('game');
   buildSidebar();
@@ -1755,7 +1773,7 @@ function showQ() {
 
   S.roundAnswers = {};
   S.roundActive  = true;
-  startTimer(30);
+  startTimer(15);
 }
 
 // ════════════════════════════════════════════════
@@ -1893,10 +1911,10 @@ function tickUI(t) {
   document.getElementById('t-num').textContent = t;
   const arc = document.getElementById('t-arc');
   const C   = 2 * Math.PI * 22;
-  arc.style.strokeDashoffset = C * (1 - t/30);
-  arc.style.stroke = t > 10 ? 'var(--gold)' : t > 5 ? 'var(--orange)' : 'var(--red)';
-  document.getElementById('t-num').style.color = t > 10 ? 'var(--gold)' : t > 5 ? 'var(--orange)' : 'var(--red)';
-  if (t <= 10 && t > 0) playTick();
+  arc.style.strokeDashoffset = C * (1 - t/15);
+  arc.style.stroke = t > 5 ? 'var(--gold)' : t > 3 ? 'var(--orange)' : 'var(--red)';
+  document.getElementById('t-num').style.color = t > 5 ? 'var(--gold)' : t > 3 ? 'var(--orange)' : 'var(--red)';
+  if (t <= 5 && t > 0) playTick();
 }
 
 // ════════════════════════════════════════════════
@@ -2033,7 +2051,8 @@ function nextQ() {
 function buildSidebar() {
   const aliveList = document.getElementById('alive-list');
   aliveList.innerHTML = '';
-  const hearts = ['','❤️','❤️❤️','❤️❤️❤️'];
+  const hearts = ['', '❤️', '❤️❤️', '❤️❤️❤️'];
+  const maxH   = hearts[selectedLives] || '❤️❤️❤️';
 
   Object.entries(S.players).forEach(([key, p]) => {
     if (p.eliminated) return;

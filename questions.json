@@ -1,280 +1,6107 @@
 [
-  {"q":"Quelle est la capitale de la France ?","a":["Lyon","Marseille","Paris","Bordeaux"],"c":2,"cat":"france"},
-  {"q":"Combien de départements compte la France métropolitaine ?","a":["89","94","96","101"],"c":2,"cat":"france"},
-  {"q":"Quel est le plus long fleuve de France ?","a":["Le Rhône","La Garonne","La Seine","La Loire"],"c":3,"cat":"france"},
-  {"q":"En quelle année la Tour Eiffel a-t-elle été construite ?","a":["1885","1887","1889","1891"],"c":2,"cat":"france"},
-  {"q":"Qui est l'auteur des Misérables ?","a":["Émile Zola","Gustave Flaubert","Victor Hugo","Honoré de Balzac"],"c":2,"cat":"art"},
-  {"q":"Quel roi a construit le château de Versailles ?","a":["Louis XIII","Louis XIV","Louis XV","Louis XVI"],"c":1,"cat":"histoire"},
-  {"q":"Quelle est la devise de la République française ?","a":["Honneur, Patrie, Valeur","Liberté, Égalité, Fraternité","Travail, Famille, Patrie","Force, Justice, Vérité"],"c":1,"cat":"france"},
-  {"q":"Quel est le plus haut sommet de France ?","a":["Le Ventoux","Le Vercors","Le Mont Blanc","Le Puy de Dôme"],"c":2,"cat":"geo"},
-  {"q":"Quelle ville française est surnommée la Ville Rose ?","a":["Bordeaux","Toulouse","Montpellier","Nîmes"],"c":1,"cat":"france"},
-  {"q":"Combien d'arrondissements compte Paris ?","a":["15","18","20","22"],"c":2,"cat":"france"},
-  {"q":"Qui a peint Le Déjeuner sur l'herbe ?","a":["Monet","Renoir","Manet","Degas"],"c":2,"cat":"art"},
-  {"q":"En quelle année la Révolution française a-t-elle commencé ?","a":["1785","1787","1789","1791"],"c":2,"cat":"histoire"},
-  {"q":"Quel fromage français est surnommé le roi des fromages ?","a":["Camembert","Brie","Comté","Roquefort"],"c":3,"cat":"france"},
-  {"q":"Quel est le symbole de la République française ?","a":["Napoléon","Marianne","Le coq","La fleur de lys"],"c":1,"cat":"france"},
-  {"q":"Dans quelle ville se trouve le musée du Louvre ?","a":["Versailles","Lyon","Paris","Bordeaux"],"c":2,"cat":"art"},
-  {"q":"Qui était le premier président de la Ve République ?","a":["Georges Pompidou","Charles de Gaulle","François Mitterrand","Valéry Giscard d'Estaing"],"c":1,"cat":"histoire"},
-  {"q":"Quel est le nom du chant révolutionnaire devenu hymne national français ?","a":["Le Chant du Départ","La Carmagnole","La Marseillaise","Le Chant des Girondins"],"c":2,"cat":"france"},
-  {"q":"Quelle ville française est la capitale de la Bretagne administrative ?","a":["Brest","Nantes","Rennes","Saint-Brieuc"],"c":2,"cat":"france"},
-  {"q":"Quel auteur a écrit Le Petit Prince ?","a":["Jules Verne","Antoine de Saint-Exupéry","Marcel Pagnol","Jean Cocteau"],"c":1,"cat":"art"},
-  {"q":"Quel général français a été sacré empereur en 1804 ?","a":["Louis XVIII","Napoléon Bonaparte","Louis-Philippe","Charles X"],"c":1,"cat":"histoire"},
-  {"q":"Quelle est la ville de naissance de Jeanne d'Arc ?","a":["Reims","Orléans","Domrémy","Rouen"],"c":2,"cat":"histoire"},
-  {"q":"Quel roi de France a été surnommé le Roi-Soleil ?","a":["Louis XIII","Louis XIV","Louis XV","Louis XVI"],"c":1,"cat":"histoire"},
-  {"q":"Quel philosophe français a écrit Je pense donc je suis ?","a":["Voltaire","Pascal","Descartes","Rousseau"],"c":2,"cat":"culture"},
-  {"q":"Quel est le fromage normand le plus célèbre ?","a":["Comté","Reblochon","Camembert","Munster"],"c":2,"cat":"france"},
-  {"q":"Quelle région française est connue pour ses vins de Bordeaux ?","a":["Bourgogne","Champagne","Nouvelle-Aquitaine","Alsace"],"c":2,"cat":"france"},
-  {"q":"En quelle année la France a-t-elle aboli la peine de mort ?","a":["1971","1977","1981","1985"],"c":2,"cat":"france"},
-  {"q":"Quel château de la Loire est le plus grand ?","a":["Amboise","Chenonceau","Chambord","Cheverny"],"c":2,"cat":"france"},
-  {"q":"Quel explorateur français a découvert le Canada au XVIe siècle ?","a":["Samuel de Champlain","Jacques Cartier","René Cavelier de La Salle","Jean Nicolet"],"c":1,"cat":"histoire"},
-  {"q":"Qui a écrit Germinal ?","a":["Victor Hugo","Guy de Maupassant","Émile Zola","Gustave Flaubert"],"c":2,"cat":"art"},
-  {"q":"En quelle année la France a-t-elle adopté la Constitution de la Ve République ?","a":["1944","1952","1958","1962"],"c":2,"cat":"histoire"},
-  {"q":"Quel compositeur français est l'auteur du Boléro ?","a":["Claude Debussy","Gabriel Fauré","Maurice Ravel","Camille Saint-Saëns"],"c":2,"cat":"musique"},
-  {"q":"Qui était le roi de France pendant la prise de la Bastille ?","a":["Louis XV","Louis XVI","Louis XVIII","Charles X"],"c":1,"cat":"histoire"},
-  {"q":"Quel est le nom du personnage de bande dessinée gaulois créé par Goscinny et Uderzo ?","a":["Obélix","Astérix","Panoramix","Idéfix"],"c":1,"cat":"france"},
-  {"q":"Quelle chanteuse française est surnommée la Môme ?","a":["Barbara","Juliette Gréco","Édith Piaf","Dalida"],"c":2,"cat":"musique"},
-  {"q":"Quel est l'animal symbolique de la France ?","a":["L'aigle","Le coq","Le lion","Le renard"],"c":1,"cat":"france"},
-  {"q":"Quel philosophe des Lumières a écrit L'Émile ?","a":["Voltaire","Diderot","Montesquieu","Rousseau"],"c":3,"cat":"culture"},
-  {"q":"Dans quelle ville se trouve le siège d'Interpol ?","a":["Paris","Bruxelles","Lyon","Genève"],"c":2,"cat":"geo"},
-  {"q":"Quelle région produit le cognac ?","a":["Normandie","Bourgogne","Charente","Alsace"],"c":2,"cat":"france"},
-  {"q":"Qui a créé la maison de couture Chanel ?","a":["Hubert de Givenchy","Coco Chanel","Christian Dior","Yves Saint Laurent"],"c":1,"cat":"france"},
-  {"q":"Quel écrivain français a écrit Vingt Mille Lieues sous les mers ?","a":["Guy de Maupassant","Alexandre Dumas","Jules Verne","Prosper Mérimée"],"c":2,"cat":"art"},
-  {"q":"Quelle est la ville natale du peintre Paul Cézanne ?","a":["Arles","Aix-en-Provence","Marseille","Avignon"],"c":1,"cat":"art"},
-  {"q":"Quel est le nom de la résidence officielle du président de la République française ?","a":["Le Quai d'Orsay","Matignon","L'Élysée","Le Palais Bourbon"],"c":2,"cat":"france"},
-  {"q":"Quelle est la ville natale de Jules Verne ?","a":["Paris","Bordeaux","Nantes","Lyon"],"c":2,"cat":"france"},
-  {"q":"Combien de fois la France a-t-elle gagné la Coupe du Monde de football ?","a":["1","2","3","4"],"c":1,"cat":"football"},
-  {"q":"Quel est le nom du stade national de football en France ?","a":["Le Parc des Princes","Le Vélodrome","Le Stade de France","Groupama Stadium"],"c":2,"cat":"football"},
-  {"q":"Quel scientifique français a découvert la radioactivité ?","a":["Louis Pasteur","Pierre Curie","Henri Becquerel","Marie Curie"],"c":2,"cat":"science"},
-  {"q":"En quelle année la France a-t-elle intégré la zone euro ?","a":["1995","1999","2002","2004"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom de la cérémonie de remise des prix du cinéma français ?","a":["Les Molières","Les César","Les Lumières","Les Magritte"],"c":1,"cat":"cinema"},
-  {"q":"Qui était le président français lors de la chute du mur de Berlin en 1989 ?","a":["Jacques Chirac","Georges Pompidou","François Mitterrand","Valéry Giscard d'Estaing"],"c":2,"cat":"histoire"},
-  {"q":"Qui a écrit Le Comte de Monte-Cristo ?","a":["Victor Hugo","Honoré de Balzac","Alexandre Dumas","Stendhal"],"c":2,"cat":"art"},
-  {"q":"La deuxième ville de France par sa population est ?","a":["Lyon","Marseille","Toulouse","Bordeaux"],"c":1,"cat":"france"},
-  {"q":"Quelle est la boisson apéritive emblématique de Marseille ?","a":["Le kir","Le pastis","Le ricard","Le rosé"],"c":1,"cat":"france"},
-  {"q":"Quel sculpteur a réalisé Le Penseur et Le Baiser ?","a":["Camille Claudel","Jean-Baptiste Carpeaux","Auguste Rodin","Antoine Bourdelle"],"c":2,"cat":"art"},
-  {"q":"Quelle est la spécialité culinaire de la ville de Dijon ?","a":["Le fromage","La moutarde","Le vin","Le pain d'épice"],"c":1,"cat":"france"},
-  {"q":"Dans quelle ville française a eu lieu l'armistice du 11 novembre 1918 ?","a":["Paris","Compiègne","Versailles","Reims"],"c":1,"cat":"histoire"},
-  {"q":"Quel est le nom du parc d'attraction le plus visité d'Europe ?","a":["Parc Astérix","Futuroscope","Disneyland Paris","Europa-Park"],"c":2,"cat":"france"},
-  {"q":"Quelle est la ville de naissance de l'empereur Napoléon Bonaparte ?","a":["Paris","Lyon","Ajaccio","Toulon"],"c":2,"cat":"histoire"},
-  {"q":"Quel écrivain français est l'auteur de La Nausée ?","a":["Albert Camus","Simone de Beauvoir","Jean-Paul Sartre","André Malraux"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom du mouvement artistique initié par Monet, Renoir et Degas ?","a":["Le fauvisme","Le cubisme","L'impressionnisme","Le réalisme"],"c":2,"cat":"art"},
-  {"q":"Qui a écrit À la recherche du temps perdu ?","a":["André Gide","Marcel Proust","Louis-Ferdinand Céline","Anatole France"],"c":1,"cat":"art"},
-  {"q":"Quelle ville française est la capitale mondiale de la parfumerie ?","a":["Paris","Grasse","Nice","Cannes"],"c":1,"cat":"france"},
-  {"q":"Quelle est la boisson régionale emblématique de la Normandie ?","a":["Le cognac","Le calvados","L'armagnac","Le floc"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom du plus célèbre détective fictif de la littérature française ?","a":["Arsène Lupin","Commissaire Maigret","Fantômas","Nestor Burma"],"c":1,"cat":"art"},
-  {"q":"Quelle est la spécialité de Nice à base de pois chiches ?","a":["La ratatouille","La socca","La tapenade","L'aioli"],"c":1,"cat":"france"},
-  {"q":"Qui a inventé le cinématographe en France ?","a":["Georges Méliès","Charles Pathé","Les frères Lumière","Léon Gaumont"],"c":2,"cat":"science"},
-  {"q":"Quel est le nom de la célèbre prison parisienne détruite à la Révolution ?","a":["La Conciergerie","Le Temple","La Bastille","Vincennes"],"c":2,"cat":"histoire"},
-  {"q":"Quel est le fromage à pâte persillée produit en Auvergne ?","a":["Bleu d'Auvergne","Cantal","Salers","Saint-Nectaire"],"c":0,"cat":"france"},
-  {"q":"Qui a réalisé À bout de souffle, film emblématique de la Nouvelle Vague ?","a":["François Truffaut","Claude Chabrol","Jean-Luc Godard","Jacques Rivette"],"c":2,"cat":"cinema"},
-  {"q":"Quelle est la spécialité sucrée de la ville de Bordeaux ?","a":["Les macarons","Les canelés","Les financiers","Les tuiles"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom de l'aéroport principal de Paris situé en Seine-Saint-Denis ?","a":["Orly","Beauvais","Roissy-Charles-de-Gaulle","Le Bourget"],"c":2,"cat":"france"},
-  {"q":"Qui est l'inventeur du vaccin contre la rage ?","a":["Claude Bernard","Marie Curie","Louis Pasteur","Émile Roux"],"c":2,"cat":"science"},
-  {"q":"Quelle est la hauteur du Mont Blanc ?","a":["4 478 m","4 808 m","5 143 m","5 895 m"],"c":1,"cat":"geo"},
-  {"q":"Qui a écrit L'Étranger ?","a":["Jean-Paul Sartre","Simone de Beauvoir","Albert Camus","André Malraux"],"c":2,"cat":"art"},
-  {"q":"Quelle est la spécialité de Toulouse à base de viande et haricots ?","a":["Bouillabaisse","Cassoulet","Blanquette","Pot-au-feu"],"c":1,"cat":"france"},
-  {"q":"Qui a écrit Cyrano de Bergerac ?","a":["Molière","Corneille","Edmond Rostand","Victor Hugo"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom du musée d'art moderne de Paris inauguré en 1977 ?","a":["Le musée d'Orsay","Le Grand Palais","Le Centre Pompidou","La Fondation Louis Vuitton"],"c":2,"cat":"art"},
-  {"q":"Qui a peint La Liberté guidant le peuple ?","a":["Jean-Auguste-Dominique Ingres","Théodore Géricault","Eugène Delacroix","Jacques-Louis David"],"c":2,"cat":"art"},
-  {"q":"En quelle année a eu lieu Mai 68 en France ?","a":["1966","1967","1968","1969"],"c":2,"cat":"histoire"},
-  {"q":"Quel philosophe a écrit Candide ?","a":["Rousseau","Voltaire","Diderot","Montesquieu"],"c":1,"cat":"culture"},
-  {"q":"Quel est le nom du grand romancier français auteur de La Comédie humaine ?","a":["Stendhal","Flaubert","Honoré de Balzac","Victor Hugo"],"c":2,"cat":"art"},
-  {"q":"Qui a fondé le mouvement surréaliste en France ?","a":["Guillaume Apollinaire","André Breton","Louis Aragon","Paul Éluard"],"c":1,"cat":"art"},
-  {"q":"Qui a créé la Tour Eiffel ?","a":["Haussmann","Le Corbusier","Gustave Eiffel","Charles Garnier"],"c":2,"cat":"france"},
-  {"q":"Quel est le nom de l'opéra de Paris inauguré en 1875 ?","a":["L'Opéra Bastille","L'Opéra Garnier","L'Opéra Comique","Le Palais Royal"],"c":1,"cat":"art"},
-  {"q":"Qui a dirigé la France libre depuis Londres pendant la Seconde Guerre mondiale ?","a":["Philippe Pétain","Maxime Weygand","Charles de Gaulle","Henri Giraud"],"c":2,"cat":"histoire"},
-  {"q":"Quel est le nom du grand romancier auteur du cycle des Rougon-Macquart ?","a":["Balzac","Hugo","Zola","Flaubert"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom du poète auteur du Bateau ivre ?","a":["Paul Verlaine","Stéphane Mallarmé","Arthur Rimbaud","Guillaume Apollinaire"],"c":2,"cat":"art"},
-  {"q":"Quelle ville française organise chaque année un festival de bande dessinée ?","a":["Bordeaux","Angoulême","Poitiers","Tours"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom du chanteur français auteur de Ne me quitte pas ?","a":["Charles Aznavour","Serge Gainsbourg","Jacques Brel","Georges Brassens"],"c":2,"cat":"musique"},
-  {"q":"Quel est le nom du célèbre auteur des Contes de ma mère l'Oye ?","a":["La Fontaine","Charles Perrault","Ésope","Grimm"],"c":1,"cat":"art"},
-  {"q":"Qui a écrit Bel-Ami ?","a":["Flaubert","Daudet","Zola","Maupassant"],"c":3,"cat":"art"},
-  {"q":"Quel est le nom de la compagnie d'aviation nationale française ?","a":["Air Inter","UTA","Air France","Corsair"],"c":2,"cat":"france"},
-  {"q":"Quelle est la ville de naissance de l'auteur Marcel Pagnol ?","a":["Marseille","Aix-en-Provence","Aubagne","Toulon"],"c":2,"cat":"art"},
-  {"q":"Qui a créé l'entreprise Louis Vuitton ?","a":["Thierry Hermès","Louis Vuitton lui-même","Bernard Arnault","Georges Vuitton"],"c":1,"cat":"france"},
-  {"q":"Quelle est la capitale de la Guyane française ?","a":["Pointe-à-Pitre","Saint-Laurent-du-Maroni","Kourou","Cayenne"],"c":3,"cat":"geo"},
-  {"q":"Quel est le nom du compositeur français auteur de L'Arlésienne ?","a":["Fauré","Saint-Saëns","Bizet","Massenet"],"c":2,"cat":"musique"},
-  {"q":"Quelle est la spécialité du département de l'Isère ?","a":["Les noix de Grenoble","Les pommes","La raclette","Le bleu du Vercors"],"c":0,"cat":"france"},
-  {"q":"Qui a peint L'Origine du monde conservé au musée d'Orsay ?","a":["Manet","Courbet","Renoir","Degas"],"c":1,"cat":"art"},
-  {"q":"Quel est le maillot pour le meilleur grimpeur du Tour de France ?","a":["Le maillot blanc","Le maillot jaune","Le maillot vert","Le maillot à pois"],"c":3,"cat":"sport"},
-  {"q":"Quel est le nom de la fête des Lumières célébrée chaque 8 décembre à Lyon ?","a":["La fête de Saint-Denis","La Fête des Lumières","La fête de la Vierge","Lumières en Fête"],"c":1,"cat":"france"},
-  {"q":"Qui a écrit Voyage au bout de la nuit ?","a":["Henri Barbusse","Louis Aragon","Louis-Ferdinand Céline","Roger Vailland"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom du peintre français inventeur du pointillisme ?","a":["Paul Signac","Camille Pissarro","Georges Seurat","Henri-Edmond Cross"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom du poète auteur de Alcools et Calligrammes ?","a":["Paul Éluard","Louis Aragon","Guillaume Apollinaire","André Breton"],"c":2,"cat":"art"},
-  {"q":"Quelle ville accueille le siège du groupe Airbus en France ?","a":["Bordeaux","Paris","Toulouse","Marseille"],"c":2,"cat":"france"},
-  {"q":"Quel est le nom du parc national le plus ancien de France ?","a":["Parc national des Cévennes","Parc national de Port-Cros","Parc national de la Vanoise","Parc national des Pyrénées"],"c":2,"cat":"france"},
-  {"q":"Quel est le champion cycliste français vainqueur du Tour de France en 1985 et 1986 ?","a":["Laurent Fignon","Bernard Hinault","Sean Kelly","Greg LeMond"],"c":1,"cat":"sport"},
-  {"q":"Quel est le nom du poète de la Pléiade auteur des Regrets ?","a":["Pierre de Ronsard","Joachim du Bellay","Jean-Antoine de Baïf","Rémi Belleau"],"c":1,"cat":"art"},
-  {"q":"Quel est le nom du grand historien français auteur d'une histoire de la Méditerranée ?","a":["Jules Michelet","Marc Bloch","Fernand Braudel","Georges Duby"],"c":2,"cat":"histoire"},
-  {"q":"Quel est le nom du compositeur français auteur du Carnaval des animaux ?","a":["Fauré","Bizet","Saint-Saëns","Massenet"],"c":2,"cat":"musique"},
-  {"q":"Quel est le nom du sportif français le plus médaillé olympique en judo ?","a":["David Douillet","Teddy Riner","Thierry Rey","Angelo Parisi"],"c":1,"cat":"sport"},
-  {"q":"Qui a écrit La Princesse de Clèves ?","a":["Madame de Sévigné","George Sand","Madame de La Fayette","Colette"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom de l'auteur des Châtiments et des Orientales ?","a":["Lamartine","Musset","Victor Hugo","Vigny"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom du compositeur français auteur de Pelléas et Mélisande ?","a":["Gabriel Fauré","Claude Debussy","Maurice Ravel","Erik Satie"],"c":1,"cat":"musique"},
-  {"q":"Quel est le premier roman de Marcel Proust ?","a":["Le Temps retrouvé","Du côté de chez Swann","À l'ombre des jeunes filles en fleurs","Sodome et Gomorrhe"],"c":1,"cat":"art"},
-  {"q":"Qui a peint Les Nymphéas exposées au musée de l'Orangerie ?","a":["Edgar Degas","Pierre-Auguste Renoir","Claude Monet","Camille Pissarro"],"c":2,"cat":"art"},
-  {"q":"Quelle est la ville de naissance du général de Gaulle ?","a":["Paris","Lille","Rouen","Arras"],"c":1,"cat":"histoire"},
-  {"q":"Quel est le nom du canal qui relie la Méditerranée à l'Atlantique via Toulouse ?","a":["Le canal de Bourgogne","Le canal du Midi","Le canal latéral à la Garonne","Le canal Saint-Martin"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom du pont romain le plus célèbre de France situé dans le Gard ?","a":["Le Pont Julien","Le Pont du Gard","Le Pont Flavien","Le Pont d'Ambrussum"],"c":1,"cat":"histoire"},
-  {"q":"Qui a peint Le Radeau de la Méduse ?","a":["Delacroix","Géricault","Courbet","David"],"c":1,"cat":"art"},
-  {"q":"Quel est le nom du footballeur français surnommé Zizou ?","a":["Thierry Henry","Zinédine Zidane","Patrick Vieira","Laurent Blanc"],"c":1,"cat":"football"},
-  {"q":"Quel est le nom du cinéaste français auteur de Playtime et Mon Oncle ?","a":["René Clair","Jean Renoir","Marcel Carné","Jacques Tati"],"c":3,"cat":"cinema"},
-  {"q":"Quel est le nom du pont le plus long de France au-dessus d'une estuaire ?","a":["Le Pont de Tancarville","Le Pont de Normandie","Le Pont de Saint-Nazaire","Le Pont d'Iroise"],"c":1,"cat":"france"},
-  {"q":"Quel est le premier roman de Marcel Proust ?","a":["Le Temps retrouvé","Du côté de chez Swann","À l'ombre des jeunes filles en fleurs","Sodome et Gomorrhe"],"c":1,"cat":"art"},
-  {"q":"Qui a écrit Les Trois Mousquetaires ?","a":["Victor Hugo","Honoré de Balzac","Alexandre Dumas","Prosper Mérimée"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom du célèbre mime français né en 1923 ?","a":["Pierre Étaix","Marcel Marceau","Jacques Tati","Pierre Desproges"],"c":1,"cat":"art"},
-  {"q":"Quel est le nom du canal parisien du Xe arrondissement fréquenté par les promeneurs ?","a":["Canal Saint-Martin","Canal de l'Ourcq","Canal Saint-Denis","Canal de la Villette"],"c":0,"cat":"france"},
-  {"q":"Quelle est la spécialité de la Bourgogne à base de bœuf ?","a":["Le pot-au-feu","Le bœuf bourguignon","La blanquette de veau","Le gigot d'agneau"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom de la célèbre collection de guides touristiques français ?","a":["Le Michelin","Le Routard","Le Guide Bleu","Le Lonely Planet"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom du mouvement impressionniste dans la peinture, nommé d'après un tableau de Monet ?","a":["Impression, soleil couchant","Impression, soleil levant","Nymphéas","La Cathédrale de Rouen"],"c":1,"cat":"art"},
-  {"q":"Quel est le nom du grand prix de formule 1 qui se tient en France ?","a":["Grand Prix de Monaco","Grand Prix de France","Grand Prix d'Alsace","Grand Prix de Provence"],"c":1,"cat":"sport"},
-  {"q":"Quel est le nom du massif montagneux situé entre la France et l'Espagne ?","a":["Les Alpes","Le Massif Central","Les Pyrénées","Les Vosges"],"c":2,"cat":"geo"},
-  {"q":"Qui était Premier ministre lors de la Libération de Paris en 1944 ?","a":["René Pleven","Georges Bidault","Charles de Gaulle","Pierre Mendès France"],"c":2,"cat":"histoire"},
-  {"q":"Quel est le nom de la spécialité auvergnate à base de lentilles vertes ?","a":["Les lentilles du Puy","Les lentilles beluga","Les lentilles corail","Les lentilles blondes"],"c":0,"cat":"france"},
-  {"q":"Quel est le nom du peintre fauve né à Cateau-Cambrésis ?","a":["André Derain","Maurice de Vlaminck","Henri Matisse","Raoul Dufy"],"c":2,"cat":"art"},
-  {"q":"Quelle ville française a accueilli les Jeux Olympiques d'hiver en 1992 ?","a":["Grenoble","Chamonix","Val d'Isère","Albertville"],"c":3,"cat":"sport"},
-  {"q":"Qui a écrit Boule de Suif ?","a":["Flaubert","Maupassant","Zola","Mérimée"],"c":1,"cat":"art"},
-  {"q":"Quel est le nom du sculpteur français auteur du Lion de Belfort ?","a":["Rude","Bartholdi","Carpeaux","Préault"],"c":1,"cat":"art"},
-  {"q":"Quel est le nom du circuit automobile situé dans le Var ?","a":["Le circuit de Nevers Magny-Cours","Le circuit Paul Ricard","Le circuit de la Sarthe","Le circuit Bugatti"],"c":1,"cat":"sport"},
-  {"q":"Quel est le nom du premier satellite français lancé dans l'espace ?","a":["Diamant","Ariane","Astérix","Véronique"],"c":2,"cat":"science"},
-  {"q":"Quelle est la capitale de la région Occitanie ?","a":["Nîmes","Montpellier","Toulouse","Perpignan"],"c":2,"cat":"geo"},
-  {"q":"Quel est le nom du journal satirique français fondé en 1915 ?","a":["L'Express","Le Canard Enchaîné","Libération","Charlie Hebdo"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom du plus long tunnel ferroviaire de France ?","a":["Le tunnel sous la Manche","Le tunnel du Simplon","Le tunnel du Fréjus","Le tunnel de Somport"],"c":0,"cat":"france"},
-  {"q":"Quel est le nom du footballeur français auteur d'un but en finale de la Coupe du Monde 1998 ?","a":["Thierry Henry","Zinédine Zidane","Emmanuel Petit","David Trezeguet"],"c":2,"cat":"football"},
-  {"q":"Quelle est la ville de France connue pour son aqueduc romain ?","a":["Nîmes","Orange","Lyon","Arles"],"c":0,"cat":"histoire"},
-  {"q":"Quel est le nom du mouvement littéraire du XVIIe siècle représenté par Molière, Racine et Corneille ?","a":["Le Romantisme","Le Classicisme","Le Réalisme","L'Humanisme"],"c":1,"cat":"art"},
-  {"q":"Quel est le nom du viaduc le plus haut du monde inauguré en France en 2004 ?","a":["Le viaduc de Millau","Le viaduc de Garabit","Le viaduc de Chaumont","Le viaduc de Morlaix"],"c":0,"cat":"france"},
-  {"q":"Qui était la première femme Premier ministre de France ?","a":["Simone Veil","Édith Cresson","Ségolène Royal","Martine Aubry"],"c":1,"cat":"histoire"},
-  {"q":"Quel est le nom du peintre français qui a créé les séries de la montagne Sainte-Victoire ?","a":["Renoir","Cézanne","Monet","Matisse"],"c":1,"cat":"art"},
-  {"q":"Quel est le nom de la chanteuse française gagnante de l'Eurovision en 1977 ?","a":["Marie Myriam","Isabelle A","France Gall","Mireille Mathieu"],"c":0,"cat":"musique"},
-  {"q":"Quel est le nom du réalisateur français auteur de Diva et 37°2 le matin ?","a":["Luc Besson","Jean-Jacques Beineix","Léos Carax","Bertrand Tavernier"],"c":1,"cat":"cinema"},
-  {"q":"Qui a écrit Les Liaisons dangereuses ?","a":["Laclos","Sade","Casanova","Marivaux"],"c":0,"cat":"art"},
-  {"q":"Quel est le nom du candidat gagnant de l'Eurovision pour la France en 1965 ?","a":["Dalida","France Gall","Sylvie Vartan","Mireille Mathieu"],"c":1,"cat":"musique"},
-  {"q":"Quel est le nom du célèbre auteur de la série San-Antonio ?","a":["Frédéric Dard","Pierre Magnan","Jean-Patrick Manchette","Léo Malet"],"c":0,"cat":"art"},
-  {"q":"Quel est le nom du philosophe français auteur de Surveiller et punir ?","a":["Louis Althusser","Jacques Derrida","Michel Foucault","Roland Barthes"],"c":2,"cat":"culture"},
-  {"q":"Quel est le nom du grand sociologue français auteur de La Distinction ?","a":["Raymond Aron","Edgar Morin","Pierre Bourdieu","Alain Touraine"],"c":2,"cat":"culture"},
-  {"q":"Quel est le nom du célèbre réalisateur français auteur de La Règle du jeu ?","a":["Marcel Carné","René Clair","Jean Renoir","Jacques Becker"],"c":2,"cat":"cinema"},
-  {"q":"Quel est le nom du compositeur français auteur de Boléro ?","a":["Debussy","Saint-Saëns","Ravel","Fauré"],"c":2,"cat":"musique"},
-  {"q":"Quelle ville française accueille le Grand Prix de tennis de Roland-Garros ?","a":["Lyon","Marseille","Paris","Bordeaux"],"c":2,"cat":"sport"},
-  {"q":"Quel est le nom de l'actrice française connue pour Les Parapluies de Cherbourg ?","a":["Jeanne Moreau","Brigitte Bardot","Catherine Deneuve","Simone Signoret"],"c":2,"cat":"cinema"},
-  {"q":"Quel est le nom du navigateur français qui a fait le tour du monde en 1766-1769 ?","a":["Jean-François de Lapérouse","Louis-Antoine de Bougainville","Dumont d'Urville","René Caillié"],"c":1,"cat":"histoire"},
-  {"q":"Quel est le nom du plus long tunnel sous la Manche ?","a":["L'Eurotunnel","Le Channel Tunnel","Le Chunnel","Le tunnel franco-britannique"],"c":0,"cat":"france"},
-  {"q":"Quel est le nom du festival de théâtre qui se tient à Avignon chaque été ?","a":["Le Festival d'Aix","Le Festival d'Avignon","Les Rencontres d'Arles","Montpellier Danse"],"c":1,"cat":"art"},
-  {"q":"Quel est le plus grand lac naturel de France entièrement sur le territoire français ?","a":["Le lac d'Annecy","Le lac du Bourget","Le lac de Biscarrosse","Le lac de Grand-Lieu"],"c":1,"cat":"geo"},
-  {"q":"Quelle est la ville de naissance du compositeur Hector Berlioz ?","a":["Paris","Grenoble","La Côte-Saint-André","Lyon"],"c":2,"cat":"musique"},
-  {"q":"Quel est le nom de la forêt domaniale la plus grande de France ?","a":["La forêt de Compiègne","La forêt de Fontainebleau","La forêt de Tronçais","La forêt d'Orléans"],"c":3,"cat":"france"},
-  {"q":"Quel est le nom de la marque française de luxe fondée par un maroquinier en 1837 ?","a":["Louis Vuitton","Chanel","Hermès","Cartier"],"c":2,"cat":"france"},
-  {"q":"Quelle est la ville de naissance de l'acteur Jean-Paul Belmondo ?","a":["Paris","Neuilly-sur-Seine","Lyon","Boulogne-Billancourt"],"c":1,"cat":"cinema"},
-  {"q":"Quel est le nom du prix littéraire le plus prestigieux décerné chaque novembre à Paris ?","a":["Le Prix Médicis","Le Prix Renaudot","Le Prix Goncourt","Le Prix Femina"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom de l'équipe de football du Stade Vélodrome à Marseille ?","a":["FC Marseille","Olympique de Marseille","AS Marseille","Sporting Marseille"],"c":1,"cat":"football"},
-  {"q":"Quel est le nom du journal satirique français ?","a":["L'Express","Le Canard Enchaîné","Libération","Charlie Hebdo"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom du champion cycliste français vainqueur de 5 Tours de France ?","a":["Laurent Fignon","Bernard Thévenet","Louison Bobet","Jacques Anquetil"],"c":3,"cat":"sport"},
-  {"q":"Quel est le nom du festival de musique bretonne le plus connu ?","a":["Hellfest","Les Vieilles Charrues","Les Francofolies","La Route du Rock"],"c":1,"cat":"musique"},
-  {"q":"Quel est le nom du joueur de tennis français vainqueur de Roland-Garros en 1983 ?","a":["Yannick Noah","Henri Leconte","Thierry Champion","Guy Forget"],"c":0,"cat":"sport"},
-  {"q":"Quel est le nom du Premier ministre lors des événements de Mai 68 ?","a":["Charles de Gaulle","Georges Pompidou","Michel Debré","Edgar Faure"],"c":1,"cat":"histoire"},
-  {"q":"Qui a réalisé le film Les 400 coups en 1959 ?","a":["Jean-Luc Godard","Claude Chabrol","Jacques Demy","François Truffaut"],"c":3,"cat":"cinema"},
-  {"q":"Quel est le nom du col alpin le plus haut de France accessible en voiture ?","a":["Col du Mont Cenis","Col de l'Iseran","Col du Galibier","Col de la Bonette"],"c":3,"cat":"geo"},
-  {"q":"Quel est le nom du peintre paysagiste français auteur de séries sur la cathédrale de Rouen ?","a":["Renoir","Cézanne","Monet","Matisse"],"c":2,"cat":"art"},
-  {"q":"Quel est le nom de la chanteuse française qui a vendu le plus de disques dans le monde ?","a":["Dalida","Edith Piaf","Mireille Mathieu","Patricia Kaas"],"c":0,"cat":"musique"},
-  {"q":"Quelle est la ville française qui accueille le Printemps de Bourges ?","a":["Limoges","Châteauroux","Bourges","Nevers"],"c":2,"cat":"musique"},
-  {"q":"Quel est le nom du philosophe auteur de L'Être et le Néant ?","a":["Maurice Merleau-Ponty","Albert Camus","Jean-Paul Sartre","Simone de Beauvoir"],"c":2,"cat":"culture"},
-  {"q":"Quelle est la ville de France connue pour sa production de couteaux Laguiole ?","a":["Thiers","Laguiole","Nogent","Langres"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom de la marque française de luxe fondée par un bijoutier en 1847 ?","a":["Boucheron","Van Cleef et Arpels","Cartier","Mauboussin"],"c":2,"cat":"france"},
-  {"q":"Quelle est la ville française qui accueille les Francofolies chaque été ?","a":["Paris","Nantes","La Rochelle","Bordeaux"],"c":2,"cat":"musique"},
-  {"q":"Quel est le nom du couturier français surnommé le Prince de la mode ?","a":["Coco Chanel","Christian Dior","Yves Saint Laurent","Karl Lagerfeld"],"c":2,"cat":"france"},
-  {"q":"Quel est le nom du village alsacien considéré comme le plus beau de France ?","a":["Obernai","Riquewihr","Eguisheim","Colmar"],"c":2,"cat":"geo"},
-  {"q":"Quel athlète français est quintuple champion du monde de biathlon ?","a":["Raphaël Poirée","Martin Fourcade","Vincent Defrasne","Simon Fourcade"],"c":1,"cat":"sport"},
-  {"q":"Quelle est la ville de France qui a accueilli les Jeux Olympiques d'été en 1900 ?","a":["Paris","Lyon","Marseille","Bordeaux"],"c":0,"cat":"sport"},
-  {"q":"Quel est le nom de la marque de voiture française née à Mulhouse ?","a":["Renault","Peugeot","Citroën","Bugatti"],"c":1,"cat":"france"},
-  {"q":"Quel est le nom du footballeur français surnommé le Titi des Bleus ?","a":["Nicolas Anelka","Thierry Henry","David Trezeguet","Sylvain Wiltord"],"c":1,"cat":"football"},
-  {"q":"En quelle année la France a-t-elle gagné la Coupe du Monde 2018 ?","a":["2016","2017","2018","2019"],"c":2,"cat":"football"},
-  {"q":"Quel est le nom du gardien de but emblématique des Bleus lors de 1998 ?","a":["Bernard Lama","Fabien Barthez","Grégory Coupet","Joël Bats"],"c":1,"cat":"football"},
-  {"q":"Qui était le capitaine de l'équipe de France lors de la victoire en Coupe du Monde 1998 ?","a":["Marcel Desailly","Zinédine Zidane","Didier Deschamps","Laurent Blanc"],"c":2,"cat":"football"},
-  {"q":"Quel club de football français a remporté le plus de titres de champion de France ?","a":["Olympique de Marseille","Paris Saint-Germain","AS Saint-Étienne","Olympique Lyonnais"],"c":2,"cat":"football"},
-  {"q":"Dans quelle ville se trouve le stade du Parc des Princes ?","a":["Lyon","Bordeaux","Paris","Marseille"],"c":2,"cat":"football"},
-  {"q":"Quel est le surnom de l'équipe de France de football ?","a":["Les Coqs","Les Bleus","Les Tricolores","Les Gaulois"],"c":1,"cat":"football"},
-  {"q":"Quel entraîneur a mené la France à la victoire en Coupe du Monde 1998 ?","a":["Raymond Domenech","Laurent Blanc","Aimé Jacquet","Didier Deschamps"],"c":2,"cat":"football"},
-  {"q":"Quelle franchise a créé Pokémon ?","a":["Nintendo","Sega","Game Freak","The Pokémon Company"],"c":2,"cat":"gaming"},
-  {"q":"Dans quel jeu retrouve-t-on le personnage de Master Chief ?","a":["Gears of War","Call of Duty","Halo","Destiny"],"c":2,"cat":"gaming"},
-  {"q":"Quel est le jeu de bataille royale développé par Epic Games ?","a":["PUBG","Apex Legends","Fortnite","Warzone"],"c":2,"cat":"gaming"},
-  {"q":"Dans quel jeu incarne-t-on Link pour sauver la Princesse Zelda ?","a":["Metroid","The Legend of Zelda","Kirby","Star Fox"],"c":1,"cat":"gaming"},
-  {"q":"Quelle entreprise a créé la PlayStation ?","a":["Microsoft","Nintendo","Sega","Sony"],"c":3,"cat":"gaming"},
-  {"q":"Quel est le jeu de tir Valve sorti en 2012 qui remplace Counter-Strike 1.6 ?","a":["CS:GO","CS 2","Half-Life 3","Team Fortress 2"],"c":0,"cat":"gaming"},
-  {"q":"Dans quel jeu retrouve-t-on le personnage de Nathan Drake ?","a":["The Last of Us","Uncharted","God of War","Horizon"],"c":1,"cat":"gaming"},
-  {"q":"Quel est le jeu de simulation de vie le plus vendu de l'histoire ?","a":["Animal Crossing","Stardew Valley","The Sims","Minecraft"],"c":2,"cat":"gaming"},
-  {"q":"Quelle est la console portable la plus vendue de l'histoire ?","a":["PSP","Game Boy","Nintendo DS","Nintendo Switch"],"c":1,"cat":"gaming"},
-  {"q":"Dans quel jeu retrouve-t-on Geralt de Riv ?","a":["Dragon Age","The Elder Scrolls","The Witcher","Dark Souls"],"c":2,"cat":"gaming"},
-  {"q":"Quel est le jeu de voiture en monde ouvert de Rockstar Games ?","a":["Need for Speed","Burnout","Midnight Club","GTA"],"c":3,"cat":"gaming"},
-  {"q":"Dans quel jeu retrouve-t-on le personnage de Solid Snake ?","a":["Splinter Cell","Metal Gear","Hitman","Ghost Recon"],"c":1,"cat":"gaming"},
-  {"q":"Quelle est la franchise de jeux de sport la plus vendue de l'histoire ?","a":["NBA 2K","PES","FIFA","Madden NFL"],"c":2,"cat":"gaming"},
-  {"q":"Quel studio a développé Red Dead Redemption ?","a":["Naughty Dog","Rockstar Games","Ubisoft","CD Projekt Red"],"c":1,"cat":"gaming"},
-  {"q":"Quel est le jeu de battle royale développé par Respawn Entertainment ?","a":["PUBG","Fortnite","Apex Legends","Warzone"],"c":2,"cat":"gaming"},
-  {"q":"Dans quel jeu peut-on crafiter et construire des structures en blocks ?","a":["Terraria","Roblox","Minecraft","Valheim"],"c":2,"cat":"gaming"},
-  {"q":"Quel est le nom de la franchise de FPS de Bungie et Microsoft ?","a":["Halo","Gears of War","Destiny","Titanfall"],"c":0,"cat":"gaming"},
-  {"q":"Dans quel jeu retrouve-t-on Kratos ?","a":["Devil May Cry","Dante's Inferno","God of War","Bayonetta"],"c":2,"cat":"gaming"},
-  {"q":"Quelle est la formule chimique de l'eau ?","a":["CO₂","H₂O","O₂","NaCl"],"c":1,"cat":"science"},
-  {"q":"Quelle planète est la plus proche du Soleil ?","a":["Vénus","Mercure","Mars","Terre"],"c":1,"cat":"science"},
-  {"q":"Quel est le symbole chimique de l'or ?","a":["Go","Ag","Au","Or"],"c":2,"cat":"science"},
-  {"q":"Combien d'os dans le corps humain adulte ?","a":["106","206","306","406"],"c":1,"cat":"science"},
-  {"q":"Quelle est la vitesse de la lumière ?","a":["150 000 km/s","300 000 km/s","450 000 km/s","600 000 km/s"],"c":1,"cat":"science"},
-  {"q":"Quel organe produit l'insuline ?","a":["Foie","Pancréas","Rein","Rate"],"c":1,"cat":"science"},
-  {"q":"Quel est le plus grand océan du monde ?","a":["Atlantique","Indien","Arctique","Pacifique"],"c":3,"cat":"science"},
-  {"q":"Combien de planètes dans le système solaire ?","a":["7","8","9","10"],"c":1,"cat":"science"},
-  {"q":"Quel gaz respirons-nous principalement ?","a":["Oxygène","Azote","CO₂","Argon"],"c":1,"cat":"science"},
-  {"q":"Quel est l'animal terrestre le plus rapide ?","a":["Lion","Guépard","Autruche","Gazelle"],"c":1,"cat":"science"},
-  {"q":"Combien de chromosomes possède l'être humain ?","a":["23","44","46","48"],"c":2,"cat":"science"},
-  {"q":"Quel est le métal le plus conducteur ?","a":["Or","Aluminium","Cuivre","Argent"],"c":3,"cat":"science"},
-  {"q":"Quelle est la distance Terre-Lune approximative ?","a":["38 000 km","384 000 km","3 840 000 km","38 400 km"],"c":1,"cat":"science"},
-  {"q":"Quel est le plus petit pays du monde ?","a":["Monaco","Liechtenstein","Saint-Marin","Vatican"],"c":3,"cat":"geo"},
-  {"q":"Quel est le plus grand pays du monde en superficie ?","a":["Canada","USA","Chine","Russie"],"c":3,"cat":"geo"},
-  {"q":"Quelle est la capitale de l'Australie ?","a":["Sydney","Melbourne","Brisbane","Canberra"],"c":3,"cat":"geo"},
-  {"q":"Dans quel pays se trouve la Grande Muraille ?","a":["Japon","Mongolie","Corée","Chine"],"c":3,"cat":"geo"},
-  {"q":"Quelle est la capitale de l'Espagne ?","a":["Barcelone","Séville","Valence","Madrid"],"c":3,"cat":"geo"},
-  {"q":"Quel est le plus long fleuve du monde ?","a":["L'Amazone","Le Yangtsé","Le Nil","Le Mississippi"],"c":2,"cat":"geo"},
-  {"q":"Dans quel pays se trouve la Tour de Pise ?","a":["France","Espagne","Grèce","Italie"],"c":3,"cat":"geo"},
-  {"q":"Quelle est la langue officielle du Brésil ?","a":["Espagnol","Français","Portugais","Italien"],"c":2,"cat":"geo"},
-  {"q":"Quel est le plus long fleuve d'Europe ?","a":["Rhin","Danube","Seine","Volga"],"c":3,"cat":"geo"},
-  {"q":"Quelle est la capitale de la Réunion ?","a":["Saint-Paul","Saint-Pierre","Saint-Denis","Le Tampon"],"c":2,"cat":"geo"},
-  {"q":"Dans quel film retrouve-t-on le personnage de Tony Stark ?","a":["Thor","Iron Man","Captain America","Black Panther"],"c":1,"cat":"cinema"},
-  {"q":"Quel réalisateur a créé la saga Star Wars originale ?","a":["Steven Spielberg","James Cameron","George Lucas","Ridley Scott"],"c":2,"cat":"cinema"},
-  {"q":"Dans quel film voit-on un requin terroriser une plage ?","a":["L'Abîme","Jaws","Deep Blue Sea","Piranha"],"c":1,"cat":"cinema"},
-  {"q":"Quel acteur joue Jack dans Titanic ?","a":["Brad Pitt","Tom Cruise","Leonardo DiCaprio","Matt Damon"],"c":2,"cat":"cinema"},
-  {"q":"Dans quel film entend-on la réplique Je vois des gens morts ?","a":["Psychose","The Others","Sixième Sens","Shining"],"c":2,"cat":"cinema"},
-  {"q":"Quel studio a produit la trilogie Le Seigneur des anneaux ?","a":["Warner Bros","Universal","New Line Cinema","Sony"],"c":2,"cat":"cinema"},
-  {"q":"Quel film a remporté la Palme d'Or à Cannes en 2019 ?","a":["Parasite","Les Misérables","Portrait de la jeune fille en feu","Atlantique"],"c":0,"cat":"cinema"},
-  {"q":"Quel est le nom du personnage joué par Keanu Reeves dans Matrix ?","a":["Morpheus","Trinity","Neo","Agent Smith"],"c":2,"cat":"cinema"},
-  {"q":"Dans quelle série retrouve-t-on la famille Stark ?","a":["The Witcher","Vikings","Game of Thrones","The Last Kingdom"],"c":2,"cat":"cinema"},
-  {"q":"Quel acteur joue Walter White dans Breaking Bad ?","a":["Bryan Cranston","Aaron Paul","Bob Odenkirk","Jonathan Banks"],"c":0,"cat":"cinema"},
-  {"q":"Qui chante Thriller ?","a":["Prince","Michael Jackson","James Brown","Stevie Wonder"],"c":1,"cat":"musique"},
-  {"q":"Quel groupe a composé Bohemian Rhapsody ?","a":["Led Zeppelin","The Rolling Stones","Queen","The Beatles"],"c":2,"cat":"musique"},
-  {"q":"Quel chanteur est surnommé The King of Rock and Roll ?","a":["Chuck Berry","Jerry Lee Lewis","Elvis Presley","Little Richard"],"c":2,"cat":"musique"},
-  {"q":"Quel groupe français a sorti l'album Discovery ?","a":["Phoenix","Justice","Daft Punk","Air"],"c":2,"cat":"musique"},
-  {"q":"Qui a composé la Symphonie n°9 ?","a":["Mozart","Bach","Beethoven","Chopin"],"c":2,"cat":"musique"},
-  {"q":"Quel chanteur est derrière les albums 21 et 25 ?","a":["Beyoncé","Adele","Rihanna","Taylor Swift"],"c":1,"cat":"musique"},
-  {"q":"Quel est le vrai nom de Lady Gaga ?","a":["Stephanie Germanotta","Alecia Moore","Robyn Fenty","Belcalis Almanzar"],"c":0,"cat":"musique"},
-  {"q":"Dans quelle ville est né Jacques Brel ?","a":["Paris","Bruxelles","Lille","Genève"],"c":1,"cat":"musique"},
-  {"q":"Quel groupe est à l'origine de Smells Like Teen Spirit ?","a":["Pearl Jam","Soundgarden","Nirvana","Alice in Chains"],"c":2,"cat":"musique"},
-  {"q":"Quel rappeur français a sorti l'album Nique la police ?","a":["IAM","NTM","Booba","Rohff"],"c":1,"cat":"musique"},
-  {"q":"Combien d'équipes participent à une Coupe du Monde FIFA ?","a":["24","32","36","48"],"c":1,"cat":"football"},
-  {"q":"Quel est le record de buts en une seule Coupe du Monde toutes éditions confondues ?","a":["Ronaldo","Miroslav Klose","Gerd Müller","Just Fontaine"],"c":1,"cat":"football"},
-  {"q":"Quel pays a remporté le plus de Coupes du Monde ?","a":["Allemagne","Argentine","Italie","Brésil"],"c":3,"cat":"football"},
-  {"q":"Dans quel pays s'est déroulée la Coupe du Monde 2022 ?","a":["Émirats Arabes Unis","Arabie Saoudite","Qatar","Bahreïn"],"c":2,"cat":"football"},
-  {"q":"Quel est le trophée remis au vainqueur de la Ligue des Champions ?","a":["La Coupe d'Europe","La Coupe aux Grandes Oreilles","La Coupe UEFA","Le Trophée Havelange"],"c":1,"cat":"football"},
-  {"q":"Quel joueur a remporté le plus de Ballons d'Or ?","a":["Cristiano Ronaldo","Zinédine Zidane","Lionel Messi","Ronaldo Nazário"],"c":2,"cat":"football"},
-  {"q":"En quelle année la France a-t-elle remporté la Coupe du Monde ?","a":["1994 et 2018","1998 et 2018","1998 et 2022","2002 et 2018"],"c":1,"cat":"football"},
-  {"q":"En quelle année l'Homme a-t-il marché sur la Lune pour la 1ère fois ?","a":["1965","1967","1969","1971"],"c":2,"cat":"culture"},
-  {"q":"Combien de continents y a-t-il sur Terre ?","a":["5","6","7","8"],"c":2,"cat":"culture"},
-  {"q":"Qui a peint la Joconde ?","a":["Raphaël","Michel-Ange","Léonard de Vinci","Botticelli"],"c":2,"cat":"culture"},
-  {"q":"Quelle est la monnaie utilisée au Japon ?","a":["Yuan","Won","Yen","Ringgit"],"c":2,"cat":"culture"},
-  {"q":"Combien de côtés a un hexagone ?","a":["5","6","7","8"],"c":1,"cat":"culture"},
-  {"q":"Quelle est la plus haute montagne du monde ?","a":["K2","Mont Blanc","Everest","Kilimanjaro"],"c":2,"cat":"culture"},
-  {"q":"Dans quel sport utilise-t-on un volant ?","a":["Tennis","Squash","Badminton","Ping-pong"],"c":2,"cat":"culture"},
-  {"q":"Combien de grammes dans un kilogramme ?","a":["100","500","1000","10000"],"c":2,"cat":"culture"},
-  {"q":"Qui a inventé le téléphone ?","a":["Edison","Tesla","Graham Bell","Marconi"],"c":2,"cat":"culture"},
-  {"q":"Quel est le plus grand désert du monde ?","a":["Le Sahara","L'Antarctique","Le désert de Gobi","Le désert d'Arabie"],"c":1,"cat":"culture"},
-  {"q":"Combien de joueurs dans une équipe de basketball ?","a":["4","5","6","7"],"c":1,"cat":"culture"},
-  {"q":"Quelle est la langue la plus parlée dans le monde ?","a":["Espagnol","Anglais","Mandarin","Hindi"],"c":2,"cat":"culture"},
-  {"q":"Quel est le pays le plus peuplé du monde en 2024 ?","a":["Inde","Chine","USA","Indonésie"],"c":0,"cat":"culture"},
-  {"q":"Combien de secondes dans une heure ?","a":["360","600","3600","36000"],"c":2,"cat":"culture"},
-  {"q":"Qui a écrit Hamlet ?","a":["Victor Hugo","Molière","Shakespeare","Goethe"],"c":2,"cat":"culture"}
+  {
+    "q": "Quelle est la capitale de la France ?",
+    "a": [
+      "Lyon",
+      "Marseille",
+      "Paris",
+      "Bordeaux"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Combien de départements compte la France métropolitaine ?",
+    "a": [
+      "89",
+      "94",
+      "96",
+      "101"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le plus long fleuve de France ?",
+    "a": [
+      "Le Rhône",
+      "La Garonne",
+      "La Seine",
+      "La Loire"
+    ],
+    "c": 3,
+    "cat": "france"
+  },
+  {
+    "q": "En quelle année la Tour Eiffel a-t-elle été construite ?",
+    "a": [
+      "1885",
+      "1887",
+      "1889",
+      "1891"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel roi a construit le château de Versailles ?",
+    "a": [
+      "Louis XIII",
+      "Louis XIV",
+      "Louis XV",
+      "Louis XVI"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la devise de la République française ?",
+    "a": [
+      "Honneur, Patrie, Valeur",
+      "Liberté, Égalité, Fraternité",
+      "Travail, Famille, Patrie",
+      "Force, Justice, Vérité"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le plus haut sommet de France ?",
+    "a": [
+      "Le Ventoux",
+      "Le Vercors",
+      "Le Mont Blanc",
+      "Le Puy de Dôme"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle ville française est surnommée la Ville Rose ?",
+    "a": [
+      "Bordeaux",
+      "Toulouse",
+      "Montpellier",
+      "Nîmes"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Combien d'arrondissements compte Paris ?",
+    "a": [
+      "15",
+      "18",
+      "20",
+      "22"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel fromage français est surnommé le roi des fromages ?",
+    "a": [
+      "Camembert",
+      "Brie",
+      "Comté",
+      "Roquefort"
+    ],
+    "c": 3,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le symbole de la République française ?",
+    "a": [
+      "Napoléon",
+      "Marianne",
+      "Le coq",
+      "La fleur de lys"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du chant révolutionnaire devenu hymne national français ?",
+    "a": [
+      "Le Chant du Départ",
+      "La Carmagnole",
+      "La Marseillaise",
+      "Le Chant des Girondins"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle ville française est la capitale administrative de la Bretagne ?",
+    "a": [
+      "Brest",
+      "Nantes",
+      "Rennes",
+      "Saint-Brieuc"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "En quelle année la France a-t-elle aboli la peine de mort ?",
+    "a": [
+      "1971",
+      "1977",
+      "1981",
+      "1985"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel château de la Loire est le plus grand ?",
+    "a": [
+      "Amboise",
+      "Chenonceau",
+      "Chambord",
+      "Cheverny"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel explorateur français a découvert le Canada au XVIe siècle ?",
+    "a": [
+      "Samuel de Champlain",
+      "Jacques Cartier",
+      "René Cavelier de La Salle",
+      "Jean Nicolet"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la boisson apéritive emblématique de Marseille ?",
+    "a": [
+      "Le kir",
+      "Le pastis",
+      "Le ricard",
+      "Le rosé"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du château médiéval des papes à Avignon ?",
+    "a": [
+      "Le château d'If",
+      "Le château de Tarascon",
+      "Le Palais des Papes",
+      "Le château des Baux"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la spécialité culinaire de la ville de Dijon ?",
+    "a": [
+      "Le fromage",
+      "La moutarde",
+      "Le vin",
+      "Le pain d'épice"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du plus grand port de commerce français ?",
+    "a": [
+      "Dunkerque",
+      "Le Havre",
+      "Marseille",
+      "Bordeaux"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la ville natale de Jules Verne ?",
+    "a": [
+      "Paris",
+      "Bordeaux",
+      "Nantes",
+      "Lyon"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom de la résidence officielle du président de la République française ?",
+    "a": [
+      "Le Quai d'Orsay",
+      "Matignon",
+      "L'Élysée",
+      "Le Palais Bourbon"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "En quelle année la France a-t-elle adopté les pièces et billets en euros ?",
+    "a": [
+      "1999",
+      "2001",
+      "2002",
+      "2003"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle ville française est la capitale mondiale de la parfumerie ?",
+    "a": [
+      "Paris",
+      "Grasse",
+      "Nice",
+      "Cannes"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la boisson régionale emblématique de la Normandie ?",
+    "a": [
+      "Le cognac",
+      "Le calvados",
+      "L'armagnac",
+      "Le floc"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la spécialité de Nice à base de pois chiches ?",
+    "a": [
+      "La ratatouille",
+      "La socca",
+      "La tapenade",
+      "L'aioli"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du canal qui relie la Méditerranée à l'Atlantique via Toulouse ?",
+    "a": [
+      "Le canal de Bourgogne",
+      "Le canal du Midi",
+      "Le canal latéral à la Garonne",
+      "Le canal Saint-Martin"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la spécialité sucrée de la ville de Bordeaux ?",
+    "a": [
+      "Les macarons",
+      "Les canelés",
+      "Les financiers",
+      "Les tuiles"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom de l'aéroport principal de Paris situé en Seine-Saint-Denis ?",
+    "a": [
+      "Orly",
+      "Beauvais",
+      "Roissy-Charles-de-Gaulle",
+      "Le Bourget"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du viaduc le plus haut du monde inauguré en France en 2004 ?",
+    "a": [
+      "Le viaduc de Millau",
+      "Le viaduc de Garabit",
+      "Le viaduc de Chaumont",
+      "Le viaduc de Morlaix"
+    ],
+    "c": 0,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle ville française organise chaque année un festival de bande dessinée ?",
+    "a": [
+      "Bordeaux",
+      "Angoulême",
+      "Poitiers",
+      "Tours"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la spécialité de la ville d'Épernay ?",
+    "a": [
+      "Le vin de Bourgogne",
+      "Le champagne",
+      "Le cidre",
+      "La bière"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du premier satellite français lancé dans l'espace ?",
+    "a": [
+      "Diamant",
+      "Ariane",
+      "Astérix",
+      "Véronique"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la capitale de la région Occitanie ?",
+    "a": [
+      "Nîmes",
+      "Montpellier",
+      "Toulouse",
+      "Perpignan"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du journal satirique français fondé en 1915 ?",
+    "a": [
+      "L'Express",
+      "Le Canard Enchaîné",
+      "Libération",
+      "Charlie Hebdo"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du plus long tunnel ferroviaire de France ?",
+    "a": [
+      "Le tunnel sous la Manche",
+      "Le tunnel du Simplon",
+      "Le tunnel du Fréjus",
+      "Le tunnel de Somport"
+    ],
+    "c": 0,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la ville de France la plus méridionale ?",
+    "a": [
+      "Nice",
+      "Perpignan",
+      "Biarritz",
+      "Marseille"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom de l'organisme chargé de défendre la langue française ?",
+    "a": [
+      "L'Institut de France",
+      "L'Académie française",
+      "Le Conseil supérieur de la langue",
+      "La DGLFLF"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la marque de voiture française née à Mulhouse ?",
+    "a": [
+      "Renault",
+      "Peugeot",
+      "Citroën",
+      "Bugatti"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du canal parisien fréquenté par les promeneurs dans le Xe arrondissement ?",
+    "a": [
+      "Canal Saint-Martin",
+      "Canal de l'Ourcq",
+      "Canal Saint-Denis",
+      "Canal de la Villette"
+    ],
+    "c": 0,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la spécialité de la Bourgogne à base de bœuf ?",
+    "a": [
+      "Le pot-au-feu",
+      "Le bœuf bourguignon",
+      "La blanquette de veau",
+      "Le gigot d'agneau"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du premier TGV mis en service en France en 1981 ?",
+    "a": [
+      "TGV Atlantique",
+      "TGV Paris-Lyon",
+      "TGV Sud-Est",
+      "TGV Nord"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la ville de France connue pour sa production de couteaux Laguiole ?",
+    "a": [
+      "Thiers",
+      "Laguiole",
+      "Nogent",
+      "Langres"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du couturier français surnommé le Prince de la mode ?",
+    "a": [
+      "Coco Chanel",
+      "Christian Dior",
+      "Yves Saint Laurent",
+      "Karl Lagerfeld"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle ville française accueille la plus grande fête de la musique chaque 21 juin ?",
+    "a": [
+      "Bordeaux",
+      "Lyon",
+      "Paris",
+      "Marseille"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom du parc d'attraction le plus visité d'Europe situé en France ?",
+    "a": [
+      "Parc Astérix",
+      "Futuroscope",
+      "Disneyland Paris",
+      "Europa-Park"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la spécialité de la Haute-Savoie ?",
+    "a": [
+      "La fondue savoyarde et la raclette",
+      "Le gratin dauphinois",
+      "Le bœuf bourguignon",
+      "La quiche lorraine"
+    ],
+    "c": 0,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom de la région française connue pour ses vins de champagne ?",
+    "a": [
+      "Bourgogne",
+      "Alsace",
+      "Grand Est",
+      "Normandie"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le plat traditionnel de la région alsacienne ?",
+    "a": [
+      "Cassoulet",
+      "Bouillabaisse",
+      "Choucroute",
+      "Raclette"
+    ],
+    "c": 2,
+    "cat": "france"
+  },
+  {
+    "q": "Quelle est la spécialité de Montélimar ?",
+    "a": [
+      "Le nougat",
+      "Les calissons",
+      "Le berlingot",
+      "Les dragées"
+    ],
+    "c": 0,
+    "cat": "france"
+  },
+  {
+    "q": "Quel est le nom de la fête nationale française ?",
+    "a": [
+      "La Fête de la République",
+      "Le 14 Juillet",
+      "La Fête de la Bastille",
+      "Le Jour de la Liberté"
+    ],
+    "c": 1,
+    "cat": "france"
+  },
+  {
+    "q": "Quel roi de France a été surnommé le Roi-Soleil ?",
+    "a": [
+      "Louis XIII",
+      "Louis XIV",
+      "Louis XV",
+      "Louis XVI"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année la Révolution française a-t-elle commencé ?",
+    "a": [
+      "1785",
+      "1787",
+      "1789",
+      "1791"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel général français a été sacré empereur en 1804 ?",
+    "a": [
+      "Louis XVIII",
+      "Napoléon Bonaparte",
+      "Louis-Philippe",
+      "Charles X"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quelle est la ville de naissance de Jeanne d'Arc ?",
+    "a": [
+      "Reims",
+      "Orléans",
+      "Domrémy",
+      "Rouen"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Qui était le roi de France pendant la prise de la Bastille ?",
+    "a": [
+      "Louis XV",
+      "Louis XVI",
+      "Louis XVIII",
+      "Charles X"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Dans quelle ville française a eu lieu l'armistice du 11 novembre 1918 ?",
+    "a": [
+      "Paris",
+      "Compiègne",
+      "Versailles",
+      "Reims"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Qui était le chef du gouvernement de Vichy pendant l'Occupation ?",
+    "a": [
+      "Pierre Laval",
+      "Philippe Pétain",
+      "Joseph Darnand",
+      "Fernand de Brinon"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année a eu lieu Mai 68 en France ?",
+    "a": [
+      "1966",
+      "1967",
+      "1968",
+      "1969"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel est le nom de la province française cédée à l'Allemagne après 1870 ?",
+    "a": [
+      "La Lorraine seule",
+      "La Bourgogne",
+      "L'Alsace-Moselle",
+      "La Champagne"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Qui a dirigé la France libre depuis Londres pendant la Seconde Guerre mondiale ?",
+    "a": [
+      "Philippe Pétain",
+      "Maxime Weygand",
+      "Charles de Gaulle",
+      "Henri Giraud"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année la France a-t-elle adopté la Constitution de la Ve République ?",
+    "a": [
+      "1944",
+      "1952",
+      "1958",
+      "1962"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Qui était le premier président de la Ve République ?",
+    "a": [
+      "Georges Pompidou",
+      "Charles de Gaulle",
+      "François Mitterrand",
+      "Valéry Giscard d'Estaing"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel est le nom du tunnel sous la Manche inauguré en 1994 ?",
+    "a": [
+      "L'Eurotunnel",
+      "Le Chunnel",
+      "Le tunnel franco-britannique",
+      "Le Channel Tunnel"
+    ],
+    "c": 0,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année Napoléon Bonaparte a-t-il été exilé à Sainte-Hélène ?",
+    "a": [
+      "1813",
+      "1814",
+      "1815",
+      "1816"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel était le nom de la bataille où Napoléon fut définitivement vaincu ?",
+    "a": [
+      "Trafalgar",
+      "Leipzig",
+      "Waterloo",
+      "Austerlitz"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Qui a été guillotiné lors de la Révolution française en 1793 ?",
+    "a": [
+      "Louis XV",
+      "Louis XVI",
+      "Louis XVIII",
+      "Charles X"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année la France a-t-elle libéré Paris de l'occupation nazie ?",
+    "a": [
+      "1942",
+      "1943",
+      "1944",
+      "1945"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel navigateur français a fait le tour du monde en 1766-1769 ?",
+    "a": [
+      "Jean-François de Lapérouse",
+      "Louis-Antoine de Bougainville",
+      "Dumont d'Urville",
+      "René Caillié"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quelle était la capitale de l'empire de Charlemagne ?",
+    "a": [
+      "Paris",
+      "Rome",
+      "Aix-la-Chapelle",
+      "Lyon"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année la prise de la Bastille a-t-elle eu lieu ?",
+    "a": [
+      "1787",
+      "1788",
+      "1789",
+      "1790"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel était le nom du traité de paix signé après la Première Guerre mondiale ?",
+    "a": [
+      "Traité de Paris",
+      "Traité de Versailles",
+      "Traité de Berlin",
+      "Traité de Vienne"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Qui a prononcé le fameux discours de l'Appel du 18 juin 1940 ?",
+    "a": [
+      "Philippe Pétain",
+      "Winston Churchill",
+      "Charles de Gaulle",
+      "Henri Giraud"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année a été construite la ligne Maginot ?",
+    "a": [
+      "1928-1932",
+      "1930-1936",
+      "1935-1940",
+      "1938-1942"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel roi de France a été baptisé à Reims et a unifié le pays ?",
+    "a": [
+      "Charlemagne",
+      "Clovis",
+      "Hugues Capet",
+      "Henri IV"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année l'Homme a-t-il marché sur la Lune pour la première fois ?",
+    "a": [
+      "1965",
+      "1967",
+      "1969",
+      "1971"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel est le nom de la bataille de 1515 remportée par François Ier ?",
+    "a": [
+      "Azincourt",
+      "Marignan",
+      "Pavie",
+      "Poitiers"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année fut fondée la Communauté économique européenne ?",
+    "a": [
+      "1951",
+      "1957",
+      "1963",
+      "1968"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Qui était président de la France lors de la chute du mur de Berlin en 1989 ?",
+    "a": [
+      "Jacques Chirac",
+      "Georges Pompidou",
+      "François Mitterrand",
+      "Valéry Giscard d'Estaing"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel est le nom de la dernière reine de France avant la Révolution ?",
+    "a": [
+      "Marie de Médicis",
+      "Anne d'Autriche",
+      "Marie Leszczyńska",
+      "Marie-Antoinette"
+    ],
+    "c": 3,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année la France a-t-elle perdu la guerre de 1870 contre la Prusse ?",
+    "a": [
+      "1869",
+      "1870",
+      "1871",
+      "1872"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Qui a fondé la Légion étrangère en 1831 ?",
+    "a": [
+      "Napoléon III",
+      "Louis-Philippe Ier",
+      "Charles X",
+      "Louis XVIII"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel est le nom du traité par lequel l'Alsace-Lorraine fut rendue à la France en 1919 ?",
+    "a": [
+      "Traité de Berlin",
+      "Traité de Versailles",
+      "Traité de Paris",
+      "Traité de Saint-Germain"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année la Bastille fut-elle prise par le peuple parisien ?",
+    "a": [
+      "1787",
+      "1788",
+      "1789",
+      "1790"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel général américain a commandé le débarquement en Normandie en 1944 ?",
+    "a": [
+      "Douglas MacArthur",
+      "Dwight Eisenhower",
+      "Omar Bradley",
+      "George Patton"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel est le nom du camp d'extermination nazi le plus meurtrier ?",
+    "a": [
+      "Dachau",
+      "Buchenwald",
+      "Treblinka",
+      "Auschwitz-Birkenau"
+    ],
+    "c": 3,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année a été signée la Déclaration des droits de l'Homme et du Citoyen ?",
+    "a": [
+      "1787",
+      "1788",
+      "1789",
+      "1791"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel empire a existé en France de 1804 à 1814 ?",
+    "a": [
+      "Le Premier Empire",
+      "Le Second Empire",
+      "L'Empire romain",
+      "L'Empire carolingien"
+    ],
+    "c": 0,
+    "cat": "histoire"
+  },
+  {
+    "q": "Qui a été le premier Premier ministre de la Ve République ?",
+    "a": [
+      "Georges Pompidou",
+      "Michel Debré",
+      "Jacques Chaban-Delmas",
+      "Pierre Messmer"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel est le nom de la dernière bataille gagnée par Napoléon avant Waterloo ?",
+    "a": [
+      "Ligny",
+      "Quatre-Bras",
+      "Wavre",
+      "Iéna"
+    ],
+    "c": 0,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année la Troisième République française a-t-elle été proclamée ?",
+    "a": [
+      "1870",
+      "1871",
+      "1875",
+      "1878"
+    ],
+    "c": 0,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel roi de France est connu pour avoir dit Paris vaut bien une messe ?",
+    "a": [
+      "Louis XIII",
+      "Henri III",
+      "Henri IV",
+      "François Ier"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année la France a-t-elle rejoint la zone euro ?",
+    "a": [
+      "1995",
+      "1999",
+      "2002",
+      "2004"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quelle est la formule chimique de l'eau ?",
+    "a": [
+      "CO₂",
+      "H₂O",
+      "O₂",
+      "NaCl"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle planète est la plus proche du Soleil ?",
+    "a": [
+      "Vénus",
+      "Mercure",
+      "Mars",
+      "Terre"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le symbole chimique de l'or ?",
+    "a": [
+      "Go",
+      "Ag",
+      "Au",
+      "Or"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Combien d'os dans le corps humain adulte ?",
+    "a": [
+      "106",
+      "206",
+      "306",
+      "406"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la vitesse de la lumière ?",
+    "a": [
+      "150 000 km/s",
+      "300 000 km/s",
+      "450 000 km/s",
+      "600 000 km/s"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel organe produit l'insuline ?",
+    "a": [
+      "Foie",
+      "Pancréas",
+      "Rein",
+      "Rate"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Combien de planètes dans le système solaire ?",
+    "a": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel gaz respirons-nous principalement ?",
+    "a": [
+      "Oxygène",
+      "Azote",
+      "CO₂",
+      "Argon"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est l'animal terrestre le plus rapide ?",
+    "a": [
+      "Lion",
+      "Guépard",
+      "Autruche",
+      "Gazelle"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Combien de chromosomes possède l'être humain ?",
+    "a": [
+      "23",
+      "44",
+      "46",
+      "48"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le métal le plus conducteur ?",
+    "a": [
+      "Or",
+      "Aluminium",
+      "Cuivre",
+      "Argent"
+    ],
+    "c": 3,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la distance Terre-Lune approximative ?",
+    "a": [
+      "38 000 km",
+      "384 000 km",
+      "3 840 000 km",
+      "38 400 km"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Qui a inventé le cinématographe en France ?",
+    "a": [
+      "Georges Méliès",
+      "Charles Pathé",
+      "Les frères Lumière",
+      "Léon Gaumont"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Qui est l'inventeur du vaccin contre la rage ?",
+    "a": [
+      "Claude Bernard",
+      "Marie Curie",
+      "Louis Pasteur",
+      "Émile Roux"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel scientifique français a découvert la radioactivité ?",
+    "a": [
+      "Louis Pasteur",
+      "Pierre Curie",
+      "Henri Becquerel",
+      "Marie Curie"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le premier satellite artificiel lancé dans l'espace en 1957 ?",
+    "a": [
+      "Explorer 1",
+      "Vostok",
+      "Spoutnik",
+      "Luna 1"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la température d'ébullition de l'eau à pression normale ?",
+    "a": [
+      "90°C",
+      "95°C",
+      "100°C",
+      "105°C"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Combien de dents a un adulte humain avec les dents de sagesse ?",
+    "a": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le plus grand organe du corps humain ?",
+    "a": [
+      "Le foie",
+      "Le poumon",
+      "Le cerveau",
+      "La peau"
+    ],
+    "c": 3,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la planète la plus grande du système solaire ?",
+    "a": [
+      "Saturne",
+      "Uranus",
+      "Jupiter",
+      "Neptune"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le symbole chimique du fer ?",
+    "a": [
+      "Fr",
+      "Fe",
+      "F",
+      "Fl"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Combien y a-t-il d'éléments dans le tableau périodique actuel ?",
+    "a": [
+      "108",
+      "112",
+      "118",
+      "124"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le gaz le plus abondant dans l'atmosphère terrestre ?",
+    "a": [
+      "Oxygène",
+      "Azote",
+      "CO₂",
+      "Argon"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la longueur d'onde de la lumière visible en nanomètres ?",
+    "a": [
+      "100-200 nm",
+      "200-380 nm",
+      "380-700 nm",
+      "700-1000 nm"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le nom de la théorie qui explique l'évolution des espèces ?",
+    "a": [
+      "La théorie de Lamarck",
+      "La théorie de Darwin",
+      "La génétique de Mendel",
+      "La théorie synthétique"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Combien de litres de sang pompe le cœur humain par minute en moyenne ?",
+    "a": [
+      "2 litres",
+      "5 litres",
+      "10 litres",
+      "15 litres"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le nom de la couche de l'atmosphère qui absorbe les UV ?",
+    "a": [
+      "La troposphère",
+      "La stratosphère",
+      "La couche d'ozone",
+      "La mésosphère"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le symbole chimique du sodium ?",
+    "a": [
+      "S",
+      "So",
+      "Na",
+      "Sd"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Combien d'années lumière nous séparent de la prochaine étoile après le Soleil ?",
+    "a": [
+      "1,3 al",
+      "2,2 al",
+      "4,2 al",
+      "6,1 al"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la formule chimique du dioxyde de carbone ?",
+    "a": [
+      "CO",
+      "CO₂",
+      "C₂O",
+      "CO₃"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel savant a formulé la loi de la gravitation universelle ?",
+    "a": [
+      "Galilée",
+      "Kepler",
+      "Newton",
+      "Einstein"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est l'élément chimique le plus léger ?",
+    "a": [
+      "Hélium",
+      "Lithium",
+      "Hydrogène",
+      "Carbone"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Combien de muscles le corps humain contient-il approximativement ?",
+    "a": [
+      "200",
+      "400",
+      "600",
+      "800"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la vitesse du son dans l'air à 20°C ?",
+    "a": [
+      "243 m/s",
+      "343 m/s",
+      "443 m/s",
+      "543 m/s"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le nom de la particule élémentaire porteuse de charge négative ?",
+    "a": [
+      "Proton",
+      "Neutron",
+      "Électron",
+      "Positron"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Qui a découvert la pénicilline ?",
+    "a": [
+      "Louis Pasteur",
+      "Alexandre Fleming",
+      "Robert Koch",
+      "Joseph Lister"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le nom du processus par lequel les plantes fabriquent leur nourriture ?",
+    "a": [
+      "La respiration",
+      "La photosynthèse",
+      "La transpiration",
+      "La germination"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le point de fusion de la glace à pression normale ?",
+    "a": [
+      "−10°C",
+      "−5°C",
+      "0°C",
+      "5°C"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la planète la plus proche de la Terre en moyenne ?",
+    "a": [
+      "Mars",
+      "Vénus",
+      "Mercure",
+      "Jupiter"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Combien de paires de chromosomes sexuels possède l'être humain ?",
+    "a": [
+      "1",
+      "2",
+      "23",
+      "46"
+    ],
+    "c": 0,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le nom de l'unité de mesure de la fréquence ?",
+    "a": [
+      "Watt",
+      "Hertz",
+      "Joule",
+      "Tesla"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le plus grand océan du monde ?",
+    "a": [
+      "Atlantique",
+      "Indien",
+      "Arctique",
+      "Pacifique"
+    ],
+    "c": 3,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le numéro atomique de l'or ?",
+    "a": [
+      "47",
+      "69",
+      "79",
+      "89"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Combien d'os compte la colonne vertébrale humaine ?",
+    "a": [
+      "24",
+      "26",
+      "33",
+      "36"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le nom de la maladie causée par un manque de vitamine C ?",
+    "a": [
+      "Le rachitisme",
+      "Le scorbut",
+      "La pellagre",
+      "Le béribéri"
+    ],
+    "c": 1,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la température du noyau terrestre approximativement ?",
+    "a": [
+      "1 000°C",
+      "3 000°C",
+      "5 000°C",
+      "10 000°C"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le nom du premier être humain à avoir voyagé dans l'espace ?",
+    "a": [
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "Youri Gagarine",
+      "Alan Shepard"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Combien de valves le cœur humain possède-t-il ?",
+    "a": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le symbole chimique du plomb ?",
+    "a": [
+      "Pb",
+      "Pl",
+      "Pm",
+      "Pd"
+    ],
+    "c": 0,
+    "cat": "science"
+  },
+  {
+    "q": "Quelle est la durée d'une révolution de la Terre autour du Soleil ?",
+    "a": [
+      "364 jours",
+      "365 jours",
+      "365,25 jours",
+      "366 jours"
+    ],
+    "c": 2,
+    "cat": "science"
+  },
+  {
+    "q": "Quel est le nom de la branche de la physique qui étudie les particules subatomiques ?",
+    "a": [
+      "La mécanique quantique",
+      "La relativité",
+      "La physique nucléaire",
+      "L'astrophysique"
+    ],
+    "c": 0,
+    "cat": "science"
+  },
+  {
+    "q": "Combien de fois la France a-t-elle gagné la Coupe du Monde de football ?",
+    "a": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du stade national de football en France ?",
+    "a": [
+      "Le Parc des Princes",
+      "Le Vélodrome",
+      "Le Stade de France",
+      "Groupama Stadium"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du footballeur français surnommé Zizou ?",
+    "a": [
+      "Thierry Henry",
+      "Zinédine Zidane",
+      "Patrick Vieira",
+      "Laurent Blanc"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "En quelle année la France a-t-elle remporté sa première Coupe du Monde ?",
+    "a": [
+      "1994",
+      "1996",
+      "1998",
+      "2000"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom de l'équipe de football du Stade Vélodrome à Marseille ?",
+    "a": [
+      "FC Marseille",
+      "Olympique de Marseille",
+      "AS Marseille",
+      "Sporting Marseille"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Dans quelle ville se trouve le stade du Parc des Princes ?",
+    "a": [
+      "Lyon",
+      "Bordeaux",
+      "Paris",
+      "Marseille"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le surnom de l'équipe de France de football ?",
+    "a": [
+      "Les Coqs",
+      "Les Bleus",
+      "Les Tricolores",
+      "Les Gaulois"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel entraîneur a mené la France à la victoire en Coupe du Monde 1998 ?",
+    "a": [
+      "Raymond Domenech",
+      "Laurent Blanc",
+      "Aimé Jacquet",
+      "Didier Deschamps"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel gardien de but emblématique défendait les cages des Bleus lors de 1998 ?",
+    "a": [
+      "Bernard Lama",
+      "Fabien Barthez",
+      "Grégory Coupet",
+      "Joël Bats"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Qui était le capitaine de l'équipe de France lors de la victoire en Coupe du Monde 1998 ?",
+    "a": [
+      "Marcel Desailly",
+      "Zinédine Zidane",
+      "Didier Deschamps",
+      "Laurent Blanc"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel club de football français a remporté le plus de titres de champion de France ?",
+    "a": [
+      "Olympique de Marseille",
+      "Paris Saint-Germain",
+      "AS Saint-Étienne",
+      "Olympique Lyonnais"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Combien d'équipes participent à une Coupe du Monde FIFA depuis 2026 ?",
+    "a": [
+      "32",
+      "36",
+      "48",
+      "64"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel pays a remporté le plus de Coupes du Monde ?",
+    "a": [
+      "Allemagne",
+      "Argentine",
+      "Italie",
+      "Brésil"
+    ],
+    "c": 3,
+    "cat": "football"
+  },
+  {
+    "q": "Dans quel pays s'est déroulée la Coupe du Monde 2022 ?",
+    "a": [
+      "Émirats Arabes Unis",
+      "Arabie Saoudite",
+      "Qatar",
+      "Bahreïn"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le trophée remis au vainqueur de la Ligue des Champions ?",
+    "a": [
+      "La Coupe d'Europe",
+      "La Coupe aux Grandes Oreilles",
+      "La Coupe UEFA",
+      "Le Trophée Havelange"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel joueur a remporté le plus de Ballons d'Or ?",
+    "a": [
+      "Cristiano Ronaldo",
+      "Zinédine Zidane",
+      "Lionel Messi",
+      "Ronaldo Nazário"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "En quelle année la France a-t-elle remporté sa deuxième Coupe du Monde ?",
+    "a": [
+      "2014",
+      "2016",
+      "2018",
+      "2022"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le record de buts en une seule Coupe du Monde toutes éditions confondues ?",
+    "a": [
+      "Ronaldo",
+      "Miroslav Klose",
+      "Gerd Müller",
+      "Just Fontaine"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le surnom de l'attaquant français auteur du doublé en finale de 2018 ?",
+    "a": [
+      "Kylian Mbappé",
+      "Antoine Griezmann",
+      "Olivier Giroud",
+      "Blaise Matuidi"
+    ],
+    "c": 0,
+    "cat": "football"
+  },
+  {
+    "q": "Quel club espagnol est surnommé les Galactiques ?",
+    "a": [
+      "FC Barcelone",
+      "Atlético Madrid",
+      "Séville FC",
+      "Real Madrid"
+    ],
+    "c": 3,
+    "cat": "football"
+  },
+  {
+    "q": "Dans quel stade se joue la finale de la Champions League ?",
+    "a": [
+      "Wembley",
+      "San Siro",
+      "La finale change chaque année",
+      "Camp Nou"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nombre de joueurs dans une équipe de football sur le terrain ?",
+    "a": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel pays a remporté l'Euro 2021 ?",
+    "a": [
+      "France",
+      "Angleterre",
+      "Portugal",
+      "Italie"
+    ],
+    "c": 3,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du joueur brésilien considéré comme le meilleur de tous les temps par beaucoup ?",
+    "a": [
+      "Ronaldo",
+      "Zico",
+      "Pelé",
+      "Ronaldinho"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quelle équipe a remporté la Coupe du Monde 2010 ?",
+    "a": [
+      "Brésil",
+      "Allemagne",
+      "Espagne",
+      "Argentine"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du Français le plus capé en sélection nationale ?",
+    "a": [
+      "Zinédine Zidane",
+      "Thierry Henry",
+      "Hugo Lloris",
+      "Lilian Thuram"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Dans quelle ville se trouve le club de l'Olympique Lyonnais ?",
+    "a": [
+      "Lille",
+      "Nantes",
+      "Lyon",
+      "Bordeaux"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du joueur français auteur d'un coup de tête en finale du Mondial 2006 ?",
+    "a": [
+      "Thierry Henry",
+      "Zinédine Zidane",
+      "Patrick Vieira",
+      "Franck Ribéry"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel pays organise la Premier League ?",
+    "a": [
+      "France",
+      "Espagne",
+      "Angleterre",
+      "Allemagne"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du club de Ligue 1 basé à Lille ?",
+    "a": [
+      "LOSC Lille",
+      "Lille FC",
+      "Stade Lillois",
+      "Olympique Lillois"
+    ],
+    "c": 0,
+    "cat": "football"
+  },
+  {
+    "q": "Quelle est la durée d'un match de football en temps réglementaire ?",
+    "a": [
+      "80 minutes",
+      "90 minutes",
+      "100 minutes",
+      "120 minutes"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du joueur français buteur en finale de l'Euro 2000 ?",
+    "a": [
+      "Thierry Henry",
+      "Zinédine Zidane",
+      "David Trezeguet",
+      "Sylvain Wiltord"
+    ],
+    "c": 3,
+    "cat": "football"
+  },
+  {
+    "q": "Quel club italien est surnommé la Vieille Dame ?",
+    "a": [
+      "AC Milan",
+      "Inter Milan",
+      "Juventus",
+      "AS Roma"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quelle équipe a remporté la Coupe du Monde 2014 ?",
+    "a": [
+      "Brésil",
+      "France",
+      "Allemagne",
+      "Argentine"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du club londonien surnommé les Blues ?",
+    "a": [
+      "Arsenal",
+      "Liverpool",
+      "Tottenham",
+      "Chelsea"
+    ],
+    "c": 3,
+    "cat": "football"
+  },
+  {
+    "q": "Dans quel pays se joue la Bundesliga ?",
+    "a": [
+      "Autriche",
+      "Suisse",
+      "Allemagne",
+      "Pays-Bas"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du joueur français qui a marqué 51 buts en sélection ?",
+    "a": [
+      "Zinédine Zidane",
+      "Karim Benzema",
+      "Thierry Henry",
+      "Antoine Griezmann"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du club anglais le plus titré en Premier League ?",
+    "a": [
+      "Arsenal",
+      "Liverpool",
+      "Chelsea",
+      "Manchester United"
+    ],
+    "c": 3,
+    "cat": "football"
+  },
+  {
+    "q": "En quelle année le FC Barcelone a-t-il remporté son premier triplé ?",
+    "a": [
+      "1999",
+      "2006",
+      "2009",
+      "2011"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel pays a organisé la Coupe du Monde 2018 ?",
+    "a": [
+      "Ukraine",
+      "Russie",
+      "Kazakhstan",
+      "Biélorussie"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du trophée individuel le plus prestigieux du football mondial ?",
+    "a": [
+      "Le Soulier d'Or",
+      "Le Ballon d'Or",
+      "Le Prix FIFA",
+      "Le Trophée Platini"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel joueur français a remporté le Ballon d'Or en 1998 ?",
+    "a": [
+      "Thierry Henry",
+      "Marcel Desailly",
+      "Zinédine Zidane",
+      "Didier Deschamps"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quelle franchise a créé Pokémon ?",
+    "a": [
+      "Nintendo",
+      "Sega",
+      "Game Freak",
+      "The Pokémon Company"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu retrouve-t-on le personnage de Master Chief ?",
+    "a": [
+      "Gears of War",
+      "Call of Duty",
+      "Halo",
+      "Destiny"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le jeu de bataille royale développé par Epic Games ?",
+    "a": [
+      "PUBG",
+      "Apex Legends",
+      "Fortnite",
+      "Warzone"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu incarne-t-on Link pour sauver la Princesse Zelda ?",
+    "a": [
+      "Metroid",
+      "The Legend of Zelda",
+      "Kirby",
+      "Star Fox"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quelle entreprise a créé la PlayStation ?",
+    "a": [
+      "Microsoft",
+      "Nintendo",
+      "Sega",
+      "Sony"
+    ],
+    "c": 3,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le jeu de tir tactique Valve sorti en 2012 ?",
+    "a": [
+      "CS:GO",
+      "CS 2",
+      "Half-Life 3",
+      "Team Fortress 2"
+    ],
+    "c": 0,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu retrouve-t-on le personnage de Nathan Drake ?",
+    "a": [
+      "The Last of Us",
+      "Uncharted",
+      "God of War",
+      "Horizon"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quelle est la console portable la plus vendue de l'histoire ?",
+    "a": [
+      "PSP",
+      "Game Boy",
+      "Nintendo DS",
+      "Nintendo Switch"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu retrouve-t-on Geralt de Riv ?",
+    "a": [
+      "Dragon Age",
+      "The Elder Scrolls",
+      "The Witcher",
+      "Dark Souls"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel studio a développé Red Dead Redemption ?",
+    "a": [
+      "Naughty Dog",
+      "Rockstar Games",
+      "Ubisoft",
+      "CD Projekt Red"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le jeu de battle royale développé par Respawn Entertainment ?",
+    "a": [
+      "PUBG",
+      "Fortnite",
+      "Apex Legends",
+      "Warzone"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu peut-on crafter et construire des structures en blocs ?",
+    "a": [
+      "Terraria",
+      "Roblox",
+      "Minecraft",
+      "Valheim"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu retrouve-t-on Kratos ?",
+    "a": [
+      "Devil May Cry",
+      "Dante's Inferno",
+      "God of War",
+      "Bayonetta"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le jeu de simulation de vie le plus vendu de l'histoire ?",
+    "a": [
+      "Animal Crossing",
+      "Stardew Valley",
+      "The Sims",
+      "Minecraft"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quelle est la franchise de jeux de sport la plus vendue de l'histoire ?",
+    "a": [
+      "NBA 2K",
+      "PES",
+      "FIFA / EA Sports FC",
+      "Madden NFL"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le jeu de rôle en monde ouvert développé par CD Projekt Red ?",
+    "a": [
+      "The Witcher 3",
+      "Cyberpunk 2077",
+      "Skyrim",
+      "Dragon Age"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quelle série retrouve-t-on le vaisseau Normandy ?",
+    "a": [
+      "Halo",
+      "Mass Effect",
+      "Star Wars Jedi",
+      "Dead Space"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom de la licorne jeu de Nintendo mettant en scène un plombier ?",
+    "a": [
+      "Donkey Kong",
+      "Luigi",
+      "Mario",
+      "Wario"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel studio français a créé la série Assassin's Creed ?",
+    "a": [
+      "Arkane Studios",
+      "Ubisoft",
+      "Amplitude",
+      "Quantic Dream"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du héros de la série Dark Souls créé par FromSoftware ?",
+    "a": [
+      "L'Élu",
+      "L'Étranger",
+      "Le Sans-feu",
+      "Le Chercheur de l'âme"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quelle console de Microsoft concurrence la PlayStation 5 ?",
+    "a": [
+      "Xbox One",
+      "Xbox Series X",
+      "Xbox 360",
+      "Xbox Elite"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu retrouve-t-on des créatures appelées creepers ?",
+    "a": [
+      "Terraria",
+      "Roblox",
+      "Minecraft",
+      "ARK"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du célèbre jeu de stratégie de Blizzard avec orcs et humains ?",
+    "a": [
+      "StarCraft",
+      "Diablo",
+      "Warcraft",
+      "Heroes of the Storm"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu de combat retrouve-t-on Ryu et Ken ?",
+    "a": [
+      "Mortal Kombat",
+      "Tekken",
+      "Street Fighter",
+      "Dead or Alive"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du célèbre RPG japonais avec Cloud Strife comme héros ?",
+    "a": [
+      "Final Fantasy VII",
+      "Dragon Quest",
+      "Kingdom Hearts",
+      "Persona 5"
+    ],
+    "c": 0,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le jeu de course développé par Nintendo le plus vendu ?",
+    "a": [
+      "F-Zero",
+      "Excite Bike",
+      "Mario Kart",
+      "Wave Race"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quelle série retrouve-t-on le personnage de Joel et Ellie ?",
+    "a": [
+      "Uncharted",
+      "God of War",
+      "The Last of Us",
+      "Days Gone"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du jeu de gestion de ville créé par Will Wright ?",
+    "a": [
+      "Age of Empires",
+      "SimCity",
+      "Civilization",
+      "The Sims"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du MOBA de Riot Games lancé en 2009 ?",
+    "a": [
+      "Dota 2",
+      "Heroes of the Storm",
+      "League of Legends",
+      "Smite"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu retrouve-t-on Isaac Clarke qui combat des Nécromorphes ?",
+    "a": [
+      "Alien Isolation",
+      "Dead Space",
+      "Control",
+      "System Shock"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du jeu de Bethesda dans lequel on joue un Dragonborn ?",
+    "a": [
+      "Oblivion",
+      "Fallout 4",
+      "The Elder Scrolls V: Skyrim",
+      "Morrowind"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du jeu de tir en première personne de Bungie et Activision ?",
+    "a": [
+      "Halo",
+      "Call of Duty",
+      "Destiny",
+      "Titanfall"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu de Nintendo retrouve-t-on Samus Aran ?",
+    "a": [
+      "Kirby",
+      "Metroid",
+      "Star Fox",
+      "F-Zero"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du jeu de survie de DayZ et Brendan Greene devenu le plus célèbre ?",
+    "a": [
+      "H1Z1",
+      "Rust",
+      "PUBG",
+      "DayZ Standalone"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel éditeur a développé la série FIFA (aujourd'hui EA Sports FC) ?",
+    "a": [
+      "Konami",
+      "EA Sports",
+      "2K Games",
+      "Ubisoft"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quelle série retrouve-t-on des personnages qui voyagent dans l'Animus ?",
+    "a": [
+      "Watch Dogs",
+      "Far Cry",
+      "Assassin's Creed",
+      "Splinter Cell"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du personnage principal de la série Mega Man ?",
+    "a": [
+      "Mega Man",
+      "Rock Man",
+      "Blue Bomber",
+      "Mega Man, aussi appelé Rock Man"
+    ],
+    "c": 3,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel jeu de rythme utilise des guitares et batteries en plastique comme contrôleurs ?",
+    "a": [
+      "DJ Hero",
+      "SingStar",
+      "Guitar Hero",
+      "Band Hero"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu retrouve-t-on le cavalier sans tête sur l'île de Sleepy Hollow ?",
+    "a": [
+      "Red Dead Redemption",
+      "Grim Fandango",
+      "Ghostbusters",
+      "Headless Horseman n'est pas dans un jeu célèbre"
+    ],
+    "c": 3,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du jeu de plateforme de Sony avec Crash Bandicoot ?",
+    "a": [
+      "Jak and Daxter",
+      "Ratchet et Clank",
+      "Crash Bandicoot",
+      "Spyro the Dragon"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel studio a développé le jeu Hollow Knight ?",
+    "a": [
+      "FromSoftware",
+      "Team Cherry",
+      "Supergiant Games",
+      "Drinkbox Studios"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu en monde ouvert retrouve-t-on V comme personnage principal ?",
+    "a": [
+      "GTA V",
+      "The Witcher 3",
+      "Cyberpunk 2077",
+      "Watch Dogs Legion"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Qui chante Thriller ?",
+    "a": [
+      "Prince",
+      "Michael Jackson",
+      "James Brown",
+      "Stevie Wonder"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel groupe a composé Bohemian Rhapsody ?",
+    "a": [
+      "Led Zeppelin",
+      "The Rolling Stones",
+      "Queen",
+      "The Beatles"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel chanteur est surnommé The King of Rock and Roll ?",
+    "a": [
+      "Chuck Berry",
+      "Jerry Lee Lewis",
+      "Elvis Presley",
+      "Little Richard"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel groupe français a sorti l'album Discovery ?",
+    "a": [
+      "Phoenix",
+      "Justice",
+      "Daft Punk",
+      "Air"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Qui a composé la Symphonie n°9 ?",
+    "a": [
+      "Mozart",
+      "Bach",
+      "Beethoven",
+      "Chopin"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel chanteur est derrière les albums 21 et 25 ?",
+    "a": [
+      "Beyoncé",
+      "Adele",
+      "Rihanna",
+      "Taylor Swift"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le vrai nom de Lady Gaga ?",
+    "a": [
+      "Stephanie Germanotta",
+      "Alecia Moore",
+      "Robyn Fenty",
+      "Belcalis Almanzar"
+    ],
+    "c": 0,
+    "cat": "musique"
+  },
+  {
+    "q": "Dans quelle ville est né Jacques Brel ?",
+    "a": [
+      "Paris",
+      "Bruxelles",
+      "Lille",
+      "Genève"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel groupe est à l'origine de Smells Like Teen Spirit ?",
+    "a": [
+      "Pearl Jam",
+      "Soundgarden",
+      "Nirvana",
+      "Alice in Chains"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel rappeur français a sorti l'album Nique la police ?",
+    "a": [
+      "IAM",
+      "NTM",
+      "Booba",
+      "Rohff"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du compositeur français auteur du Boléro ?",
+    "a": [
+      "Debussy",
+      "Saint-Saëns",
+      "Ravel",
+      "Fauré"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quelle chanteuse française est surnommée la Môme ?",
+    "a": [
+      "Barbara",
+      "Juliette Gréco",
+      "Édith Piaf",
+      "Dalida"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du chanteur français auteur de Ne me quitte pas ?",
+    "a": [
+      "Charles Aznavour",
+      "Serge Gainsbourg",
+      "Jacques Brel",
+      "Georges Brassens"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel compositeur français est l'auteur de Pelléas et Mélisande ?",
+    "a": [
+      "Gabriel Fauré",
+      "Claude Debussy",
+      "Maurice Ravel",
+      "Erik Satie"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du compositeur français auteur du Carnaval des animaux ?",
+    "a": [
+      "Fauré",
+      "Bizet",
+      "Saint-Saëns",
+      "Massenet"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quelle est la chanteuse française gagnante de l'Eurovision en 1977 ?",
+    "a": [
+      "Marie Myriam",
+      "Isabelle A",
+      "France Gall",
+      "Mireille Mathieu"
+    ],
+    "c": 0,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le festival de musique bretonne le plus connu ?",
+    "a": [
+      "Hellfest",
+      "Les Vieilles Charrues",
+      "Les Francofolies",
+      "La Route du Rock"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quelle est la chanteuse française qui a vendu le plus de disques dans le monde ?",
+    "a": [
+      "Dalida",
+      "Edith Piaf",
+      "Mireille Mathieu",
+      "Patricia Kaas"
+    ],
+    "c": 0,
+    "cat": "musique"
+  },
+  {
+    "q": "Quelle est la ville de France qui accueille le Printemps de Bourges ?",
+    "a": [
+      "Limoges",
+      "Châteauroux",
+      "Bourges",
+      "Nevers"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel groupe de musique électronique français a popularisé le French Touch ?",
+    "a": [
+      "Phoenix",
+      "Justice",
+      "Daft Punk",
+      "Bob Sinclar"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du chanteur franco-arménien connu pour La Bohème et Hier encore ?",
+    "a": [
+      "Gilbert Bécaud",
+      "Charles Aznavour",
+      "Enrico Macias",
+      "Serge Gainsbourg"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel chanteur est connu pour l'album Sgt. Pepper's Lonely Hearts Club Band ?",
+    "a": [
+      "The Rolling Stones",
+      "The Doors",
+      "The Beatles",
+      "The Who"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le vrai nom de Stromae ?",
+    "a": [
+      "Paul Van Haver",
+      "Renaud Capuçon",
+      "Laurent Garnier",
+      "Sébastien Tellier"
+    ],
+    "c": 0,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel groupe de rock français a sorti l'album Ici et maintenant en 2020 ?",
+    "a": [
+      "Téléphone",
+      "Indochine",
+      "Trust",
+      "Superbus"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel artiste a sorti l'album Thriller, l'album le plus vendu de l'histoire ?",
+    "a": [
+      "Prince",
+      "Michael Jackson",
+      "David Bowie",
+      "Whitney Houston"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du rappeur français auteur de Tomber la chemise ?",
+    "a": [
+      "Booba",
+      "Rohff",
+      "Zebda",
+      "Jul"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quelle est la chanteuse québécoise connue pour My Heart Will Go On ?",
+    "a": [
+      "Garou",
+      "Céline Dion",
+      "Isabelle Boulay",
+      "Marie-Elaine Thibert"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel groupe britannique a sorti l'album Dark Side of the Moon ?",
+    "a": [
+      "Led Zeppelin",
+      "Pink Floyd",
+      "Deep Purple",
+      "Black Sabbath"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le vrai prénom du chanteur connu sous le nom de Renaud ?",
+    "a": [
+      "René",
+      "Renaud",
+      "Richard",
+      "Robert"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du duo électronique français auteur de Sandstorm ?",
+    "a": [
+      "Non, Sandstorm c'est Darude",
+      "Daft Punk",
+      "Bob Sinclar",
+      "Martin Solveig"
+    ],
+    "c": 0,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel chanteur est connu pour Purple Rain ?",
+    "a": [
+      "David Bowie",
+      "Prince",
+      "Elton John",
+      "Stevie Wonder"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du chanteur français auteur de La vie en rose ?",
+    "a": [
+      "Charles Aznavour",
+      "Jacques Brel",
+      "Édith Piaf",
+      "Dalida"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel festival de musique électronique se tient chaque année à Coachella ?",
+    "a": [
+      "En France",
+      "En Allemagne",
+      "Aux États-Unis",
+      "En Angleterre"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le vrai nom du rappeur français Booba ?",
+    "a": [
+      "Erick Morillo",
+      "Elie Yaffa",
+      "Éric Chedeville",
+      "Bertrand Burgalat"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quelle est la chanteuse anglaise connue pour Rolling in the Deep ?",
+    "a": [
+      "Amy Winehouse",
+      "Lily Allen",
+      "Adele",
+      "Duffy"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel artiste a popularisé le genre musical Reggaeton ?",
+    "a": [
+      "Daddy Yankee",
+      "J Balvin",
+      "Maluma",
+      "Ozuna"
+    ],
+    "c": 0,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel groupe de rock a sorti l'album Led Zeppelin IV avec la chanson Stairway to Heaven ?",
+    "a": [
+      "The Rolling Stones",
+      "Led Zeppelin",
+      "Black Sabbath",
+      "Deep Purple"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du chanteur français auteur de Mistral gagnant ?",
+    "a": [
+      "Jean-Louis Aubert",
+      "Francis Cabrel",
+      "Renaud",
+      "Julien Clerc"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel festival de musique se tient chaque été à Glastonbury ?",
+    "a": [
+      "En France",
+      "En Écosse",
+      "En Angleterre",
+      "En Irlande"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel chanteur est connu pour l'album The Eminem Show ?",
+    "a": [
+      "Jay-Z",
+      "Kanye West",
+      "Eminem",
+      "50 Cent"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du chanteur français auteur de Je l'aime à mourir ?",
+    "a": [
+      "Jean-Louis Aubert",
+      "Francis Cabrel",
+      "Renaud",
+      "Julien Clerc"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel groupe de métal suédois est connu pour Enter Sandman ?",
+    "a": [
+      "Slayer",
+      "Megadeth",
+      "Metallica",
+      "Iron Maiden"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quelle chanteuse est connue pour Poker Face ?",
+    "a": [
+      "Katy Perry",
+      "Rihanna",
+      "Lady Gaga",
+      "Kesha"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du groupe de danse électronique français auteur de Da Funk ?",
+    "a": [
+      "Air",
+      "Justice",
+      "Daft Punk",
+      "Phoenix"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel chanteur nigérian est connu pour Divine et Calm Down ?",
+    "a": [
+      "Wizkid",
+      "Davido",
+      "Rema",
+      "Burna Boy"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le vrai nom de la chanteuse connue sous le pseudonyme Aya Nakamura ?",
+    "a": [
+      "Aya Nakamura Danioko",
+      "Aya Danioko",
+      "Mariama Doumbia",
+      "Aïssata Ouedraogo"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel groupe britannique est connu pour Wonderwall et Don't Look Back in Anger ?",
+    "a": [
+      "Blur",
+      "Pulp",
+      "Oasis",
+      "Suede"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel artiste a sorti l'album Nevermind avec Smells Like Teen Spirit ?",
+    "a": [
+      "Pearl Jam",
+      "Soundgarden",
+      "Nirvana",
+      "Stone Temple Pilots"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel est le nom du DJ français connu pour sa collaboration avec Bob Marley ?",
+    "a": [
+      "Laurent Garnier",
+      "Bob Sinclar",
+      "Martin Solveig",
+      "David Guetta"
+    ],
+    "c": 1,
+    "cat": "musique"
+  },
+  {
+    "q": "Quel chanteur est connu pour la chanson Shape of You ?",
+    "a": [
+      "Sam Smith",
+      "Shawn Mendes",
+      "Ed Sheeran",
+      "Harry Styles"
+    ],
+    "c": 2,
+    "cat": "musique"
+  },
+  {
+    "q": "Dans quel film retrouve-t-on le personnage de Tony Stark ?",
+    "a": [
+      "Thor",
+      "Iron Man",
+      "Captain America",
+      "Black Panther"
+    ],
+    "c": 1,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel réalisateur a créé la saga Star Wars originale ?",
+    "a": [
+      "Steven Spielberg",
+      "James Cameron",
+      "George Lucas",
+      "Ridley Scott"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur joue Jack dans Titanic ?",
+    "a": [
+      "Brad Pitt",
+      "Tom Cruise",
+      "Leonardo DiCaprio",
+      "Matt Damon"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quel film entend-on la réplique Je vois des gens morts ?",
+    "a": [
+      "Psychose",
+      "The Others",
+      "Sixième Sens",
+      "Shining"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel studio a produit la trilogie Le Seigneur des anneaux ?",
+    "a": [
+      "Warner Bros",
+      "Universal",
+      "New Line Cinema",
+      "Sony"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel film a remporté la Palme d'Or à Cannes en 2019 ?",
+    "a": [
+      "Parasite",
+      "Les Misérables",
+      "Portrait de la jeune fille en feu",
+      "Atlantique"
+    ],
+    "c": 0,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le nom du personnage joué par Keanu Reeves dans Matrix ?",
+    "a": [
+      "Morpheus",
+      "Trinity",
+      "Neo",
+      "Agent Smith"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quelle série retrouve-t-on la famille Stark ?",
+    "a": [
+      "The Witcher",
+      "Vikings",
+      "Game of Thrones",
+      "The Last Kingdom"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur joue Walter White dans Breaking Bad ?",
+    "a": [
+      "Bryan Cranston",
+      "Aaron Paul",
+      "Bob Odenkirk",
+      "Jonathan Banks"
+    ],
+    "c": 0,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel réalisateur a réalisé À bout de souffle, film emblématique de la Nouvelle Vague ?",
+    "a": [
+      "François Truffaut",
+      "Claude Chabrol",
+      "Jean-Luc Godard",
+      "Jacques Rivette"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Qui a réalisé le film Le Fabuleux Destin d'Amélie Poulain ?",
+    "a": [
+      "Luc Besson",
+      "Claude Lelouch",
+      "Jean-Pierre Jeunet",
+      "Cédric Klapisch"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur joue Vito Corleone dans Le Parrain ?",
+    "a": [
+      "Al Pacino",
+      "Robert De Niro",
+      "Marlon Brando",
+      "Jack Nicholson"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le nom du réalisateur de Jurassic Park et E.T. ?",
+    "a": [
+      "George Lucas",
+      "James Cameron",
+      "Steven Spielberg",
+      "Robert Zemeckis"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel film a remporté l'Oscar du meilleur film en 2020 ?",
+    "a": [
+      "1917",
+      "Joker",
+      "Parasite",
+      "Once Upon a Time in Hollywood"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur français a joué le rôle de Léon dans le film éponyme de Luc Besson ?",
+    "a": [
+      "Gérard Depardieu",
+      "Jean Reno",
+      "Vincent Cassel",
+      "Daniel Auteuil"
+    ],
+    "c": 1,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quelle série Netflix retrouve-t-on Eleven et le Monde à l'Envers ?",
+    "a": [
+      "Dark",
+      "Black Mirror",
+      "Stranger Things",
+      "The OA"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le film le plus rentable de l'histoire du cinéma (sans inflation) ?",
+    "a": [
+      "Titanic",
+      "Avatar",
+      "Avengers: Endgame",
+      "Star Wars"
+    ],
+    "c": 1,
+    "cat": "cinema"
+  },
+  {
+    "q": "Qui a réalisé le film Les 400 coups en 1959 ?",
+    "a": [
+      "Jean-Luc Godard",
+      "Claude Chabrol",
+      "Jacques Demy",
+      "François Truffaut"
+    ],
+    "c": 3,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur joue le Joker dans le film de 2019 ?",
+    "a": [
+      "Heath Ledger",
+      "Jared Leto",
+      "Joaquin Phoenix",
+      "Jack Nicholson"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quel film retrouve-t-on la réplique May the Force be with you ?",
+    "a": [
+      "Flash Gordon",
+      "Dune",
+      "Star Wars",
+      "Guardians of the Galaxy"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le nom de l'actrice principale de la saga Hunger Games ?",
+    "a": [
+      "Emma Stone",
+      "Jennifer Lawrence",
+      "Shailene Woodley",
+      "Lily Collins"
+    ],
+    "c": 1,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel film d'animation Pixar met en scène des personnages vivant dans des émotions ?",
+    "a": [
+      "Soul",
+      "Coco",
+      "Vice-Versa",
+      "Luca"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le nom du film de Nolan dans lequel on voyage dans les rêves ?",
+    "a": [
+      "Interstellar",
+      "The Dark Knight",
+      "Inception",
+      "Memento"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quelle série retrouve-t-on les personnages de Sheldon Cooper et Leonard Hofstadter ?",
+    "a": [
+      "How I Met Your Mother",
+      "Friends",
+      "The Big Bang Theory",
+      "Two and a Half Men"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel réalisateur a créé la trilogie du Seigneur des Anneaux ?",
+    "a": [
+      "Ridley Scott",
+      "Guillermo del Toro",
+      "Peter Jackson",
+      "Sam Raimi"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur incarne Iron Man dans l'univers Marvel ?",
+    "a": [
+      "Chris Evans",
+      "Chris Hemsworth",
+      "Robert Downey Jr.",
+      "Mark Ruffalo"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel film français se déroule dans les banlieues parisiennes et met en scène trois amis ?",
+    "a": [
+      "Entre les murs",
+      "La Haine",
+      "L'Esquive",
+      "Divines"
+    ],
+    "c": 1,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quelle série HBO est connue pour la série basée sur les romans de George R.R. Martin ?",
+    "a": [
+      "The Wire",
+      "Succession",
+      "Game of Thrones",
+      "The Sopranos"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur joue James Bond dans Casino Royale de 2006 ?",
+    "a": [
+      "Pierce Brosnan",
+      "Daniel Craig",
+      "Timothy Dalton",
+      "Roger Moore"
+    ],
+    "c": 1,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quel film de science-fiction les humains naviguent-ils dans l'hyperespace à bord de l'Hégémonie ?",
+    "a": [
+      "Dune",
+      "Interstellar",
+      "Warhammer",
+      "Foundation"
+    ],
+    "c": 0,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le nom de la série coréenne qui met en scène un jeu de survie avec des dettes ?",
+    "a": [
+      "Kingdom",
+      "Squid Game",
+      "All of Us Are Dead",
+      "Sweet Home"
+    ],
+    "c": 1,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le film d'animation japonais de Hayao Miyazaki avec une sorcière et des esprits du bain ?",
+    "a": [
+      "Mon voisin Totoro",
+      "Nausicaä",
+      "Le Voyage de Chihiro",
+      "Princesse Mononoké"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur joue Tony Montana dans Scarface (1983) ?",
+    "a": [
+      "Robert De Niro",
+      "Al Pacino",
+      "Joe Pesci",
+      "Harvey Keitel"
+    ],
+    "c": 1,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quelle est la série américaine qui suit le détective McNulty dans la ville de Baltimore ?",
+    "a": [
+      "True Detective",
+      "The Shield",
+      "The Wire",
+      "Dexter"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel film de superhéros de 2008 est souvent cité comme l'un des meilleurs du genre ?",
+    "a": [
+      "Spider-Man",
+      "Iron Man",
+      "The Dark Knight",
+      "Batman Begins"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quel film retrouve-t-on le robot R2-D2 et C-3PO ?",
+    "a": [
+      "Alien",
+      "Star Trek",
+      "Star Wars",
+      "Battlestar Galactica"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur français est connu pour les films Intouchables et Le Prénom ?",
+    "a": [
+      "Omar Sy",
+      "Jamel Debbouze",
+      "Gilles Lellouche",
+      "François Cluzet"
+    ],
+    "c": 0,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quelle série danoise a inspiré la série américaine The Bridge ?",
+    "a": [
+      "Borgen",
+      "Forbrydelsen",
+      "Broen",
+      "Rita"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le nom du film de science-fiction de Denis Villeneuve adapté du roman de Frank Herbert ?",
+    "a": [
+      "Arrival",
+      "Blade Runner 2049",
+      "Dune",
+      "Annihilation"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quelle série retrouve-t-on la famille Soprano ?",
+    "a": [
+      "The Wire",
+      "Boardwalk Empire",
+      "The Sopranos",
+      "Oz"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le titre du premier épisode de la saga Marvel au cinéma ?",
+    "a": [
+      "Thor",
+      "Captain America",
+      "Iron Man",
+      "Hulk"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel réalisateur a créé la série de films avec des zombies Night of the Living Dead ?",
+    "a": [
+      "Wes Craven",
+      "John Carpenter",
+      "George Romero",
+      "Dario Argento"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le film de Quentin Tarantino avec John Travolta et Samuel L. Jackson ?",
+    "a": [
+      "Reservoir Dogs",
+      "Kill Bill",
+      "Pulp Fiction",
+      "Jackie Brown"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur joue Forrest Gump ?",
+    "a": [
+      "Tom Cruise",
+      "Kevin Costner",
+      "Tom Hanks",
+      "Robin Williams"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le film d'animation Disney qui se déroule au Mexique pendant la Fête des Morts ?",
+    "a": [
+      "Encanto",
+      "Soul",
+      "Coco",
+      "Luca"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quelle série retrouve-t-on le détective Sherlock Holmes revu au XXIe siècle ?",
+    "a": [
+      "Elementary",
+      "Sherlock",
+      "The Mentalist",
+      "Monk"
+    ],
+    "c": 1,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel acteur a joué Superman dans Man of Steel ?",
+    "a": [
+      "Henry Cavill",
+      "Brandon Routh",
+      "Ben Affleck",
+      "Chris Reeve"
+    ],
+    "c": 0,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le film de Stanley Kubrick avec Jack Nicholson dans un hôtel hanté ?",
+    "a": [
+      "Eyes Wide Shut",
+      "Full Metal Jacket",
+      "2001 l'Odyssée de l'Espace",
+      "Shining"
+    ],
+    "c": 3,
+    "cat": "cinema"
+  },
+  {
+    "q": "Dans quelle série Netflix retrouve-t-on un professeur qui braque la banque d'Espagne ?",
+    "a": [
+      "Narcos",
+      "Suburra",
+      "La Casa de Papel",
+      "Vis a Vis"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quel est le film de Steven Spielberg qui suit des dinosaures recréés sur une île ?",
+    "a": [
+      "Congo",
+      "The Lost World",
+      "Jurassic Park",
+      "Anaconda"
+    ],
+    "c": 2,
+    "cat": "cinema"
+  },
+  {
+    "q": "Quelle est la plus haute montagne du monde ?",
+    "a": [
+      "K2",
+      "Mont Blanc",
+      "Everest",
+      "Kilimanjaro"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le plus grand pays du monde en superficie ?",
+    "a": [
+      "Canada",
+      "USA",
+      "Chine",
+      "Russie"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de l'Australie ?",
+    "a": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Canberra"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quel pays se trouve la Grande Muraille ?",
+    "a": [
+      "Japon",
+      "Mongolie",
+      "Corée",
+      "Chine"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de l'Espagne ?",
+    "a": [
+      "Barcelone",
+      "Séville",
+      "Valence",
+      "Madrid"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le plus long fleuve du monde ?",
+    "a": [
+      "L'Amazone",
+      "Le Yangtsé",
+      "Le Nil",
+      "Le Mississippi"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quel pays se trouve la Tour de Pise ?",
+    "a": [
+      "France",
+      "Espagne",
+      "Grèce",
+      "Italie"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la langue officielle du Brésil ?",
+    "a": [
+      "Espagnol",
+      "Français",
+      "Portugais",
+      "Italien"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le plus long fleuve d'Europe ?",
+    "a": [
+      "Rhin",
+      "Danube",
+      "Seine",
+      "Volga"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de la Réunion ?",
+    "a": [
+      "Saint-Paul",
+      "Saint-Pierre",
+      "Saint-Denis",
+      "Le Tampon"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la hauteur du Mont Blanc ?",
+    "a": [
+      "4 478 m",
+      "4 808 m",
+      "5 143 m",
+      "5 895 m"
+    ],
+    "c": 1,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le plus petit pays du monde ?",
+    "a": [
+      "Monaco",
+      "Liechtenstein",
+      "Saint-Marin",
+      "Vatican"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de la Guyane française ?",
+    "a": [
+      "Pointe-à-Pitre",
+      "Saint-Laurent-du-Maroni",
+      "Kourou",
+      "Cayenne"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quelle ville se trouve le siège de l'UNESCO ?",
+    "a": [
+      "Genève",
+      "New York",
+      "Paris",
+      "Vienne"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le plus grand lac naturel de France entièrement en territoire français ?",
+    "a": [
+      "Le lac d'Annecy",
+      "Le lac du Bourget",
+      "Le lac de Biscarrosse",
+      "Le lac de Grand-Lieu"
+    ],
+    "c": 1,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du col alpin le plus haut de France accessible en voiture ?",
+    "a": [
+      "Col du Mont Cenis",
+      "Col de l'Iseran",
+      "Col du Galibier",
+      "Col de la Bonette"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale du Japon ?",
+    "a": [
+      "Osaka",
+      "Kyoto",
+      "Tokyo",
+      "Hiroshima"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le plus grand désert chaud du monde ?",
+    "a": [
+      "Le désert d'Arabie",
+      "Le Sahara",
+      "Le Gobi",
+      "Le Kalahari"
+    ],
+    "c": 1,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quel continent se trouve l'Éthiopie ?",
+    "a": [
+      "Asie",
+      "Amérique du Sud",
+      "Afrique",
+      "Océanie"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale du Canada ?",
+    "a": [
+      "Toronto",
+      "Montréal",
+      "Vancouver",
+      "Ottawa"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du plus long fleuve d'Amérique du Sud ?",
+    "a": [
+      "Le Rio de la Plata",
+      "L'Orénoque",
+      "Le Paraná",
+      "L'Amazone"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de l'Argentine ?",
+    "a": [
+      "Santiago",
+      "Lima",
+      "Buenos Aires",
+      "Montevideo"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quel pays se trouve le Machu Picchu ?",
+    "a": [
+      "Brésil",
+      "Équateur",
+      "Pérou",
+      "Bolivie"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du plus grand océan du monde ?",
+    "a": [
+      "Atlantique",
+      "Indien",
+      "Arctique",
+      "Pacifique"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de l'Inde ?",
+    "a": [
+      "Mumbai",
+      "Chennai",
+      "Kolkata",
+      "New Delhi"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le pays africain le plus peuplé ?",
+    "a": [
+      "Égypte",
+      "Éthiopie",
+      "Congo",
+      "Nigeria"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quelle ville se trouve la Sagrada Familia ?",
+    "a": [
+      "Madrid",
+      "Séville",
+      "Barcelone",
+      "Valence"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du détroit entre la France et l'Angleterre ?",
+    "a": [
+      "Détroit de Douvres",
+      "Mer du Nord",
+      "Manche",
+      "Golfe de Gascogne"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de la Turquie ?",
+    "a": [
+      "Istanbul",
+      "Izmir",
+      "Bursa",
+      "Ankara"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quel pays se trouve le mont Fuji ?",
+    "a": [
+      "Chine",
+      "Corée",
+      "Japon",
+      "Thaïlande"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du pays qui possède le plus de lacs au monde ?",
+    "a": [
+      "Russie",
+      "Finlande",
+      "Canada",
+      "Suède"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale du Maroc ?",
+    "a": [
+      "Casablanca",
+      "Marrakech",
+      "Fès",
+      "Rabat"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du plus long fleuve d'Asie ?",
+    "a": [
+      "Le Mékong",
+      "Le Gange",
+      "Le Yangtsé",
+      "L'Indus"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quel continent se trouve le désert du Sahara ?",
+    "a": [
+      "Asie",
+      "Amérique",
+      "Afrique",
+      "Australie"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de l'Égypte ?",
+    "a": [
+      "Alexandrie",
+      "Louxor",
+      "Gizeh",
+      "Le Caire"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le pays le plus petit d'Amérique du Sud ?",
+    "a": [
+      "Uruguay",
+      "Paraguay",
+      "Suriname",
+      "Guyana"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quelle ville se trouve la fontaine de Trevi ?",
+    "a": [
+      "Florence",
+      "Milan",
+      "Venise",
+      "Rome"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du plus haut volcan actif du monde ?",
+    "a": [
+      "Le Vésuve",
+      "L'Etna",
+      "Le Cotopaxi",
+      "L'Ojos del Salado"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de l'Afrique du Sud ?",
+    "a": [
+      "Johannesburg",
+      "Le Cap",
+      "Durban",
+      "Pretoria"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le pays qui possède le plus de frontières terrestres ?",
+    "a": [
+      "Brésil",
+      "Russie",
+      "Chine",
+      "USA"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quel pays se trouve le lac Baïkal ?",
+    "a": [
+      "Mongolie",
+      "Kazakhstan",
+      "Ukraine",
+      "Russie"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de la Nouvelle-Zélande ?",
+    "a": [
+      "Auckland",
+      "Christchurch",
+      "Dunedin",
+      "Wellington"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du plus grand archipel du monde ?",
+    "a": [
+      "Les Philippines",
+      "Les Maldives",
+      "Le Japon",
+      "L'Indonésie"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de l'Iran ?",
+    "a": [
+      "Ispahan",
+      "Chiraz",
+      "Tabriz",
+      "Téhéran"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quel pays se trouve Angkor Wat ?",
+    "a": [
+      "Thaïlande",
+      "Vietnam",
+      "Cambodge",
+      "Myanmar"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du pays qui regroupe la Wallonie, la Flandre et Bruxelles ?",
+    "a": [
+      "Pays-Bas",
+      "Luxembourg",
+      "Suisse",
+      "Belgique"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de la Suède ?",
+    "a": [
+      "Göteborg",
+      "Malmö",
+      "Uppsala",
+      "Stockholm"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Dans quel pays se trouve le Kilimandjaro ?",
+    "a": [
+      "Kenya",
+      "Tanzanie",
+      "Ouganda",
+      "Rwanda"
+    ],
+    "c": 1,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le nom du détroit qui sépare l'Europe de l'Afrique ?",
+    "a": [
+      "Détroit de Messine",
+      "Détroit de Gibraltar",
+      "Détroit de Bosphore",
+      "Détroit de Malacca"
+    ],
+    "c": 1,
+    "cat": "geo"
+  },
+  {
+    "q": "Quelle est la capitale de la Corée du Sud ?",
+    "a": [
+      "Busan",
+      "Incheon",
+      "Séoul",
+      "Daejeon"
+    ],
+    "c": 2,
+    "cat": "geo"
+  },
+  {
+    "q": "Quel est le pays d'Amérique latine avec la plus grande superficie ?",
+    "a": [
+      "Argentine",
+      "Mexique",
+      "Colombie",
+      "Brésil"
+    ],
+    "c": 3,
+    "cat": "geo"
+  },
+  {
+    "q": "Qui a peint la Joconde ?",
+    "a": [
+      "Raphaël",
+      "Michel-Ange",
+      "Léonard de Vinci",
+      "Botticelli"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui est l'auteur des Misérables ?",
+    "a": [
+      "Émile Zola",
+      "Gustave Flaubert",
+      "Victor Hugo",
+      "Honoré de Balzac"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Germinal ?",
+    "a": [
+      "Victor Hugo",
+      "Guy de Maupassant",
+      "Émile Zola",
+      "Gustave Flaubert"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel auteur a écrit Le Petit Prince ?",
+    "a": [
+      "Jules Verne",
+      "Antoine de Saint-Exupéry",
+      "Marcel Pagnol",
+      "Jean Cocteau"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Les Fleurs du mal ?",
+    "a": [
+      "Arthur Rimbaud",
+      "Paul Verlaine",
+      "Charles Baudelaire",
+      "Stéphane Mallarmé"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel sculpteur a réalisé Le Penseur et Le Baiser ?",
+    "a": [
+      "Camille Claudel",
+      "Jean-Baptiste Carpeaux",
+      "Auguste Rodin",
+      "Antoine Bourdelle"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit L'Étranger ?",
+    "a": [
+      "Jean-Paul Sartre",
+      "Simone de Beauvoir",
+      "Albert Camus",
+      "André Malraux"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du mouvement artistique initié par Monet, Renoir et Degas ?",
+    "a": [
+      "Le fauvisme",
+      "Le cubisme",
+      "L'impressionnisme",
+      "Le réalisme"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Le Comte de Monte-Cristo ?",
+    "a": [
+      "Victor Hugo",
+      "Honoré de Balzac",
+      "Alexandre Dumas",
+      "Stendhal"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a peint La Liberté guidant le peuple ?",
+    "a": [
+      "Jean-Auguste-Dominique Ingres",
+      "Théodore Géricault",
+      "Eugène Delacroix",
+      "Jacques-Louis David"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit À la recherche du temps perdu ?",
+    "a": [
+      "André Gide",
+      "Marcel Proust",
+      "Louis-Ferdinand Céline",
+      "Anatole France"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Cyrano de Bergerac ?",
+    "a": [
+      "Molière",
+      "Corneille",
+      "Edmond Rostand",
+      "Victor Hugo"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a peint Les Nymphéas exposées au musée de l'Orangerie ?",
+    "a": [
+      "Edgar Degas",
+      "Pierre-Auguste Renoir",
+      "Claude Monet",
+      "Camille Pissarro"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Les Trois Mousquetaires ?",
+    "a": [
+      "Victor Hugo",
+      "Honoré de Balzac",
+      "Alexandre Dumas",
+      "Prosper Mérimée"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a peint Le Radeau de la Méduse ?",
+    "a": [
+      "Delacroix",
+      "Géricault",
+      "Courbet",
+      "David"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du poète auteur du Bateau ivre ?",
+    "a": [
+      "Paul Verlaine",
+      "Stéphane Mallarmé",
+      "Arthur Rimbaud",
+      "Guillaume Apollinaire"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du poète auteur de Alcools et Calligrammes ?",
+    "a": [
+      "Paul Éluard",
+      "Louis Aragon",
+      "Guillaume Apollinaire",
+      "André Breton"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Le Rouge et le Noir ?",
+    "a": [
+      "Flaubert",
+      "Balzac",
+      "Stendhal",
+      "Hugo"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le premier roman de Marcel Proust ?",
+    "a": [
+      "Le Temps retrouvé",
+      "Du côté de chez Swann",
+      "À l'ombre des jeunes filles en fleurs",
+      "Sodome et Gomorrhe"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Quel peintre post-impressionniste a vécu à Arles et coupé son oreille ?",
+    "a": [
+      "Paul Gauguin",
+      "Georges Seurat",
+      "Vincent van Gogh",
+      "Paul Signac"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Madame Bovary ?",
+    "a": [
+      "Victor Hugo",
+      "Gustave Flaubert",
+      "Émile Zola",
+      "Stendhal"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du peintre français inventeur du pointillisme ?",
+    "a": [
+      "Paul Signac",
+      "Camille Pissarro",
+      "Georges Seurat",
+      "Henri-Edmond Cross"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a fondé le mouvement surréaliste en France ?",
+    "a": [
+      "Guillaume Apollinaire",
+      "André Breton",
+      "Louis Aragon",
+      "Paul Éluard"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du grand romancier auteur du cycle des Rougon-Macquart ?",
+    "a": [
+      "Balzac",
+      "Hugo",
+      "Zola",
+      "Flaubert"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Bel-Ami ?",
+    "a": [
+      "Flaubert",
+      "Daudet",
+      "Zola",
+      "Maupassant"
+    ],
+    "c": 3,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du poète de la Pléiade auteur des Regrets ?",
+    "a": [
+      "Pierre de Ronsard",
+      "Joachim du Bellay",
+      "Jean-Antoine de Baïf",
+      "Rémi Belleau"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du grand romancier français auteur de La Comédie humaine ?",
+    "a": [
+      "Stendhal",
+      "Flaubert",
+      "Honoré de Balzac",
+      "Victor Hugo"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Le Père Goriot ?",
+    "a": [
+      "Flaubert",
+      "Stendhal",
+      "Balzac",
+      "Zola"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du peintre fauve né à Cateau-Cambrésis ?",
+    "a": [
+      "André Derain",
+      "Maurice de Vlaminck",
+      "Henri Matisse",
+      "Raoul Dufy"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit La Chartreuse de Parme ?",
+    "a": [
+      "Balzac",
+      "Hugo",
+      "Stendhal",
+      "Mérimée"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du mouvement littéraire du XVIIe siècle représenté par Molière et Racine ?",
+    "a": [
+      "Le Romantisme",
+      "Le Classicisme",
+      "Le Réalisme",
+      "L'Humanisme"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Notre-Dame de Paris ?",
+    "a": [
+      "Balzac",
+      "Flaubert",
+      "Victor Hugo",
+      "Dumas"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel philosophe a écrit Candide ?",
+    "a": [
+      "Rousseau",
+      "Voltaire",
+      "Diderot",
+      "Montesquieu"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Qui est l'auteur de La Nausée et du Mur ?",
+    "a": [
+      "Albert Camus",
+      "Simone de Beauvoir",
+      "Jean-Paul Sartre",
+      "André Malraux"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel peintre a réalisé les séries de la montagne Sainte-Victoire ?",
+    "a": [
+      "Renoir",
+      "Cézanne",
+      "Monet",
+      "Matisse"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Voyage au bout de la nuit ?",
+    "a": [
+      "Henri Barbusse",
+      "Louis Aragon",
+      "Louis-Ferdinand Céline",
+      "Roger Vailland"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom de l'auteur des Fables en vers au XVIIe siècle ?",
+    "a": [
+      "Molière",
+      "Racine",
+      "Jean de La Fontaine",
+      "Corneille"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du peintre auteur de La Nuit étoilée ?",
+    "a": [
+      "Paul Gauguin",
+      "Georges Seurat",
+      "Vincent van Gogh",
+      "Édouard Manet"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Les Liaisons dangereuses ?",
+    "a": [
+      "Laclos",
+      "Sade",
+      "Casanova",
+      "Marivaux"
+    ],
+    "c": 0,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du poète auteur de La Divine Comédie ?",
+    "a": [
+      "Pétrarque",
+      "Boccace",
+      "Dante Alighieri",
+      "Virgile"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a peint Le Déjeuner sur l'herbe ?",
+    "a": [
+      "Monet",
+      "Renoir",
+      "Manet",
+      "Degas"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du romancier auteur de Don Quichotte ?",
+    "a": [
+      "Lope de Vega",
+      "Cervantes",
+      "Calderón",
+      "Quevedo"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Quel auteur anglais a écrit les aventures de Sherlock Holmes ?",
+    "a": [
+      "Agatha Christie",
+      "G.K. Chesterton",
+      "Arthur Conan Doyle",
+      "Wilkie Collins"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du peintre espagnol auteur de Guernica ?",
+    "a": [
+      "Salvador Dalí",
+      "Joan Miró",
+      "Pablo Picasso",
+      "Juan Gris"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a écrit Crime et Châtiment ?",
+    "a": [
+      "Tolstoï",
+      "Tchekhov",
+      "Dostoïevski",
+      "Tourgueniev"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel philosophe français a écrit Je pense donc je suis ?",
+    "a": [
+      "Voltaire",
+      "Pascal",
+      "Descartes",
+      "Rousseau"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du romancier britannique auteur de 1984 ?",
+    "a": [
+      "Aldous Huxley",
+      "H.G. Wells",
+      "George Orwell",
+      "Ray Bradbury"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a peint La Cène ?",
+    "a": [
+      "Raphaël",
+      "Michel-Ange",
+      "Léonard de Vinci",
+      "Botticelli"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel auteur a écrit le roman Harry Potter ?",
+    "a": [
+      "J.R.R. Tolkien",
+      "C.S. Lewis",
+      "J.K. Rowling",
+      "Philip Pullman"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le nom du roman de Victor Hugo avec Quasimodo ?",
+    "a": [
+      "Les Misérables",
+      "Notre-Dame de Paris",
+      "L'Homme qui rit",
+      "Han d'Islande"
+    ],
+    "c": 1,
+    "cat": "art"
+  },
+  {
+    "q": "Qui a composé les 4 Saisons ?",
+    "a": [
+      "Bach",
+      "Mozart",
+      "Vivaldi",
+      "Haendel"
+    ],
+    "c": 2,
+    "cat": "art"
+  },
+  {
+    "q": "Quel est le maillot pour le meilleur grimpeur du Tour de France ?",
+    "a": [
+      "Le maillot blanc",
+      "Le maillot jaune",
+      "Le maillot vert",
+      "Le maillot à pois"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel athlète française a remporté 3 titres olympiques aux JO de 1996 ?",
+    "a": [
+      "Teddy Riner",
+      "Martin Fourcade",
+      "Laura Flessel",
+      "Marie-José Pérec"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le champion cycliste français vainqueur du Tour de France en 1985 et 1986 ?",
+    "a": [
+      "Laurent Fignon",
+      "Bernard Hinault",
+      "Sean Kelly",
+      "Greg LeMond"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du joueur de tennis français vainqueur de Roland-Garros en 1983 ?",
+    "a": [
+      "Yannick Noah",
+      "Henri Leconte",
+      "Thierry Champion",
+      "Guy Forget"
+    ],
+    "c": 0,
+    "cat": "sport"
+  },
+  {
+    "q": "Quelle ville française a accueilli les Jeux Olympiques d'hiver en 1992 ?",
+    "a": [
+      "Grenoble",
+      "Chamonix",
+      "Val d'Isère",
+      "Albertville"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du sportif français le plus médaillé olympique en judo ?",
+    "a": [
+      "David Douillet",
+      "Teddy Riner",
+      "Thierry Rey",
+      "Angelo Parisi"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du circuit automobile situé dans le Var ?",
+    "a": [
+      "Le circuit de Nevers Magny-Cours",
+      "Le circuit Paul Ricard",
+      "Le circuit de la Sarthe",
+      "Le circuit Bugatti"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom de la célèbre course automobile des 24 heures ?",
+    "a": [
+      "Les 24h de Spa",
+      "Les 24h du Mans",
+      "Les 24h de Daytona",
+      "Les 24h de Monza"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quelle ville française accueille le Grand Prix de tennis de Roland-Garros ?",
+    "a": [
+      "Lyon",
+      "Marseille",
+      "Paris",
+      "Bordeaux"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le grand prix de formule 1 qui se tient en France ?",
+    "a": [
+      "Grand Prix de Monaco",
+      "Grand Prix de France",
+      "Grand Prix d'Alsace",
+      "Grand Prix de Provence"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel athlète est quintuple champion du monde de biathlon ?",
+    "a": [
+      "Raphaël Poirée",
+      "Martin Fourcade",
+      "Vincent Defrasne",
+      "Simon Fourcade"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quelle ville a accueilli les Jeux Olympiques d'été en 2024 ?",
+    "a": [
+      "Los Angeles",
+      "Tokyo",
+      "Paris",
+      "Londres"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du coureur cycliste français vainqueur de 5 Tours de France ?",
+    "a": [
+      "Laurent Fignon",
+      "Bernard Thévenet",
+      "Louison Bobet",
+      "Jacques Anquetil"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le pays qui a remporté le plus de médailles d'or aux JO de Tokyo 2020 ?",
+    "a": [
+      "Chine",
+      "USA",
+      "Grande-Bretagne",
+      "Russie"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du boxeur français champion du monde des lourds en 2023 ?",
+    "a": [
+      "Brahim Asloum",
+      "Tony Yoka",
+      "Souleymane Mbaye",
+      "Doudou Ngumbu"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Dans quel sport les athlètes plongent depuis une plateforme de 10 mètres ?",
+    "a": [
+      "Natation synchronisée",
+      "Water-polo",
+      "Plongeon",
+      "Nage en eaux libres"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom de la discipline olympique qui combine ski de fond et tir à la carabine ?",
+    "a": [
+      "Combiné nordique",
+      "Ski de fond",
+      "Biathlon",
+      "Saut à ski"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le record du monde du 100m masculin et qui le détient ?",
+    "a": [
+      "9.58 s — Usain Bolt",
+      "9.69 s — Usain Bolt",
+      "9.72 s — Asafa Powell",
+      "9.83 s — Carl Lewis"
+    ],
+    "c": 0,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du judoka français médaillé d'or à 4 JO de suite ?",
+    "a": [
+      "David Douillet",
+      "Angelo Parisi",
+      "Teddy Riner",
+      "Thierry Rey"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le sport pratiqué à Wimbledon ?",
+    "a": [
+      "Cricket",
+      "Golf",
+      "Tennis",
+      "Polo"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Combien de joueurs composent une équipe de rugby à XV sur le terrain ?",
+    "a": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du champion de natation français ayant nagé le 400m 4 nages aux JO ?",
+    "a": [
+      "Florent Manaudou",
+      "Yannick Agnel",
+      "Laure Manaudou",
+      "Alain Bernard"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom de l'épreuve reine des JO d'athlétisme, le marathon, en kilomètres ?",
+    "a": [
+      "40 km",
+      "41 km",
+      "42,195 km",
+      "43 km"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quelle nation a dominé le Tour de France des années 1990 avec Miguel Indurain ?",
+    "a": [
+      "France",
+      "Italie",
+      "Espagne",
+      "Colombie"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du tournoi de tennis australien qui se joue en janvier ?",
+    "a": [
+      "Australian Open",
+      "Open de Sydney",
+      "Brisbane International",
+      "Hopman Cup"
+    ],
+    "c": 0,
+    "cat": "sport"
+  },
+  {
+    "q": "Quelle est la discipline où Vanessa James et Morgan Cipres étaient champions ?",
+    "a": [
+      "Patinage de vitesse",
+      "Danse sur glace",
+      "Patinage artistique en couple",
+      "Hockey sur glace"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du premier Tour de France cycliste organisé ?",
+    "a": [
+      "1900",
+      "1903",
+      "1905",
+      "1910"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Dans quel sport utilise-t-on un jeu de crosses et de boules ?",
+    "a": [
+      "Cricket",
+      "Golf",
+      "Polo",
+      "Croquet"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom de la compétition internationale d'athlétisme qui se tient tous les 4 ans ?",
+    "a": [
+      "Les Jeux Olympiques",
+      "Les Championnats du Monde",
+      "Le Diamond League",
+      "Le Grand Prix"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quelle est la longueur d'un court de tennis en mètres ?",
+    "a": [
+      "23,77 m",
+      "25 m",
+      "26,5 m",
+      "28 m"
+    ],
+    "c": 0,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du champion cycliste colombien vainqueur du Tour 2019 ?",
+    "a": [
+      "Nairo Quintana",
+      "Rigoberto Uran",
+      "Egan Bernal",
+      "Miguel Angel Lopez"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le sport où l'on pratique le kata et le kumite ?",
+    "a": [
+      "Judo",
+      "Taekwondo",
+      "Karaté",
+      "Aïkido"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Dans quel sport retrouve-t-on les postures nommées asanas ?",
+    "a": [
+      "Pilates",
+      "Yoga",
+      "Tai-chi",
+      "Qigong"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quelle est la distance officielle du semi-marathon ?",
+    "a": [
+      "20 km",
+      "21,0975 km",
+      "21,5 km",
+      "22 km"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du nageur français champion olympique du 100m nage libre en 2012 ?",
+    "a": [
+      "Florent Manaudou",
+      "Yannick Agnel",
+      "Frédéric Bousquet",
+      "Alain Bernard"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le sport pratiqué au stade de Wembley principalement ?",
+    "a": [
+      "Rugby",
+      "Cricket",
+      "Football",
+      "Athlétisme"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Dans quelle ville se sont déroulés les premiers Jeux Olympiques modernes en 1896 ?",
+    "a": [
+      "Paris",
+      "Londres",
+      "Stockholm",
+      "Athènes"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du tournoi de tennis sur gazon le plus prestigieux au monde ?",
+    "a": [
+      "Roland-Garros",
+      "US Open",
+      "Australian Open",
+      "Wimbledon"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quelle est la hauteur du filet de volleyball en mètres pour les hommes ?",
+    "a": [
+      "2,24 m",
+      "2,34 m",
+      "2,43 m",
+      "2,50 m"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du champion de badminton danois souvent comparé au meilleur de tous les temps ?",
+    "a": [
+      "Peter Gade",
+      "Anders Antonsen",
+      "Viktor Axelsen",
+      "Jan O Jorgensen"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Dans quel sport retrouve-t-on le terme smash ?",
+    "a": [
+      "Tennis uniquement",
+      "Tennis et badminton",
+      "Volleyball",
+      "Tous ces sports"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom de l'épreuve cycliste italienne surnommée La Primavera ?",
+    "a": [
+      "Strade Bianche",
+      "Milan-San Remo",
+      "Tirreno-Adriatico",
+      "Liège-Bastogne-Liège"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Quelle est la durée d'un match de basketball professionnel NBA en minutes ?",
+    "a": [
+      "40 minutes",
+      "44 minutes",
+      "48 minutes",
+      "52 minutes"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du pentathlète moderne français champion olympique ?",
+    "a": [
+      "Étienne Thobois",
+      "Sébastien Deleigne",
+      "Étienne Rousseau",
+      "Valentin Prades"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le sport où l'on pratique le yoko-geri et le mawashi-geri ?",
+    "a": [
+      "Judo",
+      "Taekwondo",
+      "Karaté",
+      "Boxe thaï"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "En quelle année l'Homme a-t-il marché sur la Lune ?",
+    "a": [
+      "1965",
+      "1967",
+      "1969",
+      "1971"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de continents y a-t-il sur Terre ?",
+    "a": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la monnaie utilisée au Japon ?",
+    "a": [
+      "Yuan",
+      "Won",
+      "Yen",
+      "Ringgit"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de côtés a un hexagone ?",
+    "a": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Dans quel sport utilise-t-on un volant ?",
+    "a": [
+      "Tennis",
+      "Squash",
+      "Badminton",
+      "Ping-pong"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de grammes dans un kilogramme ?",
+    "a": [
+      "100",
+      "500",
+      "1000",
+      "10000"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Qui a inventé le téléphone ?",
+    "a": [
+      "Edison",
+      "Tesla",
+      "Graham Bell",
+      "Marconi"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le plus grand désert du monde (toutes catégories) ?",
+    "a": [
+      "Le Sahara",
+      "L'Antarctique",
+      "Le désert de Gobi",
+      "Le désert d'Arabie"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de joueurs dans une équipe de basketball sur le terrain ?",
+    "a": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la langue la plus parlée dans le monde ?",
+    "a": [
+      "Espagnol",
+      "Anglais",
+      "Mandarin",
+      "Hindi"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le pays le plus peuplé du monde en 2024 ?",
+    "a": [
+      "Inde",
+      "Chine",
+      "USA",
+      "Indonésie"
+    ],
+    "c": 0,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de secondes dans une heure ?",
+    "a": [
+      "360",
+      "600",
+      "3600",
+      "36000"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Qui a écrit Hamlet ?",
+    "a": [
+      "Victor Hugo",
+      "Molière",
+      "Shakespeare",
+      "Goethe"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la religion la plus pratiquée dans le monde ?",
+    "a": [
+      "Islam",
+      "Hindouisme",
+      "Christianisme",
+      "Bouddhisme"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de pays composent l'Union européenne ?",
+    "a": [
+      "24",
+      "25",
+      "27",
+      "30"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la monnaie officielle du Royaume-Uni ?",
+    "a": [
+      "L'euro",
+      "La couronne",
+      "La livre sterling",
+      "Le franc"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom de la tour penchée la plus célèbre du monde ?",
+    "a": [
+      "Tour de Bologne",
+      "Tour de Pise",
+      "Tour de Sienne",
+      "Tour de Gênes"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de joueurs compose une équipe de rugby à XIII ?",
+    "a": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom de l'architecte qui a conçu le Guggenheim Bilbao ?",
+    "a": [
+      "Norman Foster",
+      "Renzo Piano",
+      "Frank Gehry",
+      "Zaha Hadid"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le siège de l'ONU ?",
+    "a": [
+      "Genève",
+      "Vienne",
+      "New York",
+      "La Haye"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la couleur du deuil en Asie ?",
+    "a": [
+      "Noir",
+      "Rouge",
+      "Blanc",
+      "Bleu"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de fuseaux horaires possède la Russie ?",
+    "a": [
+      "9",
+      "11",
+      "13",
+      "15"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom de l'opération qui a permis le débarquement en Normandie ?",
+    "a": [
+      "Opération Overlord",
+      "Opération Neptune",
+      "Opération Market Garden",
+      "Opération Torch"
+    ],
+    "c": 0,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la monnaie officielle de la Chine ?",
+    "a": [
+      "Yen",
+      "Yuan",
+      "Won",
+      "Dong"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de lettres compte l'alphabet français ?",
+    "a": [
+      "24",
+      "25",
+      "26",
+      "27"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom de la danse nationale brésilienne ?",
+    "a": [
+      "Tango",
+      "Salsa",
+      "Samba",
+      "Bossa Nova"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la capitale de l'ONU pour les droits de l'homme ?",
+    "a": [
+      "New York",
+      "Paris",
+      "Genève",
+      "La Haye"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom de la plus haute tour du monde actuellement ?",
+    "a": [
+      "Tour CN",
+      "Burj Khalifa",
+      "Tour de Shanghai",
+      "Makkah Clock Royal Tower"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de joueurs y a-t-il dans une équipe de baseball ?",
+    "a": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom du premier homme à avoir fait le tour du monde ?",
+    "a": [
+      "Christophe Colomb",
+      "Vasco de Gama",
+      "Ferdinand Magellan",
+      "Francis Drake"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la monnaie de l'Inde ?",
+    "a": [
+      "Rupee",
+      "Taka",
+      "Roupie",
+      "Dinar"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom de la ville considérée comme le berceau de la démocratie ?",
+    "a": [
+      "Rome",
+      "Athènes",
+      "Sparte",
+      "Carthage"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de faces a un icosaèdre ?",
+    "a": [
+      "12",
+      "16",
+      "20",
+      "24"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le pays d'origine du jeu d'échecs ?",
+    "a": [
+      "Chine",
+      "Inde",
+      "Perse",
+      "Arabie"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la langue officielle du Mexique ?",
+    "a": [
+      "Nahuatl",
+      "Portugais",
+      "Espagnol",
+      "Maya"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom du prix décerné chaque année pour la paix depuis 1901 ?",
+    "a": [
+      "Prix Pulitzer",
+      "Prix Nobel de la Paix",
+      "Prix Sakharov",
+      "Prix Gandhi"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de points vaut un essai au rugby à XV ?",
+    "a": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom du livre sacré de l'Islam ?",
+    "a": [
+      "La Bible",
+      "La Torah",
+      "Le Coran",
+      "Le Véda"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la monnaie de la Suisse ?",
+    "a": [
+      "Euro",
+      "Franc suisse",
+      "Couronne",
+      "Mark"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom de l'instrument de musique à cordes pincées le plus joué au monde ?",
+    "a": [
+      "Violon",
+      "Piano",
+      "Guitare",
+      "Mandoline"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de mois compte l'année hébraïque en année non bissextile ?",
+    "a": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom du philosophe grec auteur de La République ?",
+    "a": [
+      "Socrate",
+      "Aristote",
+      "Platon",
+      "Épicure"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la couleur qui symbolise la chance en Chine ?",
+    "a": [
+      "Blanc",
+      "Bleu",
+      "Rouge",
+      "Jaune"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le sport national du Canada ?",
+    "a": [
+      "Curling",
+      "Hockey sur glace",
+      "Crosse",
+      "Football américain"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de cases compte un échiquier ?",
+    "a": [
+      "48",
+      "56",
+      "64",
+      "72"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom du monument symbolique de Sydney en Australie ?",
+    "a": [
+      "Sydney Tower",
+      "Sydney Opera House",
+      "Sydney Harbour Bridge",
+      "Luna Park"
+    ],
+    "c": 1,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la langue la plus apprise dans le monde en deuxième langue ?",
+    "a": [
+      "Espagnol",
+      "Français",
+      "Mandarin",
+      "Anglais"
+    ],
+    "c": 3,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom du fondateur de la religion islamique ?",
+    "a": [
+      "Ibrahim",
+      "Isa",
+      "Moussa",
+      "Muhammad"
+    ],
+    "c": 3,
+    "cat": "culture"
+  },
+  {
+    "q": "Combien de planètes ont des anneaux dans notre système solaire ?",
+    "a": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "c": 3,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom de la coupe du monde de rugby ?",
+    "a": [
+      "Le Trophée Webb Ellis",
+      "La Coupe du Monde IRB",
+      "Le Graal Oval",
+      "La Coupe Ryder"
+    ],
+    "c": 0,
+    "cat": "culture"
+  },
+  {
+    "q": "Quelle est la religion majoritaire au Thaïlande ?",
+    "a": [
+      "Islam",
+      "Hinduisme",
+      "Bouddhisme",
+      "Christianisme"
+    ],
+    "c": 2,
+    "cat": "culture"
+  },
+  {
+    "q": "Quel est le nom du stade du FC Barcelone ?",
+    "a": [
+      "Bernabéu",
+      "Camp Nou",
+      "Metropolitano",
+      "Mestalla"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel joueur français a marqué lors de la finale de l'Euro 2000 ?",
+    "a": [
+      "Thierry Henry",
+      "Zinédine Zidane",
+      "David Trezeguet",
+      "Sylvain Wiltord"
+    ],
+    "c": 3,
+    "cat": "football"
+  },
+  {
+    "q": "Quelle équipe a remporté la Coupe du Monde 2006 ?",
+    "a": [
+      "France",
+      "Portugal",
+      "Brésil",
+      "Italie"
+    ],
+    "c": 3,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nom du club de football basé à Munich ?",
+    "a": [
+      "Borussia Dortmund",
+      "Bayern Munich",
+      "RB Leipzig",
+      "Bayer Leverkusen"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le nombre de cartons jaunes qui entraîne une suspension en Ligue 1 ?",
+    "a": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel club français a remporté la Ligue des Champions en 1993 ?",
+    "a": [
+      "PSG",
+      "Monaco",
+      "Olympique de Marseille",
+      "Lyon"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le pays organisateur de la Coupe du Monde 2026 ?",
+    "a": [
+      "USA uniquement",
+      "Mexique et USA",
+      "USA, Mexique et Canada",
+      "Canada et USA"
+    ],
+    "c": 2,
+    "cat": "football"
+  },
+  {
+    "q": "Quel est le joueur qui détient le record de buts en sélection nationale toutes nations confondues ?",
+    "a": [
+      "Messi",
+      "Ronaldo",
+      "Lewandowski",
+      "Daei"
+    ],
+    "c": 1,
+    "cat": "football"
+  },
+  {
+    "q": "Dans quel jeu retrouve-t-on la licence Call of Duty développée par Infinity Ward ?",
+    "a": [
+      "Battlefield",
+      "Call of Duty: Modern Warfare",
+      "Medal of Honor",
+      "Brothers in Arms"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du héros de la série Mega Man de Capcom ?",
+    "a": [
+      "Proto Man",
+      "Roll",
+      "Mega Man",
+      "Bass"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu de Blizzard incarne-t-on des héros comme Hanzo et Tracer ?",
+    "a": [
+      "Overwatch",
+      "Heroes of the Storm",
+      "StarCraft",
+      "World of Warcraft"
+    ],
+    "c": 0,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du premier jeu de la saga Resident Evil ?",
+    "a": [
+      "Resident Evil Zero",
+      "Resident Evil",
+      "Resident Evil 2",
+      "Resident Evil 3"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel studio japonais a créé la série Final Fantasy ?",
+    "a": [
+      "Capcom",
+      "Konami",
+      "Square Enix",
+      "Namco"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quel jeu de plateforme retrouve-t-on Crash Bandicoot ?",
+    "a": [
+      "Spyro",
+      "Crash Bandicoot",
+      "Jak and Daxter",
+      "Ratchet et Clank"
+    ],
+    "c": 1,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel est le nom du célèbre MMORPG de Blizzard lancé en 2004 ?",
+    "a": [
+      "Guild Wars",
+      "EverQuest",
+      "World of Warcraft",
+      "Final Fantasy XIV"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Dans quelle ville se déroule le jeu GTA V ?",
+    "a": [
+      "Liberty City",
+      "Vice City",
+      "Los Santos",
+      "Blaine County"
+    ],
+    "c": 2,
+    "cat": "gaming"
+  },
+  {
+    "q": "Quel empire a été fondé par Gengis Khan au XIIIe siècle ?",
+    "a": [
+      "L'Empire Ottoman",
+      "L'Empire Mongol",
+      "L'Empire Ming",
+      "L'Empire Perse"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année Christophe Colomb a-t-il découvert l'Amérique ?",
+    "a": [
+      "1488",
+      "1490",
+      "1492",
+      "1498"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel événement a déclenché la Première Guerre mondiale en 1914 ?",
+    "a": [
+      "L'invasion de la Pologne",
+      "L'assassinat de l'archiduc François-Ferdinand",
+      "La révolution russe",
+      "La crise de Suez"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel pharaon est associé à la construction de la Grande Pyramide de Gizeh ?",
+    "a": [
+      "Ramsès II",
+      "Toutankhamon",
+      "Khéops",
+      "Néfertiti"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année a été fondée la ville de Rome selon la tradition ?",
+    "a": [
+      "753 av. J.-C.",
+      "509 av. J.-C.",
+      "264 av. J.-C.",
+      "476 apr. J.-C."
+    ],
+    "c": 0,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel général carthaginois a traversé les Alpes avec des éléphants ?",
+    "a": [
+      "Carthage",
+      "Scipion",
+      "Hannibal",
+      "Hamilcar"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "En quelle année a eu lieu la révolution russe bolchevique ?",
+    "a": [
+      "1905",
+      "1914",
+      "1917",
+      "1921"
+    ],
+    "c": 2,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel empire a régné sur la péninsule ibérique jusqu'en 1492 ?",
+    "a": [
+      "L'Empire Ottoman",
+      "L'Empire Maure (Moors)",
+      "L'Empire Byzantin",
+      "L'Empire Romain d'Occident"
+    ],
+    "c": 1,
+    "cat": "histoire"
+  },
+  {
+    "q": "Quel est le nom du trophée remis au vainqueur du Championnat du monde de Formule 1 ?",
+    "a": [
+      "La Coupe des Constructeurs",
+      "Le Trophée des Champions",
+      "Le Trophée FIA",
+      "Le Trophée des Pilotes"
+    ],
+    "c": 3,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le record du monde du saut en longueur hommes ?",
+    "a": [
+      "8,59 m — Carl Lewis",
+      "8,90 m — Mike Powell",
+      "8,95 m — Bob Beamon",
+      "9,00 m — Daley Thompson"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Combien de temps dure un set de volleyball en termes de points gagnants ?",
+    "a": [
+      "15 points",
+      "21 points",
+      "25 points",
+      "30 points"
+    ],
+    "c": 2,
+    "cat": "sport"
+  },
+  {
+    "q": "Quel est le nom du championnat de basket-ball féminin aux États-Unis ?",
+    "a": [
+      "NBA",
+      "WNBA",
+      "NBL",
+      "CBA"
+    ],
+    "c": 1,
+    "cat": "sport"
+  },
+  {
+    "q": "Dans quel sport retrouve-t-on les termes épée, fleuret et sabre ?",
+    "a": [
+      "Arts martiaux",
+      "Escrime",
+      "Kendo",
+      "Fencing américain"
+    ],
+    "c": 1,
+    "cat": "sport"
+  }
 ]
