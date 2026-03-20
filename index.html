@@ -1184,16 +1184,7 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
       <button class="admin-close" onclick="closeAdmin()">✕</button>
     </h3>
 
-    <!-- Token GitHub (repo hardcodé) -->
-    <div class="admin-section">
-      <label>Token GitHub
-        <a href="https://github.com/settings/tokens/new?scopes=public_repo&description=Golmon" target="_blank" style="color:var(--gold);font-size:0.7rem;text-transform:none;font-weight:400;margin-left:0.4rem">→ Créer un token</a>
-      </label>
-      <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off">
-      <p class="admin-note">Permission requise : <code>public_repo</code> uniquement. Sauvegardé localement dans ton navigateur.</p>
-    </div>
-
-    <hr style="border:none;border-top:1px solid var(--border)">
+    <input type="hidden" id="gh-token">
 
     <!-- Question -->
     <div class="admin-section">
