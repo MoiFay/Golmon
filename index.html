@@ -395,7 +395,9 @@ body::before {
   font-size: 0.7rem; text-transform: uppercase;
   letter-spacing: 0.12em; color: var(--text-dim); font-weight: 600;
 }
-.admin-section input, .admin-section select, .admin-section textarea {
+.admin-section input:not(.ans-admin-row input),
+.admin-section select,
+.admin-section textarea {
   background: var(--bg3);
   border: 1px solid var(--border);
   border-radius: 9px;
@@ -407,7 +409,7 @@ body::before {
   transition: border-color 0.2s;
   width: 100%;
 }
-.admin-section input:focus,
+.admin-section input:not(.ans-admin-row input):focus,
 .admin-section select:focus,
 .admin-section textarea:focus { border-color: var(--gold); }
 .admin-section textarea { resize: vertical; min-height: 60px; }
@@ -416,10 +418,25 @@ body::before {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem;
 }
 .ans-admin-row {
-  display: flex; align-items: center; gap: 0.45rem;
+  display: flex; align-items: center; gap: 0.6rem; width: 100%;
 }
-.ans-admin-row input[type="radio"] { accent-color: var(--gold); flex-shrink: 0; cursor: pointer; }
-.ans-admin-row input[type="text"] { flex: 1; }
+.ans-admin-row input[type="radio"] {
+  accent-color: var(--gold); flex-shrink: 0; cursor: pointer;
+  width: 16px; height: 16px;
+}
+.ans-admin-row input[type="text"] {
+  flex: 1; min-width: 0;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 0.55rem 0.8rem;
+  color: var(--text);
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.ans-admin-row input[type="text"]:focus { border-color: var(--gold); }
 .admin-note { font-size: 0.72rem; color: var(--text-dim); line-height: 1.5; }
 .admin-note a { color: var(--gold); }
 .admin-note code { color: var(--purple-mid); font-size: 0.8em; }
