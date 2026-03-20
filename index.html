@@ -1987,7 +1987,44 @@ function endRound() {
   const totalRevealTime = rows.length * DELAY_PER + 400;
 
   setTimeout(() => {
-    // Apply lives
+    // Calcule les éliminations SANS les appliquer d'abord
+    const alive = getAlive();
+    const wouldBeEliminated = alive.filter(ukey => {
+      const p   = S.players[ukey];
+      const ans = S.roundAnswers[ukey];
+      return (!ans || ans !== correct) && p.lives <= 1;
+    });
+
+    // 🛡️ PROTECTION : si tout le monde serait éliminé → round annulé
+    if (wouldBeEliminated.length === alive.length) {
+      // Retire juste la vie sans éliminer, puis annule tout
+      alive.forEach(ukey => {
+        const p   = S.players[ukey];
+        const ans = S.roundAnswers[ukey];
+        if (!ans || ans !== correct) p.lives = Math.max(1, p.lives); // on ne descend pas en dessous de 1
+      });
+
+      buildSidebar();
+      playRoundEnd();
+
+      const overlay = document.getElementById('overlay-result');
+      overlay.classList.remove('hidden');
+      document.getElementById('r-title').textContent   = `🛡️ Round annulé !`;
+      document.getElementById('r-correct').textContent = `Bonne réponse : ${correct} — ${q.a[q.c]}`;
+
+      const evBox = document.getElementById('r-events');
+      evBox.innerHTML = '';
+      const d = document.createElement('div');
+      d.className = 'ea-item life';
+      d.textContent = `Tout le monde s'est trompé — personne n'est éliminé, on continue !`;
+      evBox.appendChild(d);
+
+      document.getElementById('r-surv').innerHTML = `<strong>${alive.length}</strong> survivant${alive.length > 1 ? 's' : ''}`;
+      document.getElementById('btn-next').textContent = 'Question suivante →';
+      return;
+    }
+
+    // Application normale des vies
     const events = [];
     getAlive().forEach(ukey => {
       const p   = S.players[ukey];
