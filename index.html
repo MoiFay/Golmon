@@ -1773,7 +1773,7 @@ function showQ() {
 
   S.roundAnswers = {};
   S.roundActive  = true;
-  startTimer(15);
+  startTimer(25);
 }
 
 // ════════════════════════════════════════════════
@@ -1911,7 +1911,7 @@ function tickUI(t) {
   document.getElementById('t-num').textContent = t;
   const arc = document.getElementById('t-arc');
   const C   = 2 * Math.PI * 22;
-  arc.style.strokeDashoffset = C * (1 - t/15);
+  arc.style.strokeDashoffset = C * (1 - t/25);
   arc.style.stroke = t > 5 ? 'var(--gold)' : t > 3 ? 'var(--orange)' : 'var(--red)';
   document.getElementById('t-num').style.color = t > 5 ? 'var(--gold)' : t > 3 ? 'var(--orange)' : 'var(--red)';
   if (t <= 5 && t > 0) playTick();
