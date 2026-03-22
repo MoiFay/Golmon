@@ -55,12 +55,52 @@ body::before {
 #screen-setup {
   position: relative; z-index: 1;
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 480px 1fr;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.setup-left {
+  grid-column: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  gap: 2.5rem;
+  gap: 1.75rem;
+}
+
+.setup-right {
+  display: none;
+}
+
+.setup-lb-twitch {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  padding-top: 1rem;
+}
+
+.setup-lb-kick {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+  padding-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  #screen-setup {
+    grid-template-columns: 1fr;
+  }
+  .setup-lb-twitch, .setup-lb-kick {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .setup-left {
+    grid-column: 1;
+  }
 }
 
 .crown-title { text-align: center; }
@@ -252,7 +292,114 @@ body::before {
   text-align: center;
 }
 
-/* ── SECTION CHAÎNES ── */
+/* ── CLASSEMENT ── */
+.leaderboard-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.lb-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.lb-col {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.lb-col-twitch { border-color: rgba(145,71,255,0.3); }
+.lb-col-kick   { border-color: rgba(83,252,24,0.25); }
+.lb-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+.lb-col-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+.lb-col-twitch .lb-col-title { color: var(--twitch); }
+.lb-col-kick   .lb-col-title { color: var(--kick); }
+.lb-col-title img { width: 16px; height: 16px; object-fit: contain; }
+.lb-reset {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  cursor: pointer;
+  font-family: 'Exo 2', sans-serif;
+  transition: color 0.2s;
+  padding: 0;
+}
+.lb-reset:hover { color: var(--red); }
+.lb-empty {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-style: italic;
+  padding: 0.5rem;
+}
+.lb-row {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  animation: chipIn 0.25s ease;
+}
+.lb-row:first-child { border-color: var(--border-gold); background: rgba(245,200,66,0.04); }
+.lb-rank {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  min-width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.lb-row:first-child .lb-rank { color: var(--gold); }
+.lb-row:nth-child(2) .lb-rank { color: #b0b0b0; }
+.lb-row:nth-child(3) .lb-rank { color: #cd7f32; }
+.lb-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.78rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lb-wins {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.82rem;
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.lb-wins-label {
+  font-size: 0.58rem;
+  color: var(--text-dim);
+  margin-left: 1px;
+}
+.lb-section-title {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  font-weight: 600;
+}
 .channels-section {
   max-width: 460px;
   width: 100%;
@@ -938,146 +1085,135 @@ canvas#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
 
 <!-- ══════════════════════════════════ SETUP ══════════════════════════════════ -->
 <div id="screen-setup">
-  <div class="crown-title">
-    <span class="crown-icon">👑</span>
-    <h1>Question pour un<br>GOLMON</h1>
-    <p>Battle Royale Chat · Twitch & Kick</p>
-  </div>
 
-  <div id="saved-banner" class="hidden" style="
-    max-width:460px;width:100%;
-    background:var(--bg2);
-    border:1px solid var(--border-gold);
-    border-radius:14px;
-    padding:1rem 1.25rem;
-    display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  ">
-    <div>
-      <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--text-dim);font-weight:600;margin-bottom:0.3rem">Dernière session</div>
-      <div id="saved-label" style="font-size:0.95rem;font-weight:700;color:var(--text)"></div>
+  <!-- ══ GAUCHE : classement Twitch ══ -->
+  <div class="setup-lb-twitch">
+    <div class="lb-col lb-col-twitch">
+      <div class="lb-col-header">
+        <div class="lb-col-title">
+          <img src="./twitch.png" alt="Twitch"> Classement Twitch
+        </div>
+        <button class="lb-reset" onclick="resetLeaderboard('twitch')">Reset</button>
+      </div>
+      <div id="lb-twitch"><div class="lb-empty">Aucune victoire</div></div>
     </div>
-    <button class="btn-gold" onclick="reconnectSaved()" style="width:auto;padding:0.6rem 1.2rem;font-size:0.85rem;flex-shrink:0">
-      ⚡ Reconnecter
-    </button>
   </div>
 
-  <div class="setup-card">
-    <div>
-      <div class="section-label">Plateforme</div>
-      <div class="platform-chooser">
-        <button class="platform-btn active" data-p="twitch" onclick="pickPlatform('twitch')">
-          <img src="./twitch.png" alt="Twitch" style="width:40px;height:40px;object-fit:contain">Twitch
-        </button>
-        <button class="platform-btn" data-p="kick" onclick="pickPlatform('kick')">
-          <img src="./kick.png" alt="Kick" style="width:40px;height:40px;object-fit:contain">Kick
-        </button>
+  <!-- ══ CENTRE : formulaire + règles + chaînes ══ -->
+  <div class="setup-left">
+    <div class="crown-title">
+      <span class="crown-icon">👑</span>
+      <h1>Question pour un<br>GOLMON</h1>
+      <p>Battle Royale Chat · Twitch & Kick</p>
+    </div>
+
+    <div id="saved-banner" class="hidden" style="
+      width:100%;
+      background:var(--bg2);
+      border:1px solid var(--border-gold);
+      border-radius:14px;
+      padding:1rem 1.25rem;
+      display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    ">
+      <div>
+        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--text-dim);font-weight:600;margin-bottom:0.3rem">Dernière session</div>
+        <div id="saved-label" style="font-size:0.95rem;font-weight:700;color:var(--text)"></div>
+      </div>
+      <button class="btn-gold" onclick="reconnectSaved()" style="width:auto;padding:0.6rem 1.2rem;font-size:0.85rem;flex-shrink:0">
+        ⚡ Reconnecter
+      </button>
+    </div>
+
+    <div class="setup-card">
+      <div>
+        <div class="section-label">Plateforme</div>
+        <div class="platform-chooser">
+          <button class="platform-btn active" data-p="twitch" onclick="pickPlatform('twitch')">
+            <img src="./twitch.png" alt="Twitch" style="width:40px;height:40px;object-fit:contain">Twitch
+          </button>
+          <button class="platform-btn" data-p="kick" onclick="pickPlatform('kick')">
+            <img src="./kick.png" alt="Kick" style="width:40px;height:40px;object-fit:contain">Kick
+          </button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>Nom de ta chaîne</label>
+        <input type="text" id="channel-input" placeholder="ex: monpseudo" autocomplete="off" spellcheck="false">
+      </div>
+
+      <div id="kick-extra" class="field-group">
+        <label>Kick Chatroom ID <span style="color:var(--text-dim);font-weight:400;text-transform:none">(requis)</span></label>
+        <input type="text" id="chatroom-id" placeholder="ex: 1234567" autocomplete="off">
+        <p class="field-note">
+          Ouvre <a id="kick-api-link" href="#" target="_blank" style="color:var(--kick)">kick.com/api/v2/channels/<strong id="kick-slug-hint">TON_PSEUDO</strong></a> dans ton navigateur → cherche <code style="color:var(--gold)">"chatroom":{"id":</code> → copie le nombre
+        </p>
+      </div>
+
+      <button class="btn-gold" id="btn-connect" onclick="connectToChat()">
+        🔌 Connecter le chat
+      </button>
+
+      <p class="status-msg" id="connect-status"></p>
+      <p id="q-load-status" style="font-size:0.72rem;text-align:center;color:var(--text-dim);display:block">⏳ Chargement des questions...</p>
+      <div class="debug-panel" id="debug-panel"></div>
+    </div>
+
+    <div class="rules-card">
+      <div class="rule-item">
+        <div class="rule-icon">⚔️</div>
+        <div class="rule-text">Viewers tapent <strong>!entry</strong> / <strong>!exit</strong> pour jouer</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon">💬</div>
+        <div class="rule-text">Répondre <strong>A B C</strong> ou <strong>D</strong> dans le chat</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon">❤️</div>
+        <div class="rule-text"><strong>3 vies</strong> · Dernier survivant = <strong>👑 Roi des Golmons</strong></div>
       </div>
     </div>
 
-    <div class="field-group">
-      <label>Nom de ta chaîne</label>
-      <input type="text" id="channel-input" placeholder="ex: monpseudo" autocomplete="off" spellcheck="false">
-    </div>
-
-    <div id="kick-extra" class="field-group">
-      <label>Kick Chatroom ID <span style="color:var(--text-dim);font-weight:400;text-transform:none">(requis)</span></label>
-      <input type="text" id="chatroom-id" placeholder="ex: 1234567" autocomplete="off">
-      <p class="field-note">
-        Ouvre <a id="kick-api-link" href="#" target="_blank" style="color:var(--kick)">kick.com/api/v2/channels/<strong id="kick-slug-hint">TON_PSEUDO</strong></a> dans ton navigateur → cherche <code style="color:var(--gold)">"chatroom":{"id":</code> → copie le nombre
-      </p>
-    </div>
-
-    <button class="btn-gold" id="btn-connect" onclick="connectToChat()">
-      🔌 Connecter le chat
-    </button>
-
-    <p class="status-msg" id="connect-status"></p>
-    <p id="q-load-status" style="font-size:0.72rem;text-align:center;color:var(--text-dim);display:block">⏳ Chargement des questions...</p>
-    <div class="debug-panel" id="debug-panel"></div>
-  </div>
-
-  <div class="rules-card">
-    <div class="rule-item">
-      <div class="rule-icon">⚔️</div>
-      <div class="rule-text">Viewers tapent <strong>!entry</strong> / <strong>!exit</strong> pour jouer</div>
-    </div>
-    <div class="rule-item">
-      <div class="rule-icon">💬</div>
-      <div class="rule-text">Répondre <strong>A B C</strong> ou <strong>D</strong> dans le chat</div>
-    </div>
-    <div class="rule-item">
-      <div class="rule-icon">❤️</div>
-      <div class="rule-text"><strong>3 vies</strong> · Dernier survivant = <strong>👑 Roi des Golmons</strong></div>
+    <div class="channels-section">
+      <div class="channels-label">Chaînes à suivre</div>
+      <div class="channels-grid">
+        <a class="ch-card" data-p="twitch" href="https://twitch.tv/moifay" target="_blank" rel="noopener">
+          <img class="ch-avatar" src="https://unavatar.io/twitch/moifay" onerror="this.src='./twitch.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(145,71,255,0.15)'" alt="moifay">
+          <div class="ch-info"><div class="ch-name">moifay</div><div class="ch-plat"><img src="./twitch.png" alt="Twitch"><span>TWITCH</span></div></div>
+          <span class="ch-arrow">→</span>
+        </a>
+        <a class="ch-card" data-p="kick" href="https://kick.com/moifay7up" target="_blank" rel="noopener">
+          <img class="ch-avatar" src="https://unavatar.io/kick/moifay7up" onerror="this.src='./kick.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(83,252,24,0.1)'" alt="moifay7up">
+          <div class="ch-info"><div class="ch-name">moifay7up</div><div class="ch-plat"><img src="./kick.png" alt="Kick"><span>KICK</span></div></div>
+          <span class="ch-arrow">→</span>
+        </a>
+        <a class="ch-card" data-p="twitch" href="https://twitch.tv/fack7up" target="_blank" rel="noopener">
+          <img class="ch-avatar" src="https://unavatar.io/twitch/fack7up" onerror="this.src='./twitch.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(145,71,255,0.15)'" alt="fack7up">
+          <div class="ch-info"><div class="ch-name">fack7up</div><div class="ch-plat"><img src="./twitch.png" alt="Twitch"><span>TWITCH</span></div></div>
+          <span class="ch-arrow">→</span>
+        </a>
+        <a class="ch-card" data-p="kick" href="https://kick.com/fack7up" target="_blank" rel="noopener">
+          <img class="ch-avatar" src="https://unavatar.io/kick/fack7up" onerror="this.src='./kick.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(83,252,24,0.1)'" alt="fack7up">
+          <div class="ch-info"><div class="ch-name">fack7up</div><div class="ch-plat"><img src="./kick.png" alt="Kick"><span>KICK</span></div></div>
+          <span class="ch-arrow">→</span>
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- ── CHAÎNES À SUIVRE ── -->
-  <div class="channels-section">
-    <div class="channels-label">Chaînes à suivre</div>
-    <div class="channels-grid">
-
-      <a class="ch-card" data-p="twitch" href="https://twitch.tv/moifay" target="_blank" rel="noopener">
-        <img class="ch-avatar"
-             src="https://unavatar.io/twitch/moifay"
-             onerror="this.src='./twitch.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(145,71,255,0.15)'"
-             alt="moifay">
-        <div class="ch-info">
-          <div class="ch-name">moifay</div>
-          <div class="ch-plat">
-            <img src="./twitch.png" alt="Twitch">
-            <span>TWITCH</span>
-          </div>
+  <!-- ══ DROITE : classement Kick ══ -->
+  <div class="setup-lb-kick">
+    <div class="lb-col lb-col-kick">
+      <div class="lb-col-header">
+        <div class="lb-col-title">
+          <img src="./kick.png" alt="Kick"> Classement Kick
         </div>
-        <span class="ch-arrow">→</span>
-      </a>
-
-      <a class="ch-card" data-p="kick" href="https://kick.com/moifay7up" target="_blank" rel="noopener">
-        <img class="ch-avatar"
-             src="https://unavatar.io/kick/moifay7up"
-             onerror="this.src='./kick.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(83,252,24,0.1)'"
-             alt="moifay7up">
-        <div class="ch-info">
-          <div class="ch-name">moifay7up</div>
-          <div class="ch-plat">
-            <img src="./kick.png" alt="Kick">
-            <span>KICK</span>
-          </div>
-        </div>
-        <span class="ch-arrow">→</span>
-      </a>
-
-      <a class="ch-card" data-p="twitch" href="https://twitch.tv/fack7up" target="_blank" rel="noopener">
-        <img class="ch-avatar"
-             src="https://unavatar.io/twitch/fack7up"
-             onerror="this.src='./twitch.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(145,71,255,0.15)'"
-             alt="fack7up">
-        <div class="ch-info">
-          <div class="ch-name">fack7up</div>
-          <div class="ch-plat">
-            <img src="./twitch.png" alt="Twitch">
-            <span>TWITCH</span>
-          </div>
-        </div>
-        <span class="ch-arrow">→</span>
-      </a>
-
-      <a class="ch-card" data-p="kick" href="https://kick.com/fack7up" target="_blank" rel="noopener">
-        <img class="ch-avatar"
-             src="https://unavatar.io/kick/fack7up"
-             onerror="this.src='./kick.png';this.style.borderRadius='8px';this.style.padding='6px';this.style.background='rgba(83,252,24,0.1)'"
-             alt="fack7up">
-        <div class="ch-info">
-          <div class="ch-name">fack7up</div>
-          <div class="ch-plat">
-            <img src="./kick.png" alt="Kick">
-            <span>KICK</span>
-          </div>
-        </div>
-        <span class="ch-arrow">→</span>
-      </a>
-
+        <button class="lb-reset" onclick="resetLeaderboard('kick')">Reset</button>
+      </div>
+      <div id="lb-kick"><div class="lb-empty">Aucune victoire</div></div>
     </div>
   </div>
+
 </div>
 
 <!-- ══════════════════════════════════ LOBBY ══════════════════════════════════ -->
@@ -1272,8 +1408,69 @@ let S = {
 };
 
 // ════════════════════════════════════════════════
-// SAUVEGARDE SESSION (localStorage)
+// CLASSEMENT — localStorage (Twitch + Kick séparés)
 // ════════════════════════════════════════════════
+const LB_KEY_TWITCH = 'golmon_lb_twitch';
+const LB_KEY_KICK   = 'golmon_lb_kick';
+
+function getLbKey(platform) {
+  return platform === 'kick' ? LB_KEY_KICK : LB_KEY_TWITCH;
+}
+
+function getLeaderboard(platform) {
+  try { return JSON.parse(localStorage.getItem(getLbKey(platform)) || '{}'); } catch { return {}; }
+}
+
+function saveLeaderboard(platform, lb) {
+  try { localStorage.setItem(getLbKey(platform), JSON.stringify(lb)); } catch(e) {}
+}
+
+function addWin(pseudo, platform) {
+  if (!pseudo || pseudo === 'Égalité !') return;
+  const lb  = getLeaderboard(platform);
+  const key = pseudo.toLowerCase();
+  if (!lb[key]) lb[key] = { display: pseudo, wins: 0 };
+  lb[key].wins++;
+  lb[key].display = pseudo;
+  saveLeaderboard(platform, lb);
+  renderLeaderboard();
+}
+
+function renderLeaderboard() {
+  const medals = ['👑', '🥈', '🥉'];
+
+  ['twitch', 'kick'].forEach(plat => {
+    const el     = document.getElementById('lb-' + plat);
+    if (!el) return;
+    const lb     = getLeaderboard(plat);
+    const sorted = Object.values(lb).sort((a, b) => b.wins - a.wins).slice(0, 8);
+
+    if (!sorted.length) {
+      el.innerHTML = '<div class="lb-empty">Aucune victoire</div>';
+      return;
+    }
+
+    el.innerHTML = sorted.map((p, i) => `
+      <div class="lb-row">
+        <span class="lb-rank">${medals[i] || (i + 1)}</span>
+        <span class="lb-name">${esc(p.display)}</span>
+        <span class="lb-wins">${p.wins}<span class="lb-wins-label"> win${p.wins > 1 ? 's' : ''}</span></span>
+      </div>
+    `).join('');
+  });
+}
+
+function resetLeaderboard(platform) {
+  const name = platform === 'kick' ? 'Kick' : 'Twitch';
+  if (!confirm(`Réinitialiser le classement ${name} ?`)) return;
+  localStorage.removeItem(getLbKey(platform));
+  renderLeaderboard();
+}
+
+// Chargement au démarrage
+renderLeaderboard();
+
+
 const SAVE_KEY = 'golmon_last_session';
 
 function saveSession() {
@@ -2127,6 +2324,8 @@ function showWinner(winnerKey) {
 
   const name = winnerKey ? S.players[winnerKey].display : 'Égalité !';
   const lives= winnerKey ? S.players[winnerKey].lives   : 0;
+
+  if (winnerKey) addWin(name, S.platform);
 
   document.getElementById('w-name').textContent    = name;
   document.getElementById('w-players').textContent = S.totalPlayers;
